@@ -1,12 +1,7 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-}
-
-@font-face {
-  font-family: lato;
-  src: url(fonts/Lato-Regular.ttf);
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -18,175 +13,202 @@ body {
   background-position: center center;
   background-attachment: fixed;
   letter-spacing: 0.5px;
-  font-family: lato;
+  font-family: 'Roboto', sans-serif;
 }
 
-/*INITIAL*/
-.initial {
+h1 {
+  text-align: center;
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: 40px;
+}
+
+.forms {
   position: relative;
-}
-
-.title {
-  font-size: 60px;
-  color: #ffc220;
-  padding-top: 15vh;
-  text-align: center;
-  font-weight: 700;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-.buttons {
-  margin-top: 10vh;
+  background-color: #ece4b7;
+  border: 1px solid #222;
+  width: 90%;
+  margin: 10px auto;
   text-align: center;
 }
 
-#colleaguesBtn,
-#visitorsBtn {
-  display: inline-block;
-  margin: 0px 50px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: #76c043;
-  overflow: hidden;
-  line-height: 200px;
-  text-align: center;
-  font-size: 22px;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
-  border: 1px solid #45632f;
-  -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.75);
-  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.75);
-  transition: all 0.3s;
-}
-
-#colleaguesBtn:hover,
-#visitorsBtn:hover {
-  font-size: 24px;
-}
-
-#colleaguesBtn:active,
-#visitorsBtn:active {
-  -ms-transform: translateY(1px);
-  -webkit-transform: translateY(1px);
-  transform: translateY(1px);
-  -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
-}
-
-#logo {
-  width: 300px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-
-#backBtn {
-  width: 100px;
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  cursor: pointer;
-  display: none;
-  transform: scaleX(-1);
-  transition: all 0.3s;
-  z-index: 999;
-}
-
-#backBtn:hover {
-  left: 0;
-}
-
-.instructions {
-  font-size: 30px;
-  color: #ffc220;
+.flexForm {
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
-  text-align: center;
-  font-weight: 700;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-#listButtons {
-  position: fixed;
-  bottom: 0;
-  padding: 20px;
+.lists {
+  margin: 10px auto;
   width: 100%;
   text-align: center;
 }
 
-#colleaguesListBtn,
-#visitorsListBtn,
-#archiveBtn {
-  color: #76c043;
-  cursor: pointer;
-  display: inline;
-  padding: 10px;
+textarea {
+  margin: 10px auto;
 }
 
-#colleaguesListBtn:hover,
-#visitorsListBtn:hover,
-#archiveBtn:hover {
-  color: #45632f;
+.daily,
+.yesterday {
+  text-align: center;
+  padding-top: 20px;
 }
 
-/*Colleagues Form*/
-
-#colleagues {
+#handOverBtnDiv,
+#handOverCon,
+#patrolCon,
+#keysCon,
+#childrenCon,
+#laptopCon,
+#carParkCon {
   display: none;
 }
 
-#colleaguesForm {
-  text-align: center;
-  width: 98%;
-  margin: 100px auto;
-  padding: 30px;
-  background-color: #76c043;
+.smallTitle {
+  font-size: 25px;
+  padding: 10px;
+  border-bottom: 1px solid #222;
 }
 
 .inputs {
   text-transform: uppercase;
-  border: 2px solid #ffc220;
+  border: 1px solid #222;
   border-radius: 5px;
   background-color: #fff;
   padding: 5px 5px;
   box-shadow: inset 0 3px 6px #0000001a;
-  width: 230px;
-  font-size: 20px;
-  margin: 10px;
+  width: 200px;
+  font-size: 18px;
+  margin: 5px;
 }
 
-#input3,
-#archItem4 {
-  width: 100px;
+.btnDiv {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mainBtn {
+  width: 150px;
+  height: 100px;
+  border: 1px solid #222;
+  margin: 20px;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 5px;
+}
+
+#newFormHo {
+  display: none;
+}
+
+#date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+}
+
+.smallTitle {
+  text-align: center;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 20px;
+}
+
+.sectionTitle {
+  padding-bottom: 15px;
+}
+
+.radio {
+  margin: 0px 15px;
+  padding: 10px;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Hide the browser's default radio button */
+.radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: -20px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio input:checked ~ .checkmark {
+  background-color: #65b32e;
+}
+
+.radioDiv {
+  text-align: center;
+  padding: 20px;
+}
+
+#textInc,
+#textFire,
+#textKeys,
+#textCams,
+#textAct,
+#textDoors,
+#textIntBars,
+#textExtBars,
+#textCity,
+#textCom,
+#textPatrol {
+  display: none;
 }
 
 .submitBtn {
   display: inline-block;
+  max-height: 43px;
   padding: 8px 10px;
   margin-left: 20px;
   background-color: #ffc220;
   border-radius: 5px;
+  border: none;
+  outline: none;
   color: #222;
   cursor: pointer;
   user-select: none;
-  border: none;
-  outline: none;
   -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.75);
 }
 
-.submitBtn:hover,
-.deleteBtn:hover {
+.submitBtn:hover {
   background-color: #aa7f08;
   color: #fff;
 }
 
-.submitBtn:active,
-.deleteBtn:active {
+.submitBtn:active {
   -ms-transform: translateY(1px);
   -webkit-transform: translateY(1px);
   transform: translateY(1px);
@@ -195,230 +217,23 @@ body {
   box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
 }
 
-/*Visitors*/
-
-#visitors {
-  display: none;
-}
-
-.instructionsListTitle {
-  font-size: 30px;
-  color: #ffc220;
-  padding: 10px;
-  text-align: center;
-  font-weight: 700;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-.smallTitle {
-  padding: 20px 0px 10px;
-  font-size: 22px;
-  color: #ffc220;
-  text-align: center;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-.fire {
-  display: none;
-  padding: 20px;
-  font-size: 25px;
-  color: red;
+.signatureDiv {
   text-align: center;
 }
 
-.smallTitleInitial {
-  font-size: 25px;
-  padding-top: 30px;
-}
-
-.instructionsText {
-  font-size: 20px;
-  padding: 0px 10px;
-  color: #f6f7f8;
-  text-align: center;
-}
-
-#visitorsForm {
-  text-align: center;
-  width: 98%;
-  padding: 30px;
-  margin: 20px auto;
-  background-color: #76c043;
-}
-
-/*LISTS*/
-
-#colleaguesListDiv,
-#visitorsListDiv,
-#archiveDiv {
-  display: none;
-  width: 95%;
-  margin: auto;
-  padding: 10px;
-}
-
-#colleaguesList,
-#visitorsList,
-#archList {
-  color: #222;
-  list-style: none;
-  display: flex;
-  flex-direction: column-reverse;
-  margin: 10px 0px;
-}
-
-.colleaguesListPart {
-  display: flex;
-  background-color: #fcfcfc;
-  justify-content: center;
-  border-bottom: 1px solid #ffc220;
-  padding: 5px;
-}
-
-.head {
-  border-bottom: 1px solid #222;
-  font-size: 22px;
-  background-color: #76c043;
-}
-
-.names {
-  padding: 10px;
-  flex-basis: 20%;
-}
-
-.listInput {
-  cursor: pointer;
-}
-
-.deleteBtn {
-  flex-basis: 80px;
-  max-width: 80px;
-  max-height: 40px;
-  display: inline-block;
-  padding: 7px 10px;
-  background-color: #ffc220;
-  border-radius: 5px;
-  color: #222;
-  cursor: pointer;
-  user-select: none;
-  border: none;
-  outline: none;
-  -webkit-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.75);
-  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.75);
-  max-width: 80px;
-  margin: 0;
-  user-select: none;
-}
-
-.last {
-  flex-basis: 80px;
-}
-
-.returned {
-  cursor: pointer;
-  user-select: none;
-}
-
-.capitalize {
-  text-transform: capitalize;
-}
-
-.passwordDiv {
+#backBtn {
   position: fixed;
-  top: 10px;
-  left: 50%;
-  width: 350px;
-  padding: 20px;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  text-align: center;
-  background-color: #76c043;
-  color: #222;
-}
-
-.close {
-  position: absolute;
   bottom: 0;
-  right: 0;
-  cursor: pointer;
-  color: #222;
+  left: 0;
 }
-
-#tyDiv {
-  display: none;
-
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  padding: 20px;
-  width: 600px;
-  height: 400px;
-
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  text-align: center;
-  background-color: #76c043;
-  border: 1px solid #ffc220;
-}
-
-.tyTitle {
-  display: inline-block;
-  padding: 0;
-}
-
-.lastLi {
-  margin-bottom: 10px;
-}
-
-.notes {
-  text-transform: uppercase;
-  cursor: pointer;
-  user-select: none;
-}
-
-/*Archive*/
-#archiveDiv {
-  display: none;
-}
-
-#archForm {
-  width: 100%;
+#patrolCon {
   text-align: center;
 }
 
-#archItem1,
-#archItem5 {
-  background: #f1faee url(images/calendar.png) 97% 50% no-repeat;
-}
-
-#archItem1::-webkit-inner-spin-button {
-  display: none;
-}
-
-#archItem5::-webkit-inner-spin-button {
-  display: none;
-}
-
-#archItem1::-webkit-calendar-picker-indicator {
-  opacity: 0;
-  width: 20px;
-}
-
-#archItem5::-webkit-calendar-picker-indicator {
-  opacity: 0;
-  width: 20px;
-}
-
-#archNumberLi,
-#visitorsCount,
-#colleaguesCount {
+.date {
   padding: 10px;
 }
 
-#archHeadV,
-#archHeadC {
-  display: none;
+.question {
+  padding: 0px 20px;
 }

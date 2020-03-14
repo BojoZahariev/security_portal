@@ -11,7 +11,7 @@ let mainWindow;
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
     icon: path.join(__dirname, 'assets/icons/win/icon.ico'),
-    title: 'Britannia House Reception',
+    title: 'Security Portal',
     webPreferences: { nodeIntegration: true }
   });
   mainWindow.loadURL(
@@ -29,7 +29,7 @@ app.on('ready', () => {
 });
 
 const db = new Datastore({
-  filename: './items.db',
+  filename: './itemsPortal.db',
   autoload: true
 });
 
