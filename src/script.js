@@ -198,26 +198,31 @@ displayTextArea(radiosCity, textCity);
 const radiosCom = document.getElementsByClassName('radioCom');
 displayTextArea(radiosCom, textCom);
 
-//Send Item to the server
+//Send new hand over to the server
 newFormHo.addEventListener('submit', e => {
   e.preventDefault();
 
-  if (inputOff.value.length > 1 && inputOn.value.length > 1 && hoSignature.value.length > 0) {
+  if (inputOff.value.length > 1 && inputOn.value.length > 1 && hoSignature.value.length > 1) {
     ipcRenderer.send('addItem', {
       id: Date.now(),
       type: 'handOver',
-      date: getToday().slice(0, 10),
+      date: dateFormat().slice(0, 10),
       collOf: inputOff.value,
       collOn: inputOn.value,
-      shift: checkedShift()
+      shift: checkedShift(),
+      incidents: checkedPairs(inc1, inc2, textInc),
+      firePanel: checkedPairs(fire1, fire2, textFire),
+      keys: checkedPairs(keys1, keys2, textKeys),
+      cams: checkedPairs(cams1, cams2, textCams),
+      act: checkedPairs(act1, act2, textAct),
+      doors: checkedPairs(doors1, doors2, textDoors),
+      inBarrs: checkedPairs(inBarrs1, inBarrs2, textIntBarrs),
+      extBarrs: checkedPairs(extBarrs1, extBarrs2, textExtBarrs),
+      city: checkedPairs(city1, city2, textCity),
+      comms: checkedPairs(comms1, comms2, textCom)
     });
 
-    playSound('success');
-    backToInitial();
-    form.reset();
-  } else {
-    playSound('fail');
-    fail();
+    newFormHo.reset();
   }
 });
 

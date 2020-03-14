@@ -4,6 +4,11 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: lato;
+  src: url(fonts/Lato-Regular.ttf);
+}
+
 body {
   background-color: #007dc6;
   height: 100vh;
@@ -13,7 +18,7 @@ body {
   background-position: center center;
   background-attachment: fixed;
   letter-spacing: 0.5px;
-  font-family: 'Roboto', sans-serif;
+  font-family: lato;
 }
 
 h1 {
@@ -178,8 +183,8 @@ textarea {
 #textCams,
 #textAct,
 #textDoors,
-#textIntBars,
-#textExtBars,
+#textIntBarrs,
+#textExtBarrs,
 #textCity,
 #textCom,
 #textPatrol {

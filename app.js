@@ -33,21 +33,6 @@ const db = new Datastore({
   autoload: true
 });
 
-// Get the items for today and yesterday from db, sort by id and send them to the client, id is UTC so sorted by date
-//colleagues
-ipcMain.on('loadListColleagues', (e, item) => {
-  db.find({ type: item.type, $or: [{ date: item.today }, { date: item.yesterday }] })
-    .sort({ id: 1 })
-    .exec((err, docs) => mainWindow.webContents.send('loadedColleagues', docs));
-});
-
-//visitors
-ipcMain.on('loadListVisitors', (e, item) => {
-  db.find({ type: item.type, $or: [{ date: item.today }, { date: item.yesterday }] })
-    .sort({ id: 1 })
-    .exec((err, docs) => mainWindow.webContents.send('loadedVisitors', docs));
-});
-
 //Saves item in the db
 ipcMain.on('addItem', (e, item) => {
   db.insert(item, err => {
