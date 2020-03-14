@@ -21,6 +21,12 @@ body {
   font-family: lato;
 }
 
+textarea {
+  resize: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 h1 {
   text-align: center;
 }
