@@ -126,6 +126,7 @@ const clearScreen = () => {
     element.style.display = 'none';
   });
   handOverBtnDiv.style.display = 'none';
+  backBtn.style.display = 'none';
 };
 
 //HO
@@ -135,6 +136,7 @@ hoBtn.addEventListener('click', e => {
   clearScreen();
 
   handOverBtnDiv.style.display = 'flex';
+  backBtn.style.display = 'block';
 });
 
 newBtn.addEventListener('click', e => {
@@ -230,6 +232,7 @@ newFormHo.addEventListener('submit', e => {
 patrolBtn.addEventListener('click', e => {
   clearScreen();
   patrolCon.style.display = 'block';
+  backBtn.style.display = 'block';
 });
 
 datePatrol.textContent = dateFormat();
@@ -241,6 +244,7 @@ displayTextArea(radiosPatrol, textPatrol);
 keysBtn.addEventListener('click', e => {
   clearScreen();
   keysCon.style.display = 'block';
+  backBtn.style.display = 'block';
 });
 
 dateKeys.textContent = dateFormat();
@@ -249,6 +253,7 @@ dateKeys.textContent = dateFormat();
 childrenBtn.addEventListener('click', e => {
   clearScreen();
   childrenCon.style.display = 'block';
+  backBtn.style.display = 'block';
 });
 
 dateChildren.textContent = dateFormat();
@@ -257,6 +262,7 @@ dateChildren.textContent = dateFormat();
 laptopBtn.addEventListener('click', e => {
   clearScreen();
   laptopCon.style.display = 'block';
+  backBtn.style.display = 'block';
 });
 
 dateLaptop.textContent = dateFormat();
@@ -265,6 +271,12 @@ dateLaptop.textContent = dateFormat();
 carParkBtn.addEventListener('click', e => {
   clearScreen();
   carParkCon.style.display = 'block';
+  backBtn.style.display = 'block';
 });
 
 dateCarPark.textContent = dateFormat();
+
+//Catches ClearAll from menu, asks for a password and sends the event to server to clear the db.
+ipcRenderer.on('clearAll', () => {
+  ipcRenderer.send('clearAll');
+});

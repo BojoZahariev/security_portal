@@ -25,15 +25,37 @@ textarea {
   resize: none;
   font-size: 18px;
   font-weight: 500;
+  padding: 5px;
 }
 
-h1 {
+.title {
+  font-size: 40px;
+  color: #ffc220;
+  padding-top: 20px;
   text-align: center;
+  font-weight: 700;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 ol {
   list-style-type: decimal;
   padding-left: 40px;
+}
+
+#backBtn {
+  width: 100px;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+  display: none;
+  transform: scaleX(-1);
+  transition: all 0.3s;
+  z-index: 999;
+}
+
+#backBtn:hover {
+  left: 0;
 }
 
 .forms {
@@ -61,10 +83,19 @@ textarea {
   margin: 10px auto;
 }
 
-.daily,
 .yesterday {
   text-align: center;
-  padding-top: 20px;
+  padding: 50px;
+  width: 60%;
+  margin: auto;
+}
+
+.yesterdayText {
+  padding: 20px;
+  text-align: left;
+
+  margin: auto;
+  font-size: 18px;
 }
 
 #handOverBtnDiv,
@@ -96,20 +127,48 @@ textarea {
 }
 
 .btnDiv {
-  margin-top: 100px;
+  padding: 200px 20px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
+.initialBtn {
+  padding: 20px;
+}
+
 .mainBtn {
-  width: 150px;
-  height: 100px;
-  border: 1px solid #222;
-  margin: 20px;
-  text-align: center;
-  line-height: 100px;
+  width: 180px;
+  height: 130px;
+  margin: 10px;
   border-radius: 5px;
+  background-color: #76c043;
+  overflow: hidden;
+  line-height: 130px;
+  text-align: center;
+  font-size: 20px;
+  color: #222;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid #45632f;
+  outline: none;
+  -webkit-box-shadow: 1px 1px 2px 2px #000000bf;
+  -moz-box-shadow: 1px 1px 2px 2px #000000bf;
+  box-shadow: 1px 1px 2px 2px #000000bf;
+  transition: all 0.3s;
+}
+
+.mainBtn:hover {
+  font-size: 22px;
+}
+
+.mainBtn:active {
+  -ms-transform: translateY(1px);
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
 }
 
 #newFormHo {
@@ -232,11 +291,6 @@ textarea {
   text-align: center;
 }
 
-#backBtn {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
 #patrolCon {
   text-align: center;
 }
@@ -246,5 +300,5 @@ textarea {
 }
 
 .question {
-  padding: 0px 20px;
+  padding: 0px 10px;
 }

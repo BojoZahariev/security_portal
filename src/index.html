@@ -12,26 +12,26 @@
   <body>
     <div id="bigContainer">
       <div id="initialDiv" class="containers">
-        <h1>SECURITY PORTAL</h1>
-
-        <div class="daily">
-          <h3>Incidents/Occurrences</h3>
-          <textarea id="textOcc" rows="6" cols="50" placeholder="Describe here."></textarea>
-        </div>
+        <h1 class="title">SECURITY PORTAL</h1>
 
         <div class="yesterday">
-          <h3>Incidents/Occurrences from yesterday</h3>
-          <p>Lorem ipsum</p>
+          <h3 class="smallTitle">Incidents/Occurrences from yesterday</h3>
+          <p class="yesterdayText">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </p>
         </div>
 
-        <div class="btnDiv">
+        <div class="btnDiv initialBtn">
           <button id="hoBtn" class="mainBtn">Handover Sheet</button>
           <button id="patrolBtn" class="mainBtn">Fire Patrol</button>
           <button id="keysBtn" class="mainBtn">Keys</button>
           <button id="childrenBtn" class="mainBtn">Children on site</button>
           <button id="laptopBtn" class="mainBtn">Laptops</button>
           <button id="carParkBtn" class="mainBtn">Car Park Patrols</button>
-          <button id="archiveBtn" class="mainBtn">Archive</button>
         </div>
       </div>
 
@@ -420,7 +420,7 @@
         </form>
       </div>
     </div>
-    <p id="backBtn">back</p>
+    <img src="images/arrow.png" id="backBtn" />
 
     <script src="./script.js"></script>
   </body>
