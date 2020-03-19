@@ -221,7 +221,8 @@ newFormHo.addEventListener('submit', e => {
       inBarrs: checkedPairs(inBarrs1, inBarrs2, textIntBarrs),
       extBarrs: checkedPairs(extBarrs1, extBarrs2, textExtBarrs),
       city: checkedPairs(city1, city2, textCity),
-      comms: checkedPairs(comms1, comms2, textCom)
+      comms: checkedPairs(comms1, comms2, textCom),
+      signature: hoSignature.value
     });
 
     newFormHo.reset();
