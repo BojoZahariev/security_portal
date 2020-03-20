@@ -213,7 +213,7 @@ newFormHo.addEventListener('submit', e => {
   if (inputOff.value.length > 1 && inputOn.value.length > 1 && hoSignature.value.length > 1) {
     ipcRenderer.send('addItem', {
       id: Date.now(),
-      type: 'handOver',
+      type: 'handover',
       date: dateFormat().slice(0, 10),
       collOf: inputOff.value,
       collOn: inputOn.value,
@@ -243,7 +243,20 @@ lastBtn.addEventListener('click', e => {
   newFormHo.style.display = 'none';
   lastHo.style.display = 'block';
   backBtn.style.display = 'block';
+
+  //send request for the last handover
+  ipcRenderer.send('loadLastHandover', {
+    type: 'handover'
+  });
 });
+
+//catch loaded last handover
+ipcRenderer.on('loadedLastHandover', (e, items) =>
+  //send for display
+  items.forEach(function(item) {
+    list.appendChild(render(item));
+  })
+);
 
 //PATROL
 patrolBtn.addEventListener('click', e => {
