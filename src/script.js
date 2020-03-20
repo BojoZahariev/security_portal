@@ -14,9 +14,11 @@ const backBtn = document.querySelector('#backBtn');
 
 //HANDOVER
 const newBtn = document.querySelector('#newBtn');
+const lastBtn = document.querySelector('#lastBtn');
 const handOverCon = document.querySelector('#handOverCon');
 
 //New
+const newFormHo = document.querySelector('#newFormHo');
 const dateHo = document.querySelector('#dateHo');
 const inputOff = document.querySelector('#inputOff');
 //radio
@@ -66,9 +68,11 @@ const comms1 = document.querySelector('#comms1');
 const comms2 = document.querySelector('#comms2');
 const textCom = document.querySelector('#textCom');
 
-const newFormHo = document.querySelector('#newFormHo');
 const hoSignature = document.querySelector('#hoSignature');
 const hoFormSubmit = document.querySelector('#hoFormSubmit');
+
+//Last handover
+const lastHo = document.querySelector('#lastHo');
 
 //Patrol
 const patrolCon = document.querySelector('#patrolCon');
@@ -143,7 +147,9 @@ newBtn.addEventListener('click', e => {
   clearScreen();
 
   handOverCon.style.display = 'block';
+  lastHo.style.display = 'none';
   newFormHo.style.display = 'block';
+  backBtn.style.display = 'block';
 });
 
 //Checks which shift radio is checked
@@ -227,6 +233,16 @@ newFormHo.addEventListener('submit', e => {
 
     newFormHo.reset();
   }
+});
+
+//last ho
+lastBtn.addEventListener('click', e => {
+  clearScreen();
+
+  handOverCon.style.display = 'block';
+  newFormHo.style.display = 'none';
+  lastHo.style.display = 'block';
+  backBtn.style.display = 'block';
 });
 
 //PATROL
