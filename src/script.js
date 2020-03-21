@@ -73,6 +73,8 @@ const hoFormSubmit = document.querySelector('#hoFormSubmit');
 
 //Last handover
 const lastHo = document.querySelector('#lastHo');
+const dateHoLast = document.querySelector('#dateHoLast');
+const lastHoSignedBy = document.querySelector('#lastHoSignedBy');
 
 //Patrol
 const patrolCon = document.querySelector('#patrolCon');
@@ -250,13 +252,16 @@ lastBtn.addEventListener('click', e => {
   });
 });
 
+const displayHandover = sheet => {
+  dateHoLast.textContent = sheet.date;
+  lastHoSignedBy.textContent = sheet.signature;
+};
+
 //catch loaded last handover
-ipcRenderer.on('loadedLastHandover', (e, items) =>
+ipcRenderer.on('loadedLastHandover', (e, item) => {
   //send for display
-  items.forEach(function(item) {
-    list.appendChild(render(item));
-  })
-);
+  displayHandover(item);
+});
 
 //PATROL
 patrolBtn.addEventListener('click', e => {
