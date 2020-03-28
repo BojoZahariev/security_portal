@@ -4,6 +4,11 @@
   margin: 0;
 }
 
+html {
+  --scrollbarBG: #6a8794;
+  --thumbBG: #22678a;
+}
+
 @font-face {
   font-family: lato;
   src: url(fonts/Lato-Regular.ttf);
@@ -56,6 +61,38 @@ ol {
 
 #backBtn:hover {
   left: 0;
+}
+
+.btnDiv {
+  padding: 20px 20px 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.initialBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.iconsMainDiv {
+  text-align: center;
+  margin: 0px 25px;
+  cursor: pointer;
+}
+
+.iconsTitle {
+  font-size: 22px;
+  font-weight: 500;
+  color: #222;
+}
+
+.iconsMain:hover {
+  transition: all 0.5s;
+  transform: scale(0.9);
 }
 
 .forms {
@@ -124,51 +161,6 @@ textarea {
   width: 200px;
   font-size: 18px;
   margin: 5px;
-}
-
-.btnDiv {
-  padding: 200px 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.initialBtn {
-  padding: 20px;
-}
-
-.mainBtn {
-  width: 180px;
-  height: 130px;
-  margin: 10px;
-  border-radius: 5px;
-  background-color: #76c043;
-  overflow: hidden;
-  line-height: 130px;
-  text-align: center;
-  font-size: 20px;
-  color: #222;
-  cursor: pointer;
-  user-select: none;
-  border: 1px solid #45632f;
-  outline: none;
-  -webkit-box-shadow: 1px 1px 2px 2px #000000bf;
-  -moz-box-shadow: 1px 1px 2px 2px #000000bf;
-  box-shadow: 1px 1px 2px 2px #000000bf;
-  transition: all 0.3s;
-}
-
-.mainBtn:hover {
-  font-size: 22px;
-}
-
-.mainBtn:active {
-  -ms-transform: translateY(1px);
-  -webkit-transform: translateY(1px);
-  transform: translateY(1px);
-  -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.75);
 }
 
 #newFormHo {
