@@ -123,9 +123,13 @@ ol {
   color: #222;
 }
 
+.iconsMain {
+  height: 110px;
+}
+
 .iconsMain:hover {
   transition: all 0.5s;
-  transform: scale(0.9);
+  transform: scale(1.1);
 }
 
 .forms {

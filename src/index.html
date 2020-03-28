@@ -10,518 +10,511 @@
   </head>
 
   <body>
-    
-      <div id="initialDiv" class="containers">
-        <h1 class="title">Britannia House <br />SECURITY PORTAL</h1>
+    <div id="initialDiv" class="containers">
+      <h1 class="title">Britannia House <br />SECURITY PORTAL</h1>
 
-        <div class="yesterday">
-          <h3 class="smallTitle">Incidents/Occurrences from yesterday</h3>
-          <p class="yesterdayText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
-          </p>
-        </div>
-
-        <div class="btnDiv initialBtn">
-          <div id="hoBtn" class="iconsMainDiv">
-            <img class="iconsMain" src="images/clipboard.png" alt="clipboard" />
-            <p class="iconsTitle">Handover Sheet</p>
-          </div>
-          <div id="patrolBtn" class="iconsMainDiv">
-            <img class="iconsMain" src="images/extinguisher.png" alt="fire" />
-            <p class="iconsTitle">Fire Patrol</p>
-          </div>
-          <div id="keysBtn" class="iconsMainDiv">
-            <img class="iconsMain" src="images/keys.png" alt="keys" />
-            <p class="iconsTitle">Keys Register</p>
-          </div>
-          <div id="laptopBtn" class="iconsMainDiv">
-            <img class="iconsMain" src="images/laptop.png" alt="keys" />
-            <p class="iconsTitle">Laptop Sweeps</p>
-          </div>
-          <div id="childrenBtn" class="iconsMainDiv">
-            <img class="iconsMain" src="images/child.png" alt="keys" />
-            <p class="iconsTitle">Children on Site</p>
-          </div>
-          <div id="carParkBtn" class="iconsMainDiv">
-            <img class="iconsMain" src="images/carpark.png" alt="keys" />
-            <p class="iconsTitle">Car Park Patrols</p>
-          </div>
-        </div>
+      <div class="yesterday">
+        <h3 class="smallTitle">Incidents/Occurrences from yesterday</h3>
+        <p class="yesterdayText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </p>
       </div>
 
-      
+      <div class="btnDiv initialBtn">
+        <div id="hoBtn" class="iconsMainDiv">
+          <img class="iconsMain" src="images/clipboard.png" alt="clipboard" />
+          <p class="iconsTitle">Handover Sheet</p>
+        </div>
+        <div id="patrolBtn" class="iconsMainDiv">
+          <img class="iconsMain" src="images/extinguisher.png" alt="fire" />
+          <p class="iconsTitle">Fire Patrol</p>
+        </div>
+        <div id="keysBtn" class="iconsMainDiv">
+          <img class="iconsMain" src="images/keys.png" alt="keys" />
+          <p class="iconsTitle">Keys Register</p>
+        </div>
+        <div id="laptopBtn" class="iconsMainDiv">
+          <img class="iconsMain" src="images/laptop.png" alt="keys" />
+          <p class="iconsTitle">Laptop Sweeps</p>
+        </div>
+        <div id="childrenBtn" class="iconsMainDiv">
+          <img class="iconsMain" src="images/child.png" alt="keys" />
+          <p class="iconsTitle">Children on Site</p>
+        </div>
+        <div id="carParkBtn" class="iconsMainDiv">
+          <img class="iconsMain" src="images/carpark.png" alt="keys" />
+          <p class="iconsTitle">Car Park Patrols</p>
+        </div>
+      </div>
+    </div>
 
-      <div id="handOverCon" class="containers">
-        <form id="newFormHo" class="forms">
+    <div id="handOverCon" class="containers">
+      <form id="newFormHo" class="forms">
+        <p>
+          <span id="dateHo">06/02/2020</span>
+        </p>
+
+        <p class="smallTitle">Security Handover Sheet</p>
+
+        <div class="top">
           <p>
-            <span id="dateHo">06/02/2020</span>
+            Colleagues Off <br />
+            <input id="inputOff" type="text" placeholder="Names" class="inputs" />
           </p>
 
-          <p class="smallTitle">Security Handover Sheet</p>
+          <div>
+            <p class="sectionTitle">Shift</p>
 
-          <div class="top">
-            <p>
-              Colleagues Off <br />
-              <input id="inputOff" type="text" placeholder="Names" class="inputs" />
-            </p>
-
-            <div>
-              <p class="sectionTitle">Shift</p>
-
-              <label class="radio"
-                ><input id="radioEarly" type="radio" name="shift" value="5:45-18:00" checked/>5:45-18:00
-                <span class="checkmark"></span
-              ></label>
-              <label class="radio"
-                ><input id="radioLate" type="radio" name="shift" value="16:30-00:30"/>16:30-00:30
-                <span class="checkmark"></span
-              ></label>
-              <label class="radio"
-                ><input id="radioFull" type="radio" name="shift" value="Full Day"/>Full Day
-                <span class="checkmark"></span
-              ></label>
-            </div>
-
-            <p>
-              Colleague On <br />
-              <input id="inputOn" type="text" placeholder="Name" class="inputs" />
-            </p>
+            <label class="radio"
+              ><input id="radioEarly" type="radio" name="shift" value="5:45-18:00" checked/>5:45-18:00
+              <span class="checkmark"></span
+            ></label>
+            <label class="radio"
+              ><input id="radioLate" type="radio" name="shift" value="16:30-00:30"/>16:30-00:30
+              <span class="checkmark"></span
+            ></label>
+            <label class="radio"
+              ><input id="radioFull" type="radio" name="shift" value="Full Day"/>Full Day <span class="checkmark"></span
+            ></label>
           </div>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Any Incidents/Occurrences?</p>
+          <p>
+            Colleague On <br />
+            <input id="inputOn" type="text" placeholder="Name" class="inputs" />
+          </p>
+        </div>
 
-            <label class="radio">
-              <input class="radioInc" id="inc1" type="radio" name="inc" value="Ok" checked />No
-              <span class="checkmark"></span>
-            </label>
-            <label class="radio">
-              <input class="radioInc" id="inc2" type="radio" name="inc" value="No" />Yes
-              <span class="checkmark"></span>
-            </label>
-            <textarea id="textInc" rows="6" cols="50" placeholder="Describe Incidents/Occurrences."></textarea>
-          </div>
+        <div class="radioDiv">
+          <p class="sectionTitle">Any Incidents/Occurrences?</p>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Fire Panel Status: Any faults or disabled areas?</p>
+          <label class="radio">
+            <input class="radioInc" id="inc1" type="radio" name="inc" value="Ok" checked />No
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio">
+            <input class="radioInc" id="inc2" type="radio" name="inc" value="No" />Yes
+            <span class="checkmark"></span>
+          </label>
+          <textarea id="textInc" rows="6" cols="50" placeholder="Describe Incidents/Occurrences."></textarea>
+        </div>
 
-            <label class="radio">
-              <input class="radioFire" id="fire1" type="radio" name="fire" value="Ok" checked />No
-              <span class="checkmark"></span>
-            </label>
-            <label class="radio">
-              <input class="radioFire" id="fire2" type="radio" name="fire" value="No" />Yes
-              <span class="checkmark"></span>
-            </label>
-            <textarea id="textFire" rows="6" cols="50" placeholder="Describe Fire Panel faults."></textarea>
-          </div>
+        <div class="radioDiv">
+          <p class="sectionTitle">Fire Panel Status: Any faults or disabled areas?</p>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Are all keys in the Key Box?</p>
+          <label class="radio">
+            <input class="radioFire" id="fire1" type="radio" name="fire" value="Ok" checked />No
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio">
+            <input class="radioFire" id="fire2" type="radio" name="fire" value="No" />Yes
+            <span class="checkmark"></span>
+          </label>
+          <textarea id="textFire" rows="6" cols="50" placeholder="Describe Fire Panel faults."></textarea>
+        </div>
 
-            <label class="radio">
-              <input class="radioKeys" id="keys1" type="radio" name="keys" value="Ok" checked />Yes
-              <span class="checkmark"></span>
-            </label>
-            <label class="radio">
-              <input class="radioKeys" id="keys2" type="radio" name="keys" value="No" />No
-              <span class="checkmark"></span>
-            </label>
-            <textarea id="textKeys" rows="6" cols="50" placeholder="Enter missing keys."></textarea>
-          </div>
+        <div class="radioDiv">
+          <p class="sectionTitle">Are all keys in the Key Box?</p>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Cameras working normally?</p>
+          <label class="radio">
+            <input class="radioKeys" id="keys1" type="radio" name="keys" value="Ok" checked />Yes
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio">
+            <input class="radioKeys" id="keys2" type="radio" name="keys" value="No" />No
+            <span class="checkmark"></span>
+          </label>
+          <textarea id="textKeys" rows="6" cols="50" placeholder="Enter missing keys."></textarea>
+        </div>
 
-            <label class="radio">
-              <input class="radioCams" id="cams1" type="radio" name="cams" value="Ok" checked />Yes
-              <span class="checkmark"></span>
-            </label>
-            <label class="radio">
-              <input class="radioCams" id="cams2" type="radio" name="cams" value="No" />No
-              <span class="checkmark"></span>
-            </label>
-            <textarea id="textCams" rows="6" cols="50" placeholder="Describe CCTV faults."></textarea>
-          </div>
+        <div class="radioDiv">
+          <p class="sectionTitle">Cameras working normally?</p>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">ACT working normally?</p>
+          <label class="radio">
+            <input class="radioCams" id="cams1" type="radio" name="cams" value="Ok" checked />Yes
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio">
+            <input class="radioCams" id="cams2" type="radio" name="cams" value="No" />No
+            <span class="checkmark"></span>
+          </label>
+          <textarea id="textCams" rows="6" cols="50" placeholder="Describe CCTV faults."></textarea>
+        </div>
 
-            <label class="radio">
-              <input class="radioAct" id="act1" type="radio" name="act" value="Ok" checked />Yes
-              <span class="checkmark"></span>
-            </label>
-            <label class="radio">
-              <input class="radioAct" id="act2" type="radio" name="act" value="No" />No
-              <span class="checkmark"></span>
-            </label>
-            <textarea id="textAct" rows="6" cols="50" placeholder="Describe ACT faults."></textarea>
-          </div>
+        <div class="radioDiv">
+          <p class="sectionTitle">ACT working normally?</p>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">All doors working normally?</p>
+          <label class="radio">
+            <input class="radioAct" id="act1" type="radio" name="act" value="Ok" checked />Yes
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio">
+            <input class="radioAct" id="act2" type="radio" name="act" value="No" />No
+            <span class="checkmark"></span>
+          </label>
+          <textarea id="textAct" rows="6" cols="50" placeholder="Describe ACT faults."></textarea>
+        </div>
 
-            <label class="radio">
-              <input class="radioDoors" id="doors1" type="radio" name="doors" value="Ok" checked />Yes
-              <span class="checkmark"></span>
-            </label>
-            <label class="radio">
-              <input class="radioDoors" id="doors2" type="radio" name="doors" value="No" />No
-              <span class="checkmark"></span>
-            </label>
-            <textarea id="textDoors" rows="6" cols="50" placeholder="Describe Doors faults."></textarea>
-          </div>
+        <div class="radioDiv">
+          <p class="sectionTitle">All doors working normally?</p>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">All internal barriers working normally?</p>
+          <label class="radio">
+            <input class="radioDoors" id="doors1" type="radio" name="doors" value="Ok" checked />Yes
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio">
+            <input class="radioDoors" id="doors2" type="radio" name="doors" value="No" />No
+            <span class="checkmark"></span>
+          </label>
+          <textarea id="textDoors" rows="6" cols="50" placeholder="Describe Doors faults."></textarea>
+        </div>
 
-            <label class="radio">
-              <input class="radioIntBars" id="inBarrs1" type="radio" name="barriers" value="Ok" checked /> Yes
-              <span class="checkmark"></span>
-            </label>
-            <label class="radio">
-              <input class="radioIntBars" id="inBarrs2" type="radio" name="barriers" value="No" />No
-              <span class="checkmark"></span>
-            </label>
-            <textarea id="textIntBarrs" rows="6" cols="50" placeholder="Describe barriers faults."></textarea>
-          </div>
+        <div class="radioDiv">
+          <p class="sectionTitle">All internal barriers working normally?</p>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">External barriers working normally?</p>
+          <label class="radio">
+            <input class="radioIntBars" id="inBarrs1" type="radio" name="barriers" value="Ok" checked /> Yes
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio">
+            <input class="radioIntBars" id="inBarrs2" type="radio" name="barriers" value="No" />No
+            <span class="checkmark"></span>
+          </label>
+          <textarea id="textIntBarrs" rows="6" cols="50" placeholder="Describe barriers faults."></textarea>
+        </div>
 
-            <label class="radio">
-              <input class="radioExtBars" id="extBarrs1" type="radio" name="extBarriers" value="Ok" checked />Yes
-              <span class="checkmark"></span>
-            </label>
-            <label class="radio">
-              <input class="radioExtBars" id="extBarrs2" type="radio" name="extBarriers" value="No" />No
-              <span class="checkmark"></span>
-            </label>
-            <textarea id="textExtBarrs" rows="6" cols="50" placeholder="Describe barriers faults."></textarea>
-          </div>
+        <div class="radioDiv">
+          <p class="sectionTitle">External barriers working normally?</p>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Have all defects (if any) been reported to CITY FM?</p>
+          <label class="radio">
+            <input class="radioExtBars" id="extBarrs1" type="radio" name="extBarriers" value="Ok" checked />Yes
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio">
+            <input class="radioExtBars" id="extBarrs2" type="radio" name="extBarriers" value="No" />No
+            <span class="checkmark"></span>
+          </label>
+          <textarea id="textExtBarrs" rows="6" cols="50" placeholder="Describe barriers faults."></textarea>
+        </div>
 
-            <label class="radio">
-              <input class="radioCity" id="city1" type="radio" name="city" value="Ok" checked />Yes
-              <span class="checkmark"></span>
-            </label>
-            <label class="radio">
-              <input class="radioCity" id="city2" type="radio" name="city" value="No" />No
-              <span class="checkmark"></span>
-            </label>
-            <textarea id="textCity" rows="6" cols="50" placeholder="Describe defects."></textarea>
-          </div>
+        <div class="radioDiv">
+          <p class="sectionTitle">Have all defects (if any) been reported to CITY FM?</p>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Any additional comments?</p>
+          <label class="radio">
+            <input class="radioCity" id="city1" type="radio" name="city" value="Ok" checked />Yes
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio">
+            <input class="radioCity" id="city2" type="radio" name="city" value="No" />No
+            <span class="checkmark"></span>
+          </label>
+          <textarea id="textCity" rows="6" cols="50" placeholder="Describe defects."></textarea>
+        </div>
 
-            <label class="radio">
-              <input class="radioCom" id="comms1" type="radio" name="comment" value="Ok" checked /> No
-              <span class="checkmark"></span>
-            </label>
-            <label class="radio">
-              <input class="radioCom" id="comms2" type="radio" name="comment" value="No" />Yes
-              <span class="checkmark"></span>
-            </label>
-            <textarea id="textCom" rows="6" cols="50" placeholder="Write your comments here."></textarea>
-          </div>
+        <div class="radioDiv">
+          <p class="sectionTitle">Any additional comments?</p>
 
-          <div class="signatureDiv">
-            <input id="hoSignature" type="text" placeholder="Your Name" class="inputs" />
-            <button id="hoFormSubmit" class="submitBtn">SUBMIT</button>
-          </div>
-        </form>
+          <label class="radio">
+            <input class="radioCom" id="comms1" type="radio" name="comment" value="Ok" checked /> No
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio">
+            <input class="radioCom" id="comms2" type="radio" name="comment" value="No" />Yes
+            <span class="checkmark"></span>
+          </label>
+          <textarea id="textCom" rows="6" cols="50" placeholder="Write your comments here."></textarea>
+        </div>
 
-        <div class="nav containers" id="hoNav">
+        <div class="signatureDiv">
+          <input id="hoSignature" type="text" placeholder="Your Name" class="inputs" />
+          <button id="hoFormSubmit" class="submitBtn">SUBMIT</button>
+        </div>
+      </form>
+
+      <div class="nav containers" id="hoNav">
         <button id="newBtn" class="smallBtn">New Sheet</button>
       </div>
 
-        <div id="lastHo" class="forms">
-          <p>
-            <span id="dateHoLast"></span>
-          </p>
+      <div id="lastHo" class="forms">
+        <p>
+          <span id="dateHoLast"></span>
+        </p>
 
-          <p class="smallTitle">Handover Sheet</p>
+        <p class="smallTitle">Handover Sheet</p>
 
-          <div class="top">
-            <p>
-              Signed by: <br />
-              <p id="lastHoSignedBy">Bojo</p>
-            </p>
-
-            <div>
-              <p class="sectionTitle">Shift</p>
-
-              <p id="lastHoShift"></p>
-            </div>
+        <div class="top">
+          <div>
+            Signed by: <br />
+            <p id="lastHoSignedBy">Bojo</p>
           </div>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Incidents/Occurrences</p>
+          <div>
+            <p class="sectionTitle">Shift</p>
 
-            <p id="lastHoInc"></p>
+            <p id="lastHoShift"></p>
           </div>
+        </div>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Fire Panel Status</p>
+        <div class="radioDiv">
+          <p class="sectionTitle">Incidents/Occurrences</p>
 
-           <p id="lastHoFire"></p>
-          </div>
+          <p id="lastHoInc"></p>
+        </div>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Are all keys in the Key Box?</p>
+        <div class="radioDiv">
+          <p class="sectionTitle">Fire Panel Status</p>
 
-            <p id="lastHoKeys"></p>
-          </div>
+          <p id="lastHoFire"></p>
+        </div>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Cameras status</p>
+        <div class="radioDiv">
+          <p class="sectionTitle">Are all keys in the Key Box?</p>
 
-            <p id="lastHoCams"></p>
-          </div>
+          <p id="lastHoKeys"></p>
+        </div>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">ACT status</p>
+        <div class="radioDiv">
+          <p class="sectionTitle">Cameras status</p>
 
-            <p id="lastHoAct"></p>
-          </div>
+          <p id="lastHoCams"></p>
+        </div>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Doors status</p>
+        <div class="radioDiv">
+          <p class="sectionTitle">ACT status</p>
 
-            <p id="lastHoDoors"></p>
-          </div>
+          <p id="lastHoAct"></p>
+        </div>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">internal barriers status</p>
+        <div class="radioDiv">
+          <p class="sectionTitle">Doors status</p>
 
-            <p id="lastHoIntDoors"></p>
-          </div>
+          <p id="lastHoDoors"></p>
+        </div>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">External barriers status</p>
+        <div class="radioDiv">
+          <p class="sectionTitle">internal barriers status</p>
 
-            <p id="lastHoExtBarrs"></p>
-          </div>
+          <p id="lastHoIntDoors"></p>
+        </div>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Have all defects (if any) been reported to CITY FM?</p>
+        <div class="radioDiv">
+          <p class="sectionTitle">External barriers status</p>
 
-            <p id="lastHoCity"></p>
-          </div>
+          <p id="lastHoExtBarrs"></p>
+        </div>
 
-          <div class="radioDiv">
-            <p class="sectionTitle">Additional comments</p>
+        <div class="radioDiv">
+          <p class="sectionTitle">Have all defects (if any) been reported to CITY FM?</p>
 
-            <p id="lastHoComms"></p>
-          </div>
+          <p id="lastHoCity"></p>
+        </div>
 
-        
+        <div class="radioDiv">
+          <p class="sectionTitle">Additional comments</p>
+
+          <p id="lastHoComms"></p>
         </div>
       </div>
+    </div>
 
-      <!-- PATROL-->
-      <div id="patrolCon" class="containers">
-        <p class="smallTitle">Daily Fire checks</p>
-        <h3>This form is to be completed by the fire monitor or appointed person only.</h3>
-        <h3>Ensure:</h3>
+    <!-- PATROL-->
+    <div id="patrolCon" class="containers">
+      <p class="smallTitle">Daily Fire checks</p>
+      <h3>This form is to be completed by the fire monitor or appointed person only.</h3>
+      <h3>Ensure:</h3>
 
-        <ul>
-          <li>All fire escape doors have been unlocked.</li>
-          <li>All internal fire escape exits, passageways (including gangways) and staircases are clear.</li>
-          <li>
-            Take a perimeter walk of the building to ensure that all external fire exit doorways, passageways and
-            staircases are clear.
-          </li>
-          <li>All waste and salvage is properly stored/contained.</li>
-          <li>No cardboard or plastic is stored outside the store during non-trading hours.</li>
-          <li>There are no signs of smoking on the premises.</li>
-          <li>Check the Fire Alarm panel ensuring no faults are displayed.</li>
-        </ul>
+      <ul>
+        <li>All fire escape doors have been unlocked.</li>
+        <li>All internal fire escape exits, passageways (including gangways) and staircases are clear.</li>
+        <li>
+          Take a perimeter walk of the building to ensure that all external fire exit doorways, passageways and
+          staircases are clear.
+        </li>
+        <li>All waste and salvage is properly stored/contained.</li>
+        <li>No cardboard or plastic is stored outside the store during non-trading hours.</li>
+        <li>There are no signs of smoking on the premises.</li>
+        <li>Check the Fire Alarm panel ensuring no faults are displayed.</li>
+      </ul>
 
-        <form class="forms flexForm">
-          <span id="datePatrol" class="date"></span>
-          <div>
-            <span class="question">Everything OK?</span>
-            <label class="radio"
-              ><input class="radioPatrol" id="patrolOK" type="radio" name="patrol" value="Ok" checked/>Yes<span
-                class="checkmark"
-              ></span
-            ></label>
-            <label class="radio"
-              ><input class="radioPatrol" id="patrolNo" type="radio" name="patrol" value="No"/>No<span
-                class="checkmark"
-              ></span
-            ></label>
-          </div>
-          <textarea id="textPatrol" class="inline" rows="5" cols="40" placeholder="Describe problems."></textarea>
-          <label>Security Officer<input id="inputFire" type="text" placeholder="Name" class="inputs"/></label>
-          <button id="patrolFormSubmit" class="submitBtn">SUBMIT</button>
-        </form>
+      <form class="forms flexForm">
+        <span id="datePatrol" class="date"></span>
+        <div>
+          <span class="question">Everything OK?</span>
+          <label class="radio"
+            ><input class="radioPatrol" id="patrolOK" type="radio" name="patrol" value="Ok" checked/>Yes<span
+              class="checkmark"
+            ></span
+          ></label>
+          <label class="radio"
+            ><input class="radioPatrol" id="patrolNo" type="radio" name="patrol" value="No"/>No<span
+              class="checkmark"
+            ></span
+          ></label>
+        </div>
+        <textarea id="textPatrol" class="inline" rows="5" cols="40" placeholder="Describe problems."></textarea>
+        <label>Security Officer<input id="inputFire" type="text" placeholder="Name" class="inputs"/></label>
+        <button id="patrolFormSubmit" class="submitBtn">SUBMIT</button>
+      </form>
 
-        <p>Any issues that do not meet the required standards are to be recorded and acted on accordingly.</p>
+      <p>Any issues that do not meet the required standards are to be recorded and acted on accordingly.</p>
 
-        <ul class="lists">
-          <li><span>05/03/2020</span> <span>OK</span> <span>11.00</span><span> Bojo</span></li>
-          <li><span>05/03/2020</span> <span>OK</span> <span>11.00</span><span> Bojo</span></li>
-          <li><span>05/03/2020</span> <span>OK</span> <span>11.00</span><span> Bojo</span></li>
-          <li><span>05/03/2020</span> <span>OK</span> <span>11.00</span><span> Bojo</span></li>
-          <li><span>05/03/2020</span> <span>OK</span> <span>11.00</span><span> Bojo</span></li>
-        </ul>
-      </div>
+      <ul class="lists">
+        <li><span>05/03/2020</span> <span>OK</span> <span>11.00</span><span> Bojo</span></li>
+        <li><span>05/03/2020</span> <span>OK</span> <span>11.00</span><span> Bojo</span></li>
+        <li><span>05/03/2020</span> <span>OK</span> <span>11.00</span><span> Bojo</span></li>
+        <li><span>05/03/2020</span> <span>OK</span> <span>11.00</span><span> Bojo</span></li>
+        <li><span>05/03/2020</span> <span>OK</span> <span>11.00</span><span> Bojo</span></li>
+      </ul>
+    </div>
 
-      <!-- KEYS-->
-      <div id="keysCon" class="containers">
-        <p class="smallTitle">Key Register</p>
+    <!-- KEYS-->
+    <div id="keysCon" class="containers">
+      <p class="smallTitle">Key Register</p>
 
-        <form class="forms flexForm">
-          <span id="dateKeys" class="date"></span>
-          <input id="inputKeysName" type="text" placeholder="Name" class="inputs" />
-          <input id="inputKeysKey" type="text" placeholder="Key No" class="inputs" />
-          <button id="keysFormSubmit" class="submitBtn">SUBMIT</button>
-        </form>
+      <form class="forms flexForm">
+        <span id="dateKeys" class="date"></span>
+        <input id="inputKeysName" type="text" placeholder="Name" class="inputs" />
+        <input id="inputKeysKey" type="text" placeholder="Key No" class="inputs" />
+        <button id="keysFormSubmit" class="submitBtn">SUBMIT</button>
+      </form>
 
-        <ul class="lists">
-          <li>
-            <span>05/03/2020</span> <span>Denise</span> <span>11.00</span><span>not returned</span><span> Bojo</span>
-          </li>
-          <li>
-            <span>04/03/2020</span> <span>Denise</span> <span>12.00</span><span>returned at 12.30</span
-            ><span> Bojo</span>
-          </li>
-        </ul>
-      </div>
+      <ul class="lists">
+        <li>
+          <span>05/03/2020</span> <span>Denise</span> <span>11.00</span><span>not returned</span><span> Bojo</span>
+        </li>
+        <li>
+          <span>04/03/2020</span> <span>Denise</span> <span>12.00</span><span>returned at 12.30</span><span> Bojo</span>
+        </li>
+      </ul>
+    </div>
 
-      <!-- Children-->
-      <div id="childrenCon" class="containers">
-        <p class="smallTitle">Children visiting the workplace - Declaration</p>
+    <!-- Children-->
+    <div id="childrenCon" class="containers">
+      <p class="smallTitle">Children visiting the workplace - Declaration</p>
 
-        <p>
-          All colleagues bringing child to work must sign the statement below to confirm that they have read and
-          understood their responsibilities as outlined in the Children Visiting the Workplace Policy.
-        </p>
-        <h3>Key Points</h3>
+      <p>
+        All colleagues bringing child to work must sign the statement below to confirm that they have read and
+        understood their responsibilities as outlined in the Children Visiting the Workplace Policy.
+      </p>
+      <h3>Key Points</h3>
+      <ol>
+        <li>Approval has been obtained prior to this visit by the relevant manager.</li>
+        <li>
+          You will be responsible for the child at all times and must not leave your child alone or supervised by
+          another colleague. If you are required to attend a meeting during your visit, alternative childcare
+          arrangements outside of the workplace should be made.
+        </li>
+        <li>
+          You will be briefed on the fire and evacuation procedure and assembly points and must take responsibility for
+          evacuating the child during any emergency.Security will be responsible for briefing you of the relevant health
+          and safety procedures.
+        </li>
+        <li>In the event of an evacuation, caution should be given when making an exit from the building.</li>
+        <li>Caution should be given when using pushchairs to avid obstructions.</li>
+        <li>
+          Should a child be injured whilst on Asda's premises, this must be reported to reception to be logged who will
+          escalate to City help desk.
+        </li>
+        <li>Children must be supervised at all times in hazardous areas. These for example include:</li>
         <ol>
-          <li>Approval has been obtained prior to this visit by the relevant manager.</li>
-          <li>
-            You will be responsible for the child at all times and must not leave your child alone or supervised by
-            another colleague. If you are required to attend a meeting during your visit, alternative childcare
-            arrangements outside of the workplace should be made.
-          </li>
-          <li>
-            You will be briefed on the fire and evacuation procedure and assembly points and must take responsibility
-            for evacuating the child during any emergency.Security will be responsible for briefing you of the relevant
-            health and safety procedures.
-          </li>
-          <li>In the event of an evacuation, caution should be given when making an exit from the building.</li>
-          <li>Caution should be given when using pushchairs to avid obstructions.</li>
-          <li>
-            Should a child be injured whilst on Asda's premises, this must be reported to reception to be logged who
-            will escalate to City help desk.
-          </li>
-          <li>Children must be supervised at all times in hazardous areas. These for example include:</li>
-          <ol>
-            <li>Escalators</li>
-            <li>Revolving doors</li>
-            <li>Stair wells</li>
-            <li>Landings</li>
-          </ol>
-          <p>
-            Extra caution should be taken and children must not be left alone or able to walk/run freely without
-            supervision
-          </p>
-          <p>
-            Children would not be allowed to enter any areas where hazardous substances are being used or if their
-            presence could cause harm to the child. For example:
-          </p>
-          <ol>
-            <li>Test kitchen</li>
-            <li>Car park - unsupervised</li>
-            <li>Escalators - when using pushchairs</li>
-          </ol>
-          <li>Children must not be allowed to touch any work-related equipment, articles or waste.</li>
-          <li>Children must not cause disruption of the work area or the work of other colleagues.</li>
-          <li>
-            The relevant manager/security can request you to remove the child immediately from the work area if any of
-            the above conditions are being breached.
-          </li>
+          <li>Escalators</li>
+          <li>Revolving doors</li>
+          <li>Stair wells</li>
+          <li>Landings</li>
         </ol>
-
         <p>
-          I confirm that i have read and understood the points outlined above and the Children visiting the Workplace
-          policy. I accept that I will be responsible at all times for the child I am supervising.
+          Extra caution should be taken and children must not be left alone or able to walk/run freely without
+          supervision
         </p>
-        <form class="forms flexForm">
-          <span id="dateChildren" class="date"></span>
-          <input id="inputChildren" type="text" placeholder="Name" class="inputs" />
-
-          <button id="childrenFormSubmit" class="submitBtn">SUBMIT</button>
-        </form>
-
-        <p>Last Updated: August 2018</p>
         <p>
-          Retention Period: 3 years for over 18's or 3 years post the date of 18th birthday for under 18's. This is for
-          claim purposes.
+          Children would not be allowed to enter any areas where hazardous substances are being used or if their
+          presence could cause harm to the child. For example:
         </p>
-      </div>
+        <ol>
+          <li>Test kitchen</li>
+          <li>Car park - unsupervised</li>
+          <li>Escalators - when using pushchairs</li>
+        </ol>
+        <li>Children must not be allowed to touch any work-related equipment, articles or waste.</li>
+        <li>Children must not cause disruption of the work area or the work of other colleagues.</li>
+        <li>
+          The relevant manager/security can request you to remove the child immediately from the work area if any of the
+          above conditions are being breached.
+        </li>
+      </ol>
 
-      <!-- LAPTOP-->
-      <div id="laptopCon" class="containers">
-        <p class="smallTitle">Laptop Sweep Record</p>
+      <p>
+        I confirm that i have read and understood the points outlined above and the Children visiting the Workplace
+        policy. I accept that I will be responsible at all times for the child I am supervising.
+      </p>
+      <form class="forms flexForm">
+        <span id="dateChildren" class="date"></span>
+        <input id="inputChildren" type="text" placeholder="Name" class="inputs" />
 
-        <form class="forms flexForm">
-          <span id="dateLaptop" class="date"></span>
-          <input id="inputLaptop1" type="text" placeholder="S.O. Name" class="inputs" />
-          <input id="inputLaptop2" type="text" placeholder="Serial Number" class="inputs" />
-          <div>
-            <span class="question">Line manager informed?</span>
-            <label class="radio">
-              <input class="radioLaptop" id="managerOK" type="radio" name="laptop" value="Ok" checked />Yes<span
-                class="checkmark"
-              ></span>
-            </label>
-            <label class="radio">
-              <input class="radioLaptop" id="managerNo" type="radio" name="laptop" value="No"/>No<span
-                class="checkmark"
-              ></span
-            ></label>
-          </div>
-          <button id="laptopFormSubmit" class="submitBtn">SUBMIT</button>
-        </form>
-      </div>
+        <button id="childrenFormSubmit" class="submitBtn">SUBMIT</button>
+      </form>
 
-      <!-- CAR PARK-->
-      <div id="carParkCon" class="containers">
-        <p class="smallTitle">Car Park Check Sheet</p>
+      <p>Last Updated: August 2018</p>
+      <p>
+        Retention Period: 3 years for over 18's or 3 years post the date of 18th birthday for under 18's. This is for
+        claim purposes.
+      </p>
+    </div>
 
-        <form class="forms flexForm">
-          <span id="dateCarPark" class="date"></span>
-          <input id="inputCarPark1" type="text" placeholder="Name" class="inputs" />
-          <input id="inputCarPark2" type="text" placeholder="Vehicle reg." class="inputs" />
-          <div>
-            <span class="question">Contacted?</span>
-            <label class="radio">
-              <input class="radioCarPark" id="contactedOK" type="radio" name="car park" value="Ok" checked />Yes<span
-                class="checkmark"
-              ></span>
-            </label>
-            <label class="radio">
-              <input class="radioCarPark" id="contactedNo" type="radio" name="car park" value="No"/>No<span
-                class="checkmark"
-              ></span
-            ></label>
-          </div>
-          <input id="inputCarPark3" type="text" placeholder="Reason" class="inputs" />
-          <button id="laptopFormSubmit" class="submitBtn">SUBMIT</button>
-        </form>
-      </div>
-    
+    <!-- LAPTOP-->
+    <div id="laptopCon" class="containers">
+      <p class="smallTitle">Laptop Sweep Record</p>
+
+      <form class="forms flexForm">
+        <span id="dateLaptop" class="date"></span>
+        <input id="inputLaptop1" type="text" placeholder="S.O. Name" class="inputs" />
+        <input id="inputLaptop2" type="text" placeholder="Serial Number" class="inputs" />
+        <div>
+          <span class="question">Line manager informed?</span>
+          <label class="radio">
+            <input class="radioLaptop" id="managerOK" type="radio" name="laptop" value="Ok" checked />Yes<span
+              class="checkmark"
+            ></span>
+          </label>
+          <label class="radio">
+            <input class="radioLaptop" id="managerNo" type="radio" name="laptop" value="No"/>No<span
+              class="checkmark"
+            ></span
+          ></label>
+        </div>
+        <button id="laptopFormSubmit" class="submitBtn">SUBMIT</button>
+      </form>
+    </div>
+
+    <!-- CAR PARK-->
+    <div id="carParkCon" class="containers">
+      <p class="smallTitle">Car Park Check Sheet</p>
+
+      <form class="forms flexForm">
+        <span id="dateCarPark" class="date"></span>
+        <input id="inputCarPark1" type="text" placeholder="Name" class="inputs" />
+        <input id="inputCarPark2" type="text" placeholder="Vehicle reg." class="inputs" />
+        <div>
+          <span class="question">Contacted?</span>
+          <label class="radio">
+            <input class="radioCarPark" id="contactedOK" type="radio" name="car park" value="Ok" checked />Yes<span
+              class="checkmark"
+            ></span>
+          </label>
+          <label class="radio">
+            <input class="radioCarPark" id="contactedNo" type="radio" name="car park" value="No"/>No<span
+              class="checkmark"
+            ></span
+          ></label>
+        </div>
+        <input id="inputCarPark3" type="text" placeholder="Reason" class="inputs" />
+        <button id="laptopFormSubmit" class="submitBtn">SUBMIT</button>
+      </form>
+    </div>
+
     <img src="images/arrow.png" id="backBtn" />
 
     <script src="./script.js"></script>
