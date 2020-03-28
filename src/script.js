@@ -1,9 +1,8 @@
 const electron = require('electron');
 const { ipcRenderer } = electron;
 
-const bigContainer = document.querySelector('#bigContainer');
 const initialDiv = document.querySelector('#initialDiv');
-const handOverBtnDiv = document.querySelector('#handOverBtnDiv');
+
 const hoBtn = document.querySelector('#hoBtn');
 const patrolBtn = document.querySelector('#patrolBtn');
 const keysBtn = document.querySelector('#keysBtn');
@@ -13,9 +12,10 @@ const carParkBtn = document.querySelector('#carParkBtn');
 const backBtn = document.querySelector('#backBtn');
 
 //HANDOVER
-const newBtn = document.querySelector('#newBtn');
-const lastBtn = document.querySelector('#lastBtn');
 const handOverCon = document.querySelector('#handOverCon');
+const hoNav = document.querySelector('#hoNav');
+
+const newBtn = document.querySelector('#newBtn');
 
 //New
 const newFormHo = document.querySelector('#newFormHo');
@@ -119,21 +119,21 @@ const addZero = i => {
   return i;
 };
 
-//return to the main screen
-backBtn.addEventListener('click', e => {
-  clearScreen();
-  initialDiv.style.display = 'block';
-});
-
 //clear all divs
 const clearScreen = () => {
   let containers = document.getElementsByClassName('containers');
   Array.from(containers).forEach(element => {
     element.style.display = 'none';
   });
-  handOverBtnDiv.style.display = 'none';
+
   backBtn.style.display = 'none';
 };
+
+//return to the main screen Btn
+backBtn.addEventListener('click', e => {
+  clearScreen();
+  initialDiv.style.display = 'block';
+});
 
 //HO
 dateHo.textContent = dateFormat().slice(0, 10);
@@ -141,8 +141,16 @@ dateHo.textContent = dateFormat().slice(0, 10);
 hoBtn.addEventListener('click', e => {
   clearScreen();
 
-  handOverBtnDiv.style.display = 'flex';
+  handOverCon.style.display = 'block';
+  newFormHo.style.display = 'none';
+  lastHo.style.display = 'block';
+  hoNav.style.display = 'block';
   backBtn.style.display = 'block';
+
+  //send request for the last handover
+  ipcRenderer.send('loadLastHandover', {
+    type: 'handover'
+  });
 });
 
 newBtn.addEventListener('click', e => {
@@ -235,21 +243,6 @@ newFormHo.addEventListener('submit', e => {
 
     newFormHo.reset();
   }
-});
-
-//last ho
-lastBtn.addEventListener('click', e => {
-  clearScreen();
-
-  handOverCon.style.display = 'block';
-  newFormHo.style.display = 'none';
-  lastHo.style.display = 'block';
-  backBtn.style.display = 'block';
-
-  //send request for the last handover
-  ipcRenderer.send('loadLastHandover', {
-    type: 'handover'
-  });
 });
 
 const displayHandover = sheet => {

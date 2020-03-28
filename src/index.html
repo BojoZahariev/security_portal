@@ -10,9 +10,9 @@
   </head>
 
   <body>
-    <div id="bigContainer">
+    
       <div id="initialDiv" class="containers">
-        <h1 class="title">SECURITY PORTAL</h1>
+        <h1 class="title">Britannia House <br />SECURITY PORTAL</h1>
 
         <div class="yesterday">
           <h3 class="smallTitle">Incidents/Occurrences from yesterday</h3>
@@ -53,10 +53,7 @@
         </div>
       </div>
 
-      <div id="handOverBtnDiv" class="btnDiv containers">
-        <button id="newBtn" class="mainBtn">New Sheet</button>
-        <button id="lastBtn" class="mainBtn">See Last</button>
-      </div>
+      
 
       <div id="handOverCon" class="containers">
         <form id="newFormHo" class="forms">
@@ -84,7 +81,7 @@
                 <span class="checkmark"></span
               ></label>
               <label class="radio"
-                ><input id="radioFull" type="radio" name="shift" value="05:30-00:30"/>05:30-00:30
+                ><input id="radioFull" type="radio" name="shift" value="Full Day"/>Full Day
                 <span class="checkmark"></span
               ></label>
             </div>
@@ -240,6 +237,10 @@
             <button id="hoFormSubmit" class="submitBtn">SUBMIT</button>
           </div>
         </form>
+
+        <div class="nav containers" id="hoNav">
+        <button id="newBtn" class="smallBtn">New Sheet</button>
+      </div>
 
         <div id="lastHo" class="forms">
           <p>
@@ -520,7 +521,7 @@
           <button id="laptopFormSubmit" class="submitBtn">SUBMIT</button>
         </form>
       </div>
-    </div>
+    
     <img src="images/arrow.png" id="backBtn" />
 
     <script src="./script.js"></script>

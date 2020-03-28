@@ -63,8 +63,41 @@ ol {
   left: 0;
 }
 
+.yesterday {
+  text-align: center;
+  padding: 50px;
+  width: 80%;
+  margin: auto;
+}
+
+.yesterdayText {
+  padding: 20px;
+  text-align: left;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  margin: auto;
+  font-size: 18px;
+}
+
+.yesterdayText::-webkit-scrollbar {
+  width: 11px;
+}
+.yesterdayText {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+.yesterdayText::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+.yesterdayText::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
 .btnDiv {
-  padding: 20px 20px 50px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -72,7 +105,7 @@ ol {
 
 .initialBtn {
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 0;
   right: 0;
   margin: auto;
@@ -118,21 +151,6 @@ ol {
 
 textarea {
   margin: 10px auto;
-}
-
-.yesterday {
-  text-align: center;
-  padding: 50px;
-  width: 60%;
-  margin: auto;
-}
-
-.yesterdayText {
-  padding: 20px;
-  text-align: left;
-
-  margin: auto;
-  font-size: 18px;
 }
 
 #handOverBtnDiv,
