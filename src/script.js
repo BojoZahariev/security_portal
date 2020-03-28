@@ -21,6 +21,7 @@ const newBtn = document.querySelector('#newBtn');
 const newFormHo = document.querySelector('#newFormHo');
 const dateHo = document.querySelector('#dateHo');
 const inputOff = document.querySelector('#inputOff');
+const textareaHo = document.getElementsByClassName('textareaHo');
 //radio
 const radioEarly = document.querySelector('#radioEarly');
 const radioLate = document.querySelector('#radioLate');
@@ -127,6 +128,14 @@ const clearScreen = () => {
   });
 
   backBtn.style.display = 'none';
+};
+
+//close the textarea
+const hideTextarea = () => {
+  let textAreas = document.getElementsByClassName('textareaHo');
+  Array.from(textAreas).forEach(element => {
+    element.style.display = 'none';
+  });
 };
 
 //return to the main screen Btn
@@ -242,6 +251,9 @@ newFormHo.addEventListener('submit', e => {
     });
 
     newFormHo.reset();
+
+    //close the textarea
+    hideTextarea();
   }
 });
 
