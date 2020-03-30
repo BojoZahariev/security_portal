@@ -2,7 +2,7 @@ const electron = require('electron');
 const { ipcRenderer } = electron;
 
 const initialDiv = document.querySelector('#initialDiv');
-
+const yesterdayText = document.querySelector('#yesterdayText');
 const hoBtn = document.querySelector('#hoBtn');
 const patrolBtn = document.querySelector('#patrolBtn');
 const keysBtn = document.querySelector('#keysBtn');
@@ -109,6 +109,18 @@ const dateLaptop = document.querySelector('#dateLaptop');
 const carParkCon = document.querySelector('#carParkCon');
 const dateCarPark = document.querySelector('#dateCarPark');
 
+//send request for the last handover
+window.addEventListener('load', () => {
+  ipcRenderer.send('loadLastHandoverInc', {
+    type: 'handover'
+  });
+});
+
+//display last incident on the landing page
+ipcRenderer.on('loadedLastHandoverInc', (e, item) => {
+  yesterdayText.textContent = item.incidents;
+});
+
 //get the date
 const dateFormat = () => {
   let dateObj = new Date();
@@ -167,7 +179,6 @@ hoBtn.addEventListener('click', e => {
   hoNav.style.display = 'block';
   backBtn.style.display = 'block';
 
-  //send request for the last handover
   ipcRenderer.send('loadLastHandover', {
     type: 'handover'
   });
@@ -261,11 +272,24 @@ newFormHo.addEventListener('submit', e => {
       signature: hoSignature.value
     });
 
+    //display last incident on the landing page
+    yesterdayText.textContent = checkedPairs(inc1, inc2, textInc);
+
     newFormHo.reset();
 
     //close the textarea
     hideTextarea();
+
+    //back to landing screen
+    clearScreen();
+    initialDiv.style.display = 'block';
   }
+});
+
+//catch loaded last handover
+ipcRenderer.on('loadedLastHandover', (e, item) => {
+  //send for display
+  displayHandover(item);
 });
 
 //Display Handover
@@ -284,12 +308,6 @@ const displayHandover = sheet => {
   lastHoCity.textContent = sheet.city;
   lastHoComms.textContent = sheet.comms;
 };
-
-//catch loaded last handover
-ipcRenderer.on('loadedLastHandover', (e, item) => {
-  //send for display
-  displayHandover(item);
-});
 
 //PATROL
 patrolBtn.addEventListener('click', e => {

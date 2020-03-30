@@ -50,6 +50,13 @@ ipcMain.on('clearAll', () => {
 
 //HANDOVER
 
+//load last handover from the db on load
+ipcMain.on('loadLastHandoverInc', (e, item) => {
+  db.find({ type: item.type })
+    .sort({ id: -1 })
+    .exec((err, docs) => mainWindow.webContents.send('loadedLastHandoverInc', docs[0]));
+});
+
 //load last handover from the db
 ipcMain.on('loadLastHandover', (e, item) => {
   db.find({ type: item.type })
