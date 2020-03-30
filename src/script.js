@@ -76,6 +76,17 @@ const hoFormSubmit = document.querySelector('#hoFormSubmit');
 const lastHo = document.querySelector('#lastHo');
 const dateHoLast = document.querySelector('#dateHoLast');
 const lastHoSignedBy = document.querySelector('#lastHoSignedBy');
+const lastHoShift = document.querySelector('#lastHoShift');
+const lastHoInc = document.querySelector('#lastHoInc');
+const lastHoFire = document.querySelector('#lastHoFire');
+const lastHoKeys = document.querySelector('#lastHoKeys');
+const lastHoCams = document.querySelector('#lastHoCams');
+const lastHoAct = document.querySelector('#lastHoAct');
+const lastHoDoors = document.querySelector('#lastHoDoors');
+const lastHoIntDoors = document.querySelector('#lastHoIntDoors');
+const lastHoExtBarrs = document.querySelector('#lastHoExtBarrs');
+const lastHoCity = document.querySelector('#lastHoCity');
+const lastHoComms = document.querySelector('#lastHoComms');
 
 //Patrol
 const patrolCon = document.querySelector('#patrolCon');
@@ -257,9 +268,21 @@ newFormHo.addEventListener('submit', e => {
   }
 });
 
+//Display Handover
 const displayHandover = sheet => {
   dateHoLast.textContent = sheet.date;
   lastHoSignedBy.textContent = sheet.signature;
+  lastHoShift.textContent = sheet.shift;
+  lastHoInc.textContent = sheet.incidents;
+  lastHoFire.textContent = sheet.firePanel;
+  lastHoKeys.textContent = sheet.keys;
+  lastHoCams.textContent = sheet.cams;
+  lastHoAct.textContent = sheet.act;
+  lastHoDoors.textContent = sheet.doors;
+  lastHoIntDoors.textContent = sheet.inBarrs;
+  lastHoExtBarrs.textContent = sheet.extBarrs;
+  lastHoCity.textContent = sheet.city;
+  lastHoComms.textContent = sheet.comms;
 };
 
 //catch loaded last handover
