@@ -110,7 +110,7 @@ const dateLaptop = document.querySelector('#dateLaptop');
 const carParkCon = document.querySelector('#carParkCon');
 const dateCarPark = document.querySelector('#dateCarPark');
 
-//send request for the last handover
+//send request for the last handover to display the last incident
 window.addEventListener('load', () => {
   ipcRenderer.send('loadLastHandoverInc', {
     type: 'handover'
@@ -249,7 +249,7 @@ displayTextArea(radiosCity, textCity);
 const radiosCom = document.getElementsByClassName('radioCom');
 displayTextArea(radiosCom, textCom);
 
-//Send new hand over to the server
+//Send new handover to the server
 newFormHo.addEventListener('submit', e => {
   e.preventDefault();
 
