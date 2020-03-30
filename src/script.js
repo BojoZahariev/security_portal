@@ -3,6 +3,7 @@ const { ipcRenderer } = electron;
 
 const initialDiv = document.querySelector('#initialDiv');
 const yesterdayText = document.querySelector('#yesterdayText');
+const lastIncDate = document.querySelector('#lastIncDate');
 const hoBtn = document.querySelector('#hoBtn');
 const patrolBtn = document.querySelector('#patrolBtn');
 const keysBtn = document.querySelector('#keysBtn');
@@ -116,8 +117,9 @@ window.addEventListener('load', () => {
   });
 });
 
-//display last incident on the landing page
+//display last incident on the landing page and the date
 ipcRenderer.on('loadedLastHandoverInc', (e, item) => {
+  lastIncDate.textContent = item.date;
   yesterdayText.textContent = item.incidents;
 });
 
@@ -272,8 +274,9 @@ newFormHo.addEventListener('submit', e => {
       signature: hoSignature.value
     });
 
-    //display last incident on the landing page
+    //display last incident on the landing page and the date
     yesterdayText.textContent = checkedPairs(inc1, inc2, textInc);
+    lastIncDate.textContent = dateFormat().slice(0, 10);
 
     newFormHo.reset();
 
