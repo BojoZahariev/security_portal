@@ -312,6 +312,7 @@ ipcRenderer.on('loadedLastHandover', (e, item) => {
 
 //Display Handover
 const displayHandover = sheet => {
+  /*
   dateHoLast.textContent = sheet.date;
   lastHoSignedBy.textContent = sheet.signature;
   lastHoShift.textContent = sheet.shift;
@@ -325,6 +326,42 @@ const displayHandover = sheet => {
   lastHoExtBarrs.textContent = sheet.extBarrs;
   lastHoCity.textContent = sheet.city;
   lastHoComms.textContent = sheet.comms;
+*/
+  const li = document.createElement('li');
+  li.classList.add('handoverPart');
+
+  const smallTitle = document.createElement('p');
+  smallTitle.classList.add('smallTitle');
+  smallTitle.textContent = 'Handover Sheet';
+  li.appendChild(smallTitle);
+
+  const dateHoLast = document.createElement('p');
+  dateHoLast.textContent = sheet.date;
+  li.appendChild(dateHoLast);
+
+  //top
+  const top = document.createElement('div');
+  top.classList.add('top');
+
+  const signedBy = document.createElement('p');
+  signedBy.classList.add('sectionTitle');
+  signedBy.textContent = 'Signed by:';
+  const signedByName = document.createElement('span');
+  signedByName.textContent = sheet.signature;
+  signedBy.appendChild(signedByName);
+  top.appendChild(signedBy);
+
+  const shift = document.createElement('p');
+  shift.classList.add('sectionTitle');
+  shift.textContent = 'Shift:';
+  const shiftHour = document.createElement('span');
+  shiftHour.textContent = sheet.shift;
+  shift.appendChild(shiftHour);
+  top.appendChild(shift);
+
+  li.appendChild(top);
+
+  lastHo.appendChild(li);
 };
 
 //archive handover submit and send to db
@@ -341,7 +378,9 @@ archHoForm.addEventListener('submit', e => {
 
 //catch found handover
 ipcRenderer.on('foundHo', (e, docs) => {
-  console.log(docs);
+  docs.forEach(element => {
+    console.log(element);
+  });
 });
 
 //PATROL
