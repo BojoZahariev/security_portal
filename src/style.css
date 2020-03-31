@@ -163,7 +163,8 @@ textarea {
 #keysCon,
 #childrenCon,
 #laptopCon,
-#carParkCon {
+#carParkCon,
+#HoArchCon {
   display: none;
 }
 

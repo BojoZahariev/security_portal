@@ -15,8 +15,8 @@ const backBtn = document.querySelector('#backBtn');
 //HANDOVER
 const handOverCon = document.querySelector('#handOverCon');
 const hoNav = document.querySelector('#hoNav');
-
 const newBtn = document.querySelector('#newBtn');
+const archHoBtn = document.querySelector('#archHoBtn');
 
 //New
 const newFormHo = document.querySelector('#newFormHo');
@@ -88,6 +88,9 @@ const lastHoIntDoors = document.querySelector('#lastHoIntDoors');
 const lastHoExtBarrs = document.querySelector('#lastHoExtBarrs');
 const lastHoCity = document.querySelector('#lastHoCity');
 const lastHoComms = document.querySelector('#lastHoComms');
+
+//Archive handover
+const HoArchCon = document.querySelector('#HoArchCon');
 
 //Patrol
 const patrolCon = document.querySelector('#patrolCon');
@@ -192,6 +195,16 @@ newBtn.addEventListener('click', e => {
   handOverCon.style.display = 'block';
   lastHo.style.display = 'none';
   newFormHo.style.display = 'block';
+  backBtn.style.display = 'block';
+});
+
+archHoBtn.addEventListener('click', e => {
+  clearScreen();
+
+  handOverCon.style.display = 'block';
+  HoArchCon.style.display = 'block';
+  lastHo.style.display = 'none';
+  newFormHo.style.display = 'none';
   backBtn.style.display = 'block';
 });
 

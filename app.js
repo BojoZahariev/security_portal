@@ -63,3 +63,13 @@ ipcMain.on('loadLastHandover', (e, item) => {
     .sort({ id: -1 })
     .exec((err, docs) => mainWindow.webContents.send('loadedLastHandover', docs[0]));
 });
+
+//FIND handover
+ipcMain.on('findHo', (e, item) => {
+  //date only
+  if (item.searchDate !== '//' && item.month === '/') {
+    db.find({ date: item.searchDate, type: item.type })
+      .sort({ id: -1 })
+      .exec((err, docs) => mainWindow.webContents.send('foundHo', docs));
+  }
+});
