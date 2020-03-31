@@ -91,6 +91,8 @@ const lastHoComms = document.querySelector('#lastHoComms');
 
 //Archive handover
 const HoArchCon = document.querySelector('#HoArchCon');
+const archHo1 = document.querySelector('#archHo1');
+const archHoForm = document.querySelector('#archHoForm');
 
 //Patrol
 const patrolCon = document.querySelector('#patrolCon');
@@ -324,6 +326,23 @@ const displayHandover = sheet => {
   lastHoCity.textContent = sheet.city;
   lastHoComms.textContent = sheet.comms;
 };
+
+//archive handover submit and send to db
+archHoForm.addEventListener('submit', e => {
+  e.preventDefault();
+
+  let searchDate = `${archHo1.value.slice(8, 10)}/${archHo1.value.slice(5, 7)}/${archHo1.value.slice(0, 4)}`;
+
+  ipcRenderer.send('findHo', {
+    type: 'handover',
+    searchDate
+  });
+});
+
+//catch found handover
+ipcRenderer.on('foundHo', (e, docs) => {
+  console.log(docs);
+});
 
 //PATROL
 patrolBtn.addEventListener('click', e => {

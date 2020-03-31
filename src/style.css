@@ -186,6 +186,19 @@ textarea {
   margin: 5px;
 }
 
+#archHo1 {
+  background: #f1faee url(images/calendar.png) 97% 50% no-repeat;
+}
+
+#archHo1::-webkit-inner-spin-button {
+  display: none;
+}
+
+#archHo1::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 20px;
+}
+
 #newFormHo {
   display: none;
 }

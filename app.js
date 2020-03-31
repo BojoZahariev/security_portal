@@ -67,7 +67,7 @@ ipcMain.on('loadLastHandover', (e, item) => {
 //FIND handover
 ipcMain.on('findHo', (e, item) => {
   //date only
-  if (item.searchDate !== '//' && item.month === '/') {
+  if (item.searchDate !== '//') {
     db.find({ date: item.searchDate, type: item.type })
       .sort({ id: -1 })
       .exec((err, docs) => mainWindow.webContents.send('foundHo', docs));
