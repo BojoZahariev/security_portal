@@ -183,6 +183,7 @@ hoBtn.addEventListener('click', e => {
   handOverCon.style.display = 'block';
   newFormHo.style.display = 'none';
   lastHo.style.display = 'block';
+  lastHo.innerHTML = '';
   hoNav.style.display = 'block';
   backBtn.style.display = 'block';
 
@@ -200,6 +201,7 @@ newBtn.addEventListener('click', e => {
   backBtn.style.display = 'block';
 });
 
+//Archive btn
 archHoBtn.addEventListener('click', e => {
   clearScreen();
 
@@ -360,6 +362,18 @@ const displayHandover = sheet => {
   top.appendChild(shift);
 
   li.appendChild(top);
+
+  //section incidents
+  const sectionInc = document.createElement('div');
+  sectionInc.classList.add('radioDiv');
+  const sectionTitleInc = document.createElement('p');
+  sectionTitleInc.classList.add('sectionTitle');
+  sectionTitleInc.textContent = 'Incidents/Occurrences:';
+  const sectionIncText = document.createElement('p');
+  sectionIncText.textContent = sheet.incidents;
+  sectionInc.appendChild(sectionTitleInc);
+  sectionInc.appendChild(sectionIncText);
+  li.appendChild(sectionInc);
 
   lastHo.appendChild(li);
 };
