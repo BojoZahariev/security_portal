@@ -75,24 +75,12 @@ const hoFormSubmit = document.querySelector('#hoFormSubmit');
 
 //Last handover
 const lastHo = document.querySelector('#lastHo');
-const dateHoLast = document.querySelector('#dateHoLast');
-const lastHoSignedBy = document.querySelector('#lastHoSignedBy');
-const lastHoShift = document.querySelector('#lastHoShift');
-const lastHoInc = document.querySelector('#lastHoInc');
-const lastHoFire = document.querySelector('#lastHoFire');
-const lastHoKeys = document.querySelector('#lastHoKeys');
-const lastHoCams = document.querySelector('#lastHoCams');
-const lastHoAct = document.querySelector('#lastHoAct');
-const lastHoDoors = document.querySelector('#lastHoDoors');
-const lastHoIntDoors = document.querySelector('#lastHoIntDoors');
-const lastHoExtBarrs = document.querySelector('#lastHoExtBarrs');
-const lastHoCity = document.querySelector('#lastHoCity');
-const lastHoComms = document.querySelector('#lastHoComms');
 
 //Archive handover
 const HoArchCon = document.querySelector('#HoArchCon');
 const archHo1 = document.querySelector('#archHo1');
 const archHoForm = document.querySelector('#archHoForm');
+const archiveList = document.querySelector('#archiveList');
 
 //Patrol
 const patrolCon = document.querySelector('#patrolCon');
@@ -309,26 +297,11 @@ newFormHo.addEventListener('submit', e => {
 //catch loaded last handover
 ipcRenderer.on('loadedLastHandover', (e, item) => {
   //send for display
-  displayHandover(item);
+  displayHandover(item, 'last');
 });
 
 //Display Handover
-const displayHandover = sheet => {
-  /*
-  dateHoLast.textContent = sheet.date;
-  lastHoSignedBy.textContent = sheet.signature;
-  lastHoShift.textContent = sheet.shift;
-  lastHoInc.textContent = sheet.incidents;
-  lastHoFire.textContent = sheet.firePanel;
-  lastHoKeys.textContent = sheet.keys;
-  lastHoCams.textContent = sheet.cams;
-  lastHoAct.textContent = sheet.act;
-  lastHoDoors.textContent = sheet.doors;
-  lastHoIntDoors.textContent = sheet.inBarrs;
-  lastHoExtBarrs.textContent = sheet.extBarrs;
-  lastHoCity.textContent = sheet.city;
-  lastHoComms.textContent = sheet.comms;
-*/
+const displayHandover = (sheet, page) => {
   const li = document.createElement('li');
   li.classList.add('handoverPart');
 
@@ -362,36 +335,22 @@ const displayHandover = sheet => {
   top.appendChild(shift);
 
   li.appendChild(top);
-
-  /*
-  //section incidents
-  const sectionInc = document.createElement('div');
-  sectionInc.classList.add('radioDiv');
-  const sectionTitleInc = document.createElement('p');
-  sectionTitleInc.classList.add('sectionTitle');
-  sectionTitleInc.textContent = 'Incidents/Occurrences:';
-  const sectionIncText = document.createElement('p');
-  sectionIncText.textContent = sheet.incidents;
-  sectionInc.appendChild(sectionTitleInc);
-  sectionInc.appendChild(sectionIncText);
-  li.appendChild(sectionInc);
-
-  //section fire patrol
-  const sectionFire = document.createElement('div');
-  sectionFire.classList.add('radioDiv');
-  const sectionTitleFire = document.createElement('p');
-  sectionTitleFire.classList.add('sectionTitle');
-  sectionTitleFire.textContent = 'Fire Panel Status:';
-  const sectionFireText = document.createElement('p');
-  sectionFireText.textContent = sheet.firePanel;
-  sectionInc.appendChild(sectionTitleFire);
-  sectionInc.appendChild(sectionFireText);
-  li.appendChild(sectionFire);
-*/
+  //sections
   li.appendChild(handoverSection('Incidents/Occurrences:', sheet.incidents));
   li.appendChild(handoverSection('Fire Panel Status:', sheet.firePanel));
-
-  lastHo.appendChild(li);
+  li.appendChild(handoverSection('Are all keys in the Key Box?', sheet.keys));
+  li.appendChild(handoverSection('CCTV status:', sheet.cams));
+  li.appendChild(handoverSection('ACT status:', sheet.act));
+  li.appendChild(handoverSection('Doors status:', sheet.doors));
+  li.appendChild(handoverSection('Internal barriers status:', sheet.inBarrs));
+  li.appendChild(handoverSection('External barriers status:', sheet.extBarrs));
+  li.appendChild(handoverSection('Have all defects (if any) been reported to CITY FM?', sheet.city));
+  li.appendChild(handoverSection('Additional comments:', sheet.comms));
+  if (page === 'last') {
+    lastHo.appendChild(li);
+  } else if (page === 'archive') {
+    archiveList.appendChild(li);
+  }
 };
 
 //Handover radio button values section
@@ -424,7 +383,7 @@ archHoForm.addEventListener('submit', e => {
 //catch found handover
 ipcRenderer.on('foundHo', (e, docs) => {
   docs.forEach(element => {
-    console.log(element);
+    displayHandover(element, 'archive');
   });
 });
 

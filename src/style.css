@@ -145,6 +145,15 @@ ul {
   text-align: center;
 }
 
+.handoverPart {
+  position: relative;
+  background-color: #ece4b7;
+  border: 1px solid #222;
+  width: 90%;
+  margin: 10px auto;
+  text-align: center;
+}
+
 .flexForm {
   display: flex;
   justify-content: space-between;
