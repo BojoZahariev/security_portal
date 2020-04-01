@@ -26,7 +26,7 @@ body {
   font-family: lato;
 }
 
-textarea {
+.textareaHo {
   resize: none;
   font-size: 18px;
   font-weight: 500;
@@ -214,6 +214,18 @@ textarea {
 
 #newFormHo {
   display: none;
+}
+
+#archHoForm {
+  text-align: center;
+}
+
+.oldHoText {
+  background-color: #fff;
+  border: 1px solid #ffc220;
+  width: 50%;
+  margin: auto;
+  padding: 10px;
 }
 
 #date {

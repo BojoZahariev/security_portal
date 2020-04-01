@@ -81,6 +81,7 @@ const HoArchCon = document.querySelector('#HoArchCon');
 const archHo1 = document.querySelector('#archHo1');
 const archHoForm = document.querySelector('#archHoForm');
 const archiveList = document.querySelector('#archiveList');
+const archHoClear = document.querySelector('#archHoClear');
 
 //Patrol
 const patrolCon = document.querySelector('#patrolCon');
@@ -362,6 +363,7 @@ const handoverSection = (textTitle, textContent) => {
   sectionTitle.classList.add('sectionTitle');
   sectionTitle.textContent = textTitle;
   const sectionText = document.createElement('p');
+  sectionText.classList.add('oldHoText');
   sectionText.textContent = textContent;
   sectionContainer.appendChild(sectionTitle);
   sectionContainer.appendChild(sectionText);
@@ -390,6 +392,14 @@ ipcRenderer.on('foundHo', (e, docs) => {
   docs.forEach(element => {
     displayHandover(element, 'archive');
   });
+});
+
+//clear the form and reset btn
+archHoClear.addEventListener('click', e => {
+  //clear the page
+  archiveList.innerHTML = '';
+  //reset the input
+  archHoForm.reset();
 });
 
 //PATROL
