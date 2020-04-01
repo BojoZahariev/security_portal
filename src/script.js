@@ -346,6 +346,7 @@ const displayHandover = (sheet, page) => {
   li.appendChild(handoverSection('External barriers status:', sheet.extBarrs));
   li.appendChild(handoverSection('Have all defects (if any) been reported to CITY FM?', sheet.city));
   li.appendChild(handoverSection('Additional comments:', sheet.comms));
+
   if (page === 'last') {
     lastHo.appendChild(li);
   } else if (page === 'archive') {
@@ -374,13 +375,17 @@ archHoForm.addEventListener('submit', e => {
 
   let searchDate = `${archHo1.value.slice(8, 10)}/${archHo1.value.slice(5, 7)}/${archHo1.value.slice(0, 4)}`;
 
+  //clear the page
+  archiveList.innerHTML = '';
+
+  //send request to the db
   ipcRenderer.send('findHo', {
     type: 'handover',
     searchDate
   });
 });
 
-//catch found handover
+//catch found handover sheets
 ipcRenderer.on('foundHo', (e, docs) => {
   docs.forEach(element => {
     displayHandover(element, 'archive');
