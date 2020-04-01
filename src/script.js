@@ -363,6 +363,7 @@ const displayHandover = sheet => {
 
   li.appendChild(top);
 
+  /*
   //section incidents
   const sectionInc = document.createElement('div');
   sectionInc.classList.add('radioDiv');
@@ -375,7 +376,37 @@ const displayHandover = sheet => {
   sectionInc.appendChild(sectionIncText);
   li.appendChild(sectionInc);
 
+  //section fire patrol
+  const sectionFire = document.createElement('div');
+  sectionFire.classList.add('radioDiv');
+  const sectionTitleFire = document.createElement('p');
+  sectionTitleFire.classList.add('sectionTitle');
+  sectionTitleFire.textContent = 'Fire Panel Status:';
+  const sectionFireText = document.createElement('p');
+  sectionFireText.textContent = sheet.firePanel;
+  sectionInc.appendChild(sectionTitleFire);
+  sectionInc.appendChild(sectionFireText);
+  li.appendChild(sectionFire);
+*/
+  li.appendChild(handoverSection('Incidents/Occurrences:', sheet.incidents));
+  li.appendChild(handoverSection('Fire Panel Status:', sheet.firePanel));
+
   lastHo.appendChild(li);
+};
+
+//Handover radio button values section
+const handoverSection = (textTitle, textContent) => {
+  let sectionContainer = document.createElement('div');
+  sectionContainer.classList.add('radioDiv');
+  const sectionTitle = document.createElement('p');
+  sectionTitle.classList.add('sectionTitle');
+  sectionTitle.textContent = textTitle;
+  const sectionText = document.createElement('p');
+  sectionText.textContent = textContent;
+  sectionContainer.appendChild(sectionTitle);
+  sectionContainer.appendChild(sectionText);
+
+  return sectionContainer;
 };
 
 //archive handover submit and send to db
