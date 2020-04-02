@@ -67,8 +67,17 @@ ipcMain.on('loadLastHandover', (e, item) => {
 //FIND handover
 ipcMain.on('findHo', (e, item) => {
   //date only
-  if (item.searchDate !== '//') {
+  if (item.searchDate !== '//' && item.month === '/') {
     db.find({ date: item.searchDate, type: item.type })
+      .sort({ id: -1 })
+      .exec((err, docs) => mainWindow.webContents.send('foundHo', docs));
+  } else if (item.month !== '/' && item.searchDate === '//') {
+    db.find({
+      type: item.type,
+      $where: function() {
+        return this.date.includes(item.month);
+      }
+    })
       .sort({ id: -1 })
       .exec((err, docs) => mainWindow.webContents.send('foundHo', docs));
   }

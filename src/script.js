@@ -79,6 +79,7 @@ const lastHo = document.querySelector('#lastHo');
 //Archive handover
 const HoArchCon = document.querySelector('#HoArchCon');
 const archHo1 = document.querySelector('#archHo1');
+const archHo2 = document.querySelector('#archHo2');
 const archHoForm = document.querySelector('#archHoForm');
 const archiveList = document.querySelector('#archiveList');
 const archHoClear = document.querySelector('#archHoClear');
@@ -376,14 +377,15 @@ archHoForm.addEventListener('submit', e => {
   e.preventDefault();
 
   let searchDate = `${archHo1.value.slice(8, 10)}/${archHo1.value.slice(5, 7)}/${archHo1.value.slice(0, 4)}`;
-
+  let month = `${archHo2.value.slice(5, 7)}/${archHo2.value.slice(0, 4)}`;
   //clear the page
   archiveList.innerHTML = '';
 
   //send request to the db
   ipcRenderer.send('findHo', {
     type: 'handover',
-    searchDate
+    searchDate,
+    month
   });
 });
 
