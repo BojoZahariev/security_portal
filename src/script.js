@@ -260,13 +260,12 @@ displayTextArea(radiosCom, textCom);
 newFormHo.addEventListener('submit', e => {
   e.preventDefault();
 
-  if (inputOff.value.length > 1 && inputOn.value.length > 1 && hoSignature.value.length > 1) {
+  if (inputOff.value.length > 1 && hoSignature.value.length > 1) {
     ipcRenderer.send('addItem', {
       id: Date.now(),
       type: 'handover',
       date: dateFormat().slice(0, 10),
       collOf: inputOff.value,
-      collOn: inputOn.value,
       shift: checkedShift(),
       incidents: checkedPairs(inc1, inc2, textInc),
       firePanel: checkedPairs(fire1, fire2, textFire),
@@ -327,6 +326,14 @@ const displayHandover = (sheet, page) => {
   signedByName.textContent = sheet.signature;
   signedBy.appendChild(signedByName);
   top.appendChild(signedBy);
+
+  const officers = document.createElement('p');
+  officers.classList.add('sectionTitle');
+  officers.textContent = 'Colleagues on the shift:';
+  const officersNames = document.createElement('span');
+  officersNames.textContent = sheet.collOf;
+  officers.appendChild(officersNames);
+  top.appendChild(officers);
 
   const shift = document.createElement('p');
   shift.classList.add('sectionTitle');

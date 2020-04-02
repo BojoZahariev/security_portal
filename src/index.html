@@ -48,20 +48,18 @@
 
     <div id="handOverCon" class="containers">
       <form id="newFormHo" class="forms">
-        <p>
-          <span id="dateHo">06/02/2020</span>
-        </p>
-
         <p class="smallTitle">Security Handover Sheet</p>
+
+        <p id="dateHo" class="dates">06/02/2020</p>
 
         <div class="top">
           <p>
-            Colleagues Off <br />
+            <label>Colleagues Off</label>
             <input id="inputOff" type="text" placeholder="Names" class="inputs" />
           </p>
 
           <div>
-            <p class="sectionTitle">Shift</p>
+            <span class="sectionTitle">Shift</span>
 
             <label class="radio"
               ><input id="radioEarly" type="radio" name="shift" value="5:45-18:00" checked/>5:45-18:00
@@ -76,10 +74,12 @@
             ></label>
           </div>
 
+          <!--
           <p>
             Colleague On <br />
             <input id="inputOn" type="text" placeholder="Name" class="inputs" />
           </p>
+          -->
         </div>
 
         <div class="radioDiv">
