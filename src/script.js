@@ -308,7 +308,7 @@ const displayHandover = (sheet, page) => {
 
   const smallTitle = document.createElement('p');
   smallTitle.classList.add('smallTitle');
-  smallTitle.textContent = 'Handover Sheet';
+  smallTitle.textContent = 'SECURITY HANDOVER SHEET';
   li.appendChild(smallTitle);
 
   const dateHoLast = document.createElement('p');
@@ -322,7 +322,8 @@ const displayHandover = (sheet, page) => {
   const signedBy = document.createElement('p');
   signedBy.classList.add('sectionTitle');
   signedBy.textContent = 'Signed by:';
-  const signedByName = document.createElement('span');
+  const signedByName = document.createElement('p');
+  signedByName.classList.add('hoName');
   signedByName.textContent = sheet.signature;
   signedBy.appendChild(signedByName);
   top.appendChild(signedBy);
@@ -330,7 +331,8 @@ const displayHandover = (sheet, page) => {
   const officers = document.createElement('p');
   officers.classList.add('sectionTitle');
   officers.textContent = 'Colleagues on the shift:';
-  const officersNames = document.createElement('span');
+  const officersNames = document.createElement('p');
+  officersNames.classList.add('hoName');
   officersNames.textContent = sheet.collOf;
   officers.appendChild(officersNames);
   top.appendChild(officers);
@@ -338,7 +340,8 @@ const displayHandover = (sheet, page) => {
   const shift = document.createElement('p');
   shift.classList.add('sectionTitle');
   shift.textContent = 'Shift:';
-  const shiftHour = document.createElement('span');
+  const shiftHour = document.createElement('p');
+  shiftHour.classList.add('hoName');
   shiftHour.textContent = sheet.shift;
   shift.appendChild(shiftHour);
   top.appendChild(shift);
@@ -372,6 +375,9 @@ const handoverSection = (textTitle, textContent) => {
   sectionTitle.textContent = textTitle;
   const sectionText = document.createElement('p');
   sectionText.classList.add('oldHoText');
+  if (textContent.length > 35) {
+    sectionText.classList.add('oldHoTextLeft');
+  }
   sectionText.textContent = textContent;
   sectionContainer.appendChild(sectionTitle);
   sectionContainer.appendChild(sectionText);

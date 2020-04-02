@@ -190,6 +190,11 @@ ul {
   padding: 5px;
 }
 
+.nav {
+  padding: 20px;
+  text-align: center;
+}
+
 textarea {
   margin: 10px auto;
 }
@@ -226,6 +231,10 @@ textarea {
   padding: 10px;
 }
 
+.oldHoTextLeft {
+  text-align: left;
+}
+
 #date {
   position: absolute;
   top: 0;
@@ -244,8 +253,15 @@ textarea {
   padding: 20px;
 }
 
+.hoName {
+  text-transform: uppercase;
+  padding: 5px;
+  background-color: #65b32e;
+}
+
 .sectionTitle {
   padding: 15px;
+  font-size: 20px;
 }
 
 .radio {
@@ -311,7 +327,7 @@ textarea {
   display: inline-block;
   max-height: 43px;
   padding: 8px 10px;
-  margin-left: 20px;
+  margin: 0px 20px;
   background-color: #ffc220;
   border-radius: 5px;
   border: none;
@@ -341,7 +357,7 @@ textarea {
 .signatureDiv {
   text-align: center;
   border-top: 1px solid #222;
-  padding: 10px;
+  padding: 20px 0px 10px;
 }
 
 #patrolCon {
