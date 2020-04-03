@@ -359,6 +359,11 @@ const displayHandover = (sheet, page) => {
   li.appendChild(handoverSection('Have all defects (if any) been reported to CITY FM?', sheet.city));
   li.appendChild(handoverSection('Additional comments:', sheet.comms));
 
+  let deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Delete';
+  deleteBtn.classList.add('deleteBtn');
+  li.appendChild(deleteBtn);
+
   if (page === 'last') {
     lastHo.appendChild(li);
   } else if (page === 'archive') {
