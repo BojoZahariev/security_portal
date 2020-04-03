@@ -360,17 +360,19 @@ const displayHandover = (sheet, page) => {
   li.appendChild(handoverSection('Additional comments:', sheet.comms));
 
   //delete btn
-  let deleteBtn = document.createElement('button');
-  deleteBtn.textContent = 'Delete';
-  deleteBtn.classList.add('deleteBtn');
-  li.appendChild(deleteBtn);
+  if (page === 'archive') {
+    let deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.classList.add('deleteBtn');
+    li.appendChild(deleteBtn);
 
-  deleteBtn.addEventListener('click', function(e) {
-    let div = deleteBtn.parentElement;
-    div.style.display = 'none';
+    deleteBtn.addEventListener('click', function(e) {
+      let div = deleteBtn.parentElement;
+      div.style.display = 'none';
 
-    ipcRenderer.send('deleteHo', { sheet });
-  });
+      ipcRenderer.send('deleteHo', { sheet });
+    });
+  }
 
   //attach the li accordingly
   if (page === 'last') {
@@ -421,6 +423,13 @@ archHoForm.addEventListener('submit', e => {
 ipcRenderer.on('foundHo', (e, docs) => {
   docs.forEach(element => {
     displayHandover(element, 'archive');
+  });
+});
+
+//catch deleted handover sheet
+ipcRenderer.on('deletedHo', (e, numRemoved) => {
+  ipcRenderer.send('loadLastHandoverInc', {
+    type: 'handover'
   });
 });
 

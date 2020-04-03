@@ -66,7 +66,10 @@ ipcMain.on('loadLastHandover', (e, item) => {
 
 //delete handover item from the db
 ipcMain.on('deleteHo', (e, item) => {
-  db.remove({ id: item.sheet.id }, {});
+  db.remove({ id: item.sheet.id }, {}, (err, numRemoved) => {
+    if (err) throw new Error(err);
+    mainWindow.webContents.send('deletedHo', numRemoved);
+  });
 });
 
 //FIND handover
