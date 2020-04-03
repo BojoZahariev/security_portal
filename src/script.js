@@ -11,6 +11,7 @@ const childrenBtn = document.querySelector('#childrenBtn');
 const laptopBtn = document.querySelector('#laptopBtn');
 const carParkBtn = document.querySelector('#carParkBtn');
 const backBtn = document.querySelector('#backBtn');
+const passwordDivHolder = document.querySelector('#passwordDivHolder');
 
 //HANDOVER
 const handOverCon = document.querySelector('#handOverCon');
@@ -114,8 +115,10 @@ window.addEventListener('load', () => {
 
 //display last incident on the landing page and the date
 ipcRenderer.on('loadedLastHandoverInc', (e, item) => {
-  lastIncDate.textContent = item.date;
-  yesterdayText.textContent = item.incidents;
+  if (item) {
+    lastIncDate.textContent = item.date;
+    yesterdayText.textContent = item.incidents;
+  }
 });
 
 //get the date
@@ -298,7 +301,9 @@ newFormHo.addEventListener('submit', e => {
 //catch loaded last handover
 ipcRenderer.on('loadedLastHandover', (e, item) => {
   //send for display
-  displayHandover(item, 'last');
+  if (item) {
+    displayHandover(item, 'last');
+  }
 });
 
 //Display Handover
@@ -491,5 +496,54 @@ dateCarPark.textContent = dateFormat();
 
 //Catches ClearAll from menu, asks for a password and sends the event to server to clear the db.
 ipcRenderer.on('clearAll', () => {
-  ipcRenderer.send('clearAll');
+  let passwordDiv = document.createElement('div');
+  passwordDiv.classList.add('passwordDiv');
+  passwordDivHolder.style.display = 'block';
+  passwordDivHolder.appendChild(passwordDiv);
+  let passwordMsg = document.createElement('p');
+  passwordMsg.textContent = 'Enter password';
+  passwordDiv.appendChild(passwordMsg);
+  let passwordForm = document.createElement('form');
+  passwordDiv.appendChild(passwordForm);
+  let inputPassword = document.createElement('input');
+  inputPassword.type = 'text';
+  inputPassword.autofocus = true;
+  inputPassword.classList.add('inputs');
+  passwordForm.appendChild(inputPassword);
+  let passwordSubmit = document.createElement('button');
+  passwordSubmit.type = 'submit';
+  passwordSubmit.textContent = 'Submit';
+  passwordSubmit.classList.add('submitBtn');
+  passwordForm.appendChild(passwordSubmit);
+
+  let close = document.createElement('p');
+  close.textContent = 'close';
+  close.classList.add('close');
+  passwordDiv.appendChild(close);
+
+  close.addEventListener('click', e => {
+    passwordDivHolder.style.display = 'none';
+  });
+
+  passwordForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if (inputPassword.value === 'bhadmin') {
+      ipcRenderer.send('clearAll');
+      passwordDivHolder.style.display = 'none';
+      passwordForm.reset();
+    } else {
+      passwordMsg.textContent = 'Wrong password';
+      passwordForm.reset();
+      setTimeout(function() {
+        passwordDivHolder.style.display = 'none';
+        passwordMsg.textContent = 'Enter password';
+      }, 1500);
+    }
+  });
+});
+
+ipcRenderer.on('cleared', () => {
+  yesterdayText.textContent = 'None';
+  lastIncDate.textContent = 'the last shift';
 });

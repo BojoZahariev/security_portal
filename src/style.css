@@ -26,6 +26,29 @@ body {
   font-family: lato;
 }
 
+/*password*/
+
+.passwordDiv {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  width: 350px;
+  padding: 20px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: #76c043;
+  color: #222;
+}
+
+.close {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  color: #222;
+}
+
 .title {
   font-size: 40px;
   color: #ffc220;
@@ -336,7 +359,8 @@ textarea {
 #textExtBarrs,
 #textCity,
 #textCom,
-#textPatrol {
+#textPatrol,
+#passwordDivHolder {
   display: none;
 }
 
