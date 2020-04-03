@@ -359,11 +359,20 @@ const displayHandover = (sheet, page) => {
   li.appendChild(handoverSection('Have all defects (if any) been reported to CITY FM?', sheet.city));
   li.appendChild(handoverSection('Additional comments:', sheet.comms));
 
+  //delete btn
   let deleteBtn = document.createElement('button');
   deleteBtn.textContent = 'Delete';
   deleteBtn.classList.add('deleteBtn');
   li.appendChild(deleteBtn);
 
+  deleteBtn.addEventListener('click', function(e) {
+    let div = deleteBtn.parentElement;
+    div.style.display = 'none';
+
+    ipcRenderer.send('deleteHo', { sheet });
+  });
+
+  //attach the li accordingly
   if (page === 'last') {
     lastHo.appendChild(li);
   } else if (page === 'archive') {
@@ -380,6 +389,7 @@ const handoverSection = (textTitle, textContent) => {
   sectionTitle.textContent = textTitle;
   const sectionText = document.createElement('p');
   sectionText.classList.add('oldHoText');
+  //text align left if is long
   if (textContent.length > 35) {
     sectionText.classList.add('oldHoTextLeft');
   }

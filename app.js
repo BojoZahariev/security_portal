@@ -50,7 +50,7 @@ ipcMain.on('clearAll', () => {
 
 //HANDOVER
 
-//load last handover from the db on load
+//load last handover incident from the db on load
 ipcMain.on('loadLastHandoverInc', (e, item) => {
   db.find({ type: item.type })
     .sort({ id: -1 })
@@ -62,6 +62,11 @@ ipcMain.on('loadLastHandover', (e, item) => {
   db.find({ type: item.type })
     .sort({ id: -1 })
     .exec((err, docs) => mainWindow.webContents.send('loadedLastHandover', docs[0]));
+});
+
+//delete handover item from the db
+ipcMain.on('deleteHo', (e, item) => {
+  db.remove({ id: item.sheet.id }, {});
 });
 
 //FIND handover
