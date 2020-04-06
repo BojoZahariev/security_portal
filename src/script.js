@@ -89,6 +89,7 @@ const archHoClear = document.querySelector('#archHoClear');
 const patrolCon = document.querySelector('#patrolCon');
 const datePatrol = document.querySelector('#datePatrol');
 const patrolForm = document.querySelector('#patrolForm');
+const patrolList = document.querySelector('#patrolList');
 
 const patrol1 = document.querySelector('#patrol1');
 const patrol2 = document.querySelector('#patrol2');
@@ -313,45 +314,45 @@ ipcRenderer.on('loadedLastHandover', (e, item) => {
 
 //Display Handover
 const displayHandover = (sheet, page) => {
-  const li = document.createElement('li');
+  let li = document.createElement('li');
   li.classList.add('handoverPart');
 
-  const smallTitle = document.createElement('p');
+  let smallTitle = document.createElement('p');
   smallTitle.classList.add('smallTitle');
   smallTitle.textContent = 'SECURITY HANDOVER SHEET';
   li.appendChild(smallTitle);
 
-  const dateHoLast = document.createElement('p');
+  let dateHoLast = document.createElement('p');
   dateHoLast.textContent = sheet.date;
   dateHoLast.classList.add('dates');
   li.appendChild(dateHoLast);
 
   //top
-  const top = document.createElement('div');
+  let top = document.createElement('div');
   top.classList.add('top');
 
-  const signedBy = document.createElement('p');
+  let signedBy = document.createElement('p');
   signedBy.classList.add('sectionTitle');
   signedBy.textContent = 'Signed by:';
-  const signedByName = document.createElement('p');
+  let signedByName = document.createElement('p');
   signedByName.classList.add('hoName');
   signedByName.textContent = sheet.signature;
   signedBy.appendChild(signedByName);
   top.appendChild(signedBy);
 
-  const officers = document.createElement('p');
+  let officers = document.createElement('p');
   officers.classList.add('sectionTitle');
   officers.textContent = 'Colleagues on the shift:';
-  const officersNames = document.createElement('p');
+  let officersNames = document.createElement('p');
   officersNames.classList.add('hoName');
   officersNames.textContent = sheet.collOf;
   officers.appendChild(officersNames);
   top.appendChild(officers);
 
-  const shift = document.createElement('p');
+  let shift = document.createElement('p');
   shift.classList.add('sectionTitle');
   shift.textContent = 'Shift:';
-  const shiftHour = document.createElement('p');
+  let shiftHour = document.createElement('p');
   shiftHour.classList.add('hoName');
   shiftHour.textContent = sheet.shift;
   shift.appendChild(shiftHour);
@@ -457,6 +458,19 @@ patrolBtn.addEventListener('click', e => {
   clearScreen();
   patrolCon.style.display = 'block';
   backBtn.style.display = 'block';
+
+  ipcRenderer.send('loadLastPatrol', {
+    type: 'patrol'
+  });
+});
+
+//catch loaded last patrol
+ipcRenderer.on('loadedLastPatrol', (e, item) => {
+  //send for display
+  if (item) {
+    console.log(item);
+    //displayHandover(item, 'last');
+  }
 });
 
 datePatrol.textContent = dateFormat().slice(0, 10);
@@ -487,6 +501,16 @@ patrolForm.addEventListener('submit', e => {
     initialDiv.style.display = 'block';
   }
 });
+
+displayPatrols = sheet => {
+  let li = document.createElement('li');
+  li.classList.add('patrolPart');
+
+  let datePastPatrols = document.createElement('p');
+  datePastPatrols.textContent = sheet.date;
+  datePastPatrols.classList.add('dates');
+  li.appendChild(datePastPatrols);
+};
 
 //KEYS
 keysBtn.addEventListener('click', e => {

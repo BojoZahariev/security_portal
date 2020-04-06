@@ -90,3 +90,11 @@ ipcMain.on('findHo', (e, item) => {
       .exec((err, docs) => mainWindow.webContents.send('foundHo', docs));
   }
 });
+
+//PATROL
+
+ipcMain.on('loadLastPatrol', (e, item) => {
+  db.find({ type: item.type })
+    .sort({ id: -1 })
+    .exec((err, docs) => mainWindow.webContents.send('loadedLastPatrol', docs[0]));
+});
