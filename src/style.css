@@ -428,7 +428,7 @@ textarea {
 }
 
 .generalText {
-  padding: 5px;
+  padding: 2px;
   font-size: 18px;
 }
 
@@ -436,4 +436,12 @@ textarea {
   margin: 10px auto;
   width: 100%;
   text-align: center;
+}
+
+.patrolPart {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #65b32e;
 }

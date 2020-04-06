@@ -115,7 +115,7 @@ const dateCarPark = document.querySelector('#dateCarPark');
 //send request for the last handover to display the last incident
 window.addEventListener('load', () => {
   ipcRenderer.send('loadLastHandoverInc', {
-    type: 'handover'
+    type: 'handover',
   });
 });
 
@@ -142,7 +142,7 @@ const dateFormat = () => {
 };
 
 //add zero if the date is < 10
-const addZero = i => {
+const addZero = (i) => {
   if (i < 10) {
     i = '0' + i;
   }
@@ -152,7 +152,7 @@ const addZero = i => {
 //clear all divs
 const clearScreen = () => {
   let containers = document.getElementsByClassName('containers');
-  Array.from(containers).forEach(element => {
+  Array.from(containers).forEach((element) => {
     element.style.display = 'none';
   });
 
@@ -162,13 +162,13 @@ const clearScreen = () => {
 //close the textarea
 const hideTextarea = () => {
   let textAreas = document.getElementsByClassName('textareaHo');
-  Array.from(textAreas).forEach(element => {
+  Array.from(textAreas).forEach((element) => {
     element.style.display = 'none';
   });
 };
 
 //return to the main screen Btn
-backBtn.addEventListener('click', e => {
+backBtn.addEventListener('click', (e) => {
   clearScreen();
   initialDiv.style.display = 'block';
 });
@@ -176,7 +176,7 @@ backBtn.addEventListener('click', e => {
 //HO
 dateHo.textContent = dateFormat().slice(0, 10);
 
-hoBtn.addEventListener('click', e => {
+hoBtn.addEventListener('click', (e) => {
   clearScreen();
 
   handOverCon.style.display = 'block';
@@ -187,11 +187,11 @@ hoBtn.addEventListener('click', e => {
   backBtn.style.display = 'block';
 
   ipcRenderer.send('loadLastHandover', {
-    type: 'handover'
+    type: 'handover',
   });
 });
 
-newBtn.addEventListener('click', e => {
+newBtn.addEventListener('click', (e) => {
   clearScreen();
 
   handOverCon.style.display = 'block';
@@ -201,7 +201,7 @@ newBtn.addEventListener('click', e => {
 });
 
 //Archive btn
-archHoBtn.addEventListener('click', e => {
+archHoBtn.addEventListener('click', (e) => {
   clearScreen();
 
   handOverCon.style.display = 'block';
@@ -234,7 +234,7 @@ const checkedPairs = (radio1, radio2, text) => {
 //Display textarea if different radio is pressed
 const displayTextArea = (radios, textDiv) => {
   for (let i = 0; i < radios.length; i++) {
-    radios[i].onclick = function() {
+    radios[i].onclick = function () {
       if (this.value === 'No') {
         textDiv.style.display = 'block';
       } else {
@@ -266,7 +266,7 @@ const radiosCom = document.getElementsByClassName('radioCom');
 displayTextArea(radiosCom, textCom);
 
 //Send new handover to the server
-newFormHo.addEventListener('submit', e => {
+newFormHo.addEventListener('submit', (e) => {
   e.preventDefault();
 
   if (inputOff.value.length > 1 && hoSignature.value.length > 1) {
@@ -286,7 +286,7 @@ newFormHo.addEventListener('submit', e => {
       extBarrs: checkedPairs(extBarrs1, extBarrs2, textExtBarrs),
       city: checkedPairs(city1, city2, textCity),
       comms: checkedPairs(comms1, comms2, textCom),
-      signature: hoSignature.value
+      signature: hoSignature.value,
     });
 
     //display last incident on the landing page and the date
@@ -378,7 +378,7 @@ const displayHandover = (sheet, page) => {
     deleteBtn.classList.add('deleteBtn');
     li.appendChild(deleteBtn);
 
-    deleteBtn.addEventListener('click', function(e) {
+    deleteBtn.addEventListener('click', function (e) {
       let div = deleteBtn.parentElement;
       div.style.display = 'none';
 
@@ -415,7 +415,7 @@ const handoverSection = (textTitle, textContent) => {
 };
 
 //archive handover submit and send to db
-archHoForm.addEventListener('submit', e => {
+archHoForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   let searchDate = `${archHo1.value.slice(8, 10)}/${archHo1.value.slice(5, 7)}/${archHo1.value.slice(0, 4)}`;
@@ -427,13 +427,13 @@ archHoForm.addEventListener('submit', e => {
   ipcRenderer.send('findHo', {
     type: 'handover',
     searchDate,
-    month
+    month,
   });
 });
 
 //catch found handover sheets
 ipcRenderer.on('foundHo', (e, docs) => {
-  docs.forEach(element => {
+  docs.forEach((element) => {
     displayHandover(element, 'archive');
   });
 });
@@ -441,12 +441,12 @@ ipcRenderer.on('foundHo', (e, docs) => {
 //catch deleted handover sheet
 ipcRenderer.on('deletedHo', (e, numRemoved) => {
   ipcRenderer.send('loadLastHandoverInc', {
-    type: 'handover'
+    type: 'handover',
   });
 });
 
 //clear the form and reset btn
-archHoClear.addEventListener('click', e => {
+archHoClear.addEventListener('click', (e) => {
   //clear the page
   archiveList.innerHTML = '';
   //reset the input
@@ -454,13 +454,13 @@ archHoClear.addEventListener('click', e => {
 });
 
 //PATROL
-patrolBtn.addEventListener('click', e => {
+patrolBtn.addEventListener('click', (e) => {
   clearScreen();
   patrolCon.style.display = 'block';
   backBtn.style.display = 'block';
 
   ipcRenderer.send('loadLastPatrol', {
-    type: 'patrol'
+    type: 'patrol',
   });
 });
 
@@ -468,8 +468,9 @@ patrolBtn.addEventListener('click', e => {
 ipcRenderer.on('loadedLastPatrol', (e, item) => {
   //send for display
   if (item) {
-    console.log(item);
-    //displayHandover(item, 'last');
+    //clear the old
+    patrolList.innerHTML = '';
+    displayPatrols(item, 'last');
   }
 });
 
@@ -478,7 +479,7 @@ datePatrol.textContent = dateFormat().slice(0, 10);
 const radiosPatrol = document.getElementsByClassName('radioPatrol');
 displayTextArea(radiosPatrol, textPatrol);
 
-patrolForm.addEventListener('submit', e => {
+patrolForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   if (patrolSignature.value.length > 1) {
@@ -488,7 +489,7 @@ patrolForm.addEventListener('submit', e => {
       date: dateFormat().slice(0, 10),
       time: dateFormat().slice(11, 16),
       problems: checkedPairs(patrol1, patrol2, textPatrol),
-      signature: patrolSignature.value
+      signature: patrolSignature.value,
     });
 
     patrolForm.reset();
@@ -502,18 +503,33 @@ patrolForm.addEventListener('submit', e => {
   }
 });
 
-displayPatrols = sheet => {
+displayPatrols = (sheet, page) => {
   let li = document.createElement('li');
   li.classList.add('patrolPart');
 
   let datePastPatrols = document.createElement('p');
   datePastPatrols.textContent = sheet.date;
-  datePastPatrols.classList.add('dates');
   li.appendChild(datePastPatrols);
+
+  let hourPastPatrols = document.createElement('p');
+  hourPastPatrols.textContent = sheet.time;
+  li.appendChild(hourPastPatrols);
+
+  let resultPastPatrols = document.createElement('p');
+  resultPastPatrols.textContent = `Result: ${sheet.problems}`;
+  li.appendChild(resultPastPatrols);
+
+  let signedPastPatrols = document.createElement('p');
+  signedPastPatrols.textContent = `Signed By: ${sheet.signature}`;
+  li.appendChild(signedPastPatrols);
+
+  if (page === 'last') {
+    patrolList.appendChild(li);
+  }
 };
 
 //KEYS
-keysBtn.addEventListener('click', e => {
+keysBtn.addEventListener('click', (e) => {
   clearScreen();
   keysCon.style.display = 'block';
   backBtn.style.display = 'block';
@@ -522,7 +538,7 @@ keysBtn.addEventListener('click', e => {
 dateKeys.textContent = dateFormat();
 
 //CHILDREN
-childrenBtn.addEventListener('click', e => {
+childrenBtn.addEventListener('click', (e) => {
   clearScreen();
   childrenCon.style.display = 'block';
   backBtn.style.display = 'block';
@@ -531,7 +547,7 @@ childrenBtn.addEventListener('click', e => {
 dateChildren.textContent = dateFormat();
 
 //LAPTOP
-laptopBtn.addEventListener('click', e => {
+laptopBtn.addEventListener('click', (e) => {
   clearScreen();
   laptopCon.style.display = 'block';
   backBtn.style.display = 'block';
@@ -540,7 +556,7 @@ laptopBtn.addEventListener('click', e => {
 dateLaptop.textContent = dateFormat();
 
 //CARPARK
-carParkBtn.addEventListener('click', e => {
+carParkBtn.addEventListener('click', (e) => {
   clearScreen();
   carParkCon.style.display = 'block';
   backBtn.style.display = 'block';
@@ -575,11 +591,11 @@ ipcRenderer.on('clearAll', () => {
   close.classList.add('close');
   passwordDiv.appendChild(close);
 
-  close.addEventListener('click', e => {
+  close.addEventListener('click', (e) => {
     passwordDivHolder.style.display = 'none';
   });
 
-  passwordForm.addEventListener('submit', function(e) {
+  passwordForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
     if (inputPassword.value === 'bhadmin') {
@@ -589,7 +605,7 @@ ipcRenderer.on('clearAll', () => {
     } else {
       passwordMsg.textContent = 'Wrong password';
       passwordForm.reset();
-      setTimeout(function() {
+      setTimeout(function () {
         passwordDivHolder.style.display = 'none';
         passwordMsg.textContent = 'Enter password';
       }, 1500);
