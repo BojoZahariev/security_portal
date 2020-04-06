@@ -306,23 +306,22 @@
         <li class="generalText">Check the Fire Alarm panel ensuring no faults are displayed.</li>
       </ul>
 
-      <form class="forms flexForm">
+      <form id="patrolForm" class="forms flexForm">
         <span id="datePatrol" class="date"></span>
         <div>
           <span class="question">Everything OK?</span>
           <label class="radio">
-            <input class="radioPatrol" id="patrolOK" type="radio" name="patrol" value="Ok" checked />Yes
+            <input class="radioPatrol" id="patrol1" type="radio" name="patrol" value="Ok" checked />Yes
             <span class="checkmark"></span>
           </label>
           <label class="radio">
-            <input class="radioPatrol" id="patrolNo" type="radio" name="patrol" value="No" />No
+            <input class="radioPatrol" id="patrol2" type="radio" name="patrol" value="No" />No
             <span class="checkmark"></span>
           </label>
         </div>
-        <textarea id="textPatrol" class="textPatrol inline" rows="5" cols="50" placeholder="Describe problems.">
-        </textarea>
-        <label>Security Officer<input id="inputFire" type="text" placeholder="Name" class="inputs"/></label>
-        <button id="patrolFormSubmit" class="submitBtn">SUBMIT</button>
+        <textarea id="textPatrol" class="textareaHo" rows="5" cols="50" placeholder="Describe problems."></textarea>
+        <label>Security Officer<input id="patrolSignature" type="text" placeholder="Name" class="inputs"/></label>
+        <button id="patrolFormSubmit" class="submitBtn" type="submit">SUBMIT</button>
       </form>
 
       <p class="generalText">

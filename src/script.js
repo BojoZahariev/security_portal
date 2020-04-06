@@ -88,6 +88,11 @@ const archHoClear = document.querySelector('#archHoClear');
 //Patrol
 const patrolCon = document.querySelector('#patrolCon');
 const datePatrol = document.querySelector('#datePatrol');
+const patrolForm = document.querySelector('#patrolForm');
+
+const patrol1 = document.querySelector('#patrol1');
+const patrol2 = document.querySelector('#patrol2');
+const patrolSignature = document.querySelector('#patrolSignature');
 const textPatrol = document.querySelector('#textPatrol');
 
 //Keys
@@ -454,10 +459,34 @@ patrolBtn.addEventListener('click', e => {
   backBtn.style.display = 'block';
 });
 
-datePatrol.textContent = dateFormat();
+datePatrol.textContent = dateFormat().slice(0, 10);
 
 const radiosPatrol = document.getElementsByClassName('radioPatrol');
 displayTextArea(radiosPatrol, textPatrol);
+
+patrolForm.addEventListener('submit', e => {
+  e.preventDefault();
+
+  if (patrolSignature.value.length > 1) {
+    ipcRenderer.send('addItem', {
+      id: Date.now(),
+      type: 'patrol',
+      date: dateFormat().slice(0, 10),
+      time: dateFormat().slice(11, 16),
+      problems: checkedPairs(patrol1, patrol2, textPatrol),
+      signature: patrolSignature.value
+    });
+
+    patrolForm.reset();
+
+    //close the textarea
+    textPatrol.style.display = 'none';
+
+    //back to landing screen
+    clearScreen();
+    initialDiv.style.display = 'block';
+  }
+});
 
 //KEYS
 keysBtn.addEventListener('click', e => {
