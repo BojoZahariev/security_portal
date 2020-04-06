@@ -318,6 +318,7 @@ const displayHandover = (sheet, page) => {
 
   const dateHoLast = document.createElement('p');
   dateHoLast.textContent = sheet.date;
+  dateHoLast.classList.add('dates');
   li.appendChild(dateHoLast);
 
   //top

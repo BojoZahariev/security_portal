@@ -284,6 +284,11 @@ textarea {
 
 .smallTitle {
   text-align: center;
+  font-weight: 700;
+}
+
+.dates {
+  font-size: 20px;
 }
 
 .top {
