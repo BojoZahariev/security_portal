@@ -292,39 +292,42 @@
       <h3>Ensure:</h3>
 
       <ul>
-        <li>All fire escape doors have been unlocked.</li>
-        <li>All internal fire escape exits, passageways (including gangways) and staircases are clear.</li>
-        <li>
+        <li class="generalText">All fire escape doors have been unlocked.</li>
+        <li class="generalText">
+          All internal fire escape exits, passageways (including gangways) and staircases are clear.
+        </li>
+        <li class="generalText">
           Take a perimeter walk of the building to ensure that all external fire exit doorways, passageways and
           staircases are clear.
         </li>
-        <li>All waste and salvage is properly stored/contained.</li>
-        <li>No cardboard or plastic is stored outside the store during non-trading hours.</li>
-        <li>There are no signs of smoking on the premises.</li>
-        <li>Check the Fire Alarm panel ensuring no faults are displayed.</li>
+        <li class="generalText">All waste and salvage is properly stored/contained.</li>
+        <li class="generalText">No cardboard or plastic is stored outside the store during non-trading hours.</li>
+        <li class="generalText">There are no signs of smoking on the premises.</li>
+        <li class="generalText">Check the Fire Alarm panel ensuring no faults are displayed.</li>
       </ul>
 
       <form class="forms flexForm">
         <span id="datePatrol" class="date"></span>
         <div>
           <span class="question">Everything OK?</span>
-          <label class="radio"
-            ><input class="radioPatrol" id="patrolOK" type="radio" name="patrol" value="Ok" checked/>Yes<span
-              class="checkmark"
-            ></span
-          ></label>
-          <label class="radio"
-            ><input class="radioPatrol" id="patrolNo" type="radio" name="patrol" value="No"/>No<span
-              class="checkmark"
-            ></span
-          ></label>
+          <label class="radio">
+            <input class="radioPatrol" id="patrolOK" type="radio" name="patrol" value="Ok" checked />Yes
+            <span class="checkmark"></span>
+          </label>
+          <label class="radio">
+            <input class="radioPatrol" id="patrolNo" type="radio" name="patrol" value="No" />No
+            <span class="checkmark"></span>
+          </label>
         </div>
-        <textarea id="textPatrol" class="inline" rows="5" cols="40" placeholder="Describe problems."></textarea>
+        <textarea id="textPatrol" class="textPatrol inline" rows="5" cols="50" placeholder="Describe problems.">
+        </textarea>
         <label>Security Officer<input id="inputFire" type="text" placeholder="Name" class="inputs"/></label>
         <button id="patrolFormSubmit" class="submitBtn">SUBMIT</button>
       </form>
 
-      <p>Any issues that do not meet the required standards are to be recorded and acted on accordingly.</p>
+      <p class="generalText">
+        Any issues that do not meet the required standards are to be recorded and acted on accordingly.
+      </p>
 
       <ul class="lists">
         <li><span>05/03/2020</span> <span>OK</span> <span>11.00</span><span> Bojo</span></li>

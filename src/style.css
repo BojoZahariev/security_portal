@@ -406,16 +406,30 @@ textarea {
   padding: 20px 0px 10px;
 }
 
-#patrolCon {
-  text-align: center;
-}
-
 .date {
   padding: 10px;
 }
 
+/*PATROL*/
+
+#patrolCon {
+  text-align: center;
+}
+
 .question {
-  padding: 0px 10px;
+  padding: 0px 20px;
+}
+
+.textPatrol {
+  resize: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5px;
+}
+
+.generalText {
+  padding: 5px;
+  font-size: 18px;
 }
 
 .lists {
