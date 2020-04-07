@@ -365,7 +365,8 @@ textarea {
 #textCity,
 #textCom,
 #textPatrol,
-#passwordDivHolder {
+#passwordDivHolder,
+#patrolArchCon {
   display: none;
 }
 

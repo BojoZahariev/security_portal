@@ -267,9 +267,9 @@
 
       <ul id="lastHo"></ul>
 
-      <!--Archive-->
+      <!--Handover Archive-->
       <div id="HoArchCon" class="containers">
-        <p class="smallTitle">Archive</p>
+        <p class="smallTitle">Handover Archive</p>
         <form id="archHoForm">
           <label>Search by date</label>
           <input id="archHo1" class="inputs" type="date" />
@@ -287,48 +287,71 @@
 
     <!-- PATROL-->
     <div id="patrolCon" class="containers">
-      <p class="smallTitle">Daily Fire checks</p>
-      <h3>This form is to be completed by the fire monitor or appointed person only.</h3>
-      <h3>Ensure:</h3>
+      <div id="newFormPatrol" class="containers">
+        <p class="smallTitle">Daily Fire checks</p>
+        <h3>This form is to be completed by the fire monitor or appointed person only.</h3>
+        <h3>Ensure:</h3>
 
-      <ul>
-        <li class="generalText">All fire escape doors have been unlocked.</li>
-        <li class="generalText">
-          All internal fire escape exits, passageways (including gangways) and staircases are clear.
-        </li>
-        <li class="generalText">
-          Take a perimeter walk of the building to ensure that all external fire exit doorways, passageways and
-          staircases are clear.
-        </li>
-        <li class="generalText">All waste and salvage is properly stored/contained.</li>
-        <li class="generalText">No cardboard or plastic is stored outside the store during non-trading hours.</li>
-        <li class="generalText">There are no signs of smoking on the premises.</li>
-        <li class="generalText">Check the Fire Alarm panel ensuring no faults are displayed.</li>
-      </ul>
+        <ul>
+          <li class="generalText">All fire escape doors have been unlocked.</li>
+          <li class="generalText">
+            All internal fire escape exits, passageways (including gangways) and staircases are clear.
+          </li>
+          <li class="generalText">
+            Take a perimeter walk of the building to ensure that all external fire exit doorways, passageways and
+            staircases are clear.
+          </li>
+          <li class="generalText">All waste and salvage is properly stored/contained.</li>
+          <li class="generalText">No cardboard or plastic is stored outside the store during non-trading hours.</li>
+          <li class="generalText">There are no signs of smoking on the premises.</li>
+          <li class="generalText">Check the Fire Alarm panel ensuring no faults are displayed.</li>
+        </ul>
 
-      <form id="patrolForm" class="forms flexForm">
-        <span id="datePatrol" class="date"></span>
-        <div>
-          <span class="question">Everything OK?</span>
-          <label class="radio">
-            <input class="radioPatrol" id="patrol1" type="radio" name="patrol" value="Ok" checked />Yes
-            <span class="checkmark"></span>
-          </label>
-          <label class="radio">
-            <input class="radioPatrol" id="patrol2" type="radio" name="patrol" value="No" />No
-            <span class="checkmark"></span>
-          </label>
+        <form id="patrolForm" class="forms flexForm">
+          <span id="datePatrol" class="date"></span>
+          <div>
+            <span class="question">Everything OK?</span>
+            <label class="radio">
+              <input class="radioPatrol" id="patrol1" type="radio" name="patrol" value="Ok" checked />Yes
+              <span class="checkmark"></span>
+            </label>
+            <label class="radio">
+              <input class="radioPatrol" id="patrol2" type="radio" name="patrol" value="No" />No
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <textarea id="textPatrol" class="textareaHo" rows="5" cols="50" placeholder="Describe problems."></textarea>
+          <label>Security Officer<input id="patrolSignature" type="text" placeholder="Name" class="inputs" /></label>
+          <button id="patrolFormSubmit" class="submitBtn" type="submit">SUBMIT</button>
+        </form>
+
+        <p class="generalText">
+          Any issues that do not meet the required standards are to be recorded and acted on accordingly.
+        </p>
+        <p class="smallTitle">Last Patrol</p>
+        <ul id="patrolList" class="lists"></ul>
+
+        <div class="nav containers" id="patrolNav">
+          <button id="archPBtn" class="submitBtn">ARCHIVE</button>
         </div>
-        <textarea id="textPatrol" class="textareaHo" rows="5" cols="50" placeholder="Describe problems."></textarea>
-        <label>Security Officer<input id="patrolSignature" type="text" placeholder="Name" class="inputs"/></label>
-        <button id="patrolFormSubmit" class="submitBtn" type="submit">SUBMIT</button>
-      </form>
+      </div>
 
-      <p class="generalText">
-        Any issues that do not meet the required standards are to be recorded and acted on accordingly.
-      </p>
-      <p class="smallTitle">Lats Patrol Results</p>
-      <ul id="patrolList" class="lists"></ul>
+      <!--Patrol Archive-->
+      <div id="patrolArchCon" class="containers">
+        <p class="smallTitle">Patrol Archive</p>
+        <form id="archPForm">
+          <label>Search by date</label>
+          <input id="archP1" class="inputs" type="date" />
+
+          <label>Search by month</label>
+          <input id="archP2" class="inputs" type="month" />
+
+          <button id="archPSubmit" class="submitBtn" type="submit">SEARCH</button>
+          <button id="archPClear" class="submitBtn">Clear</button>
+        </form>
+
+        <ul id="archivePList"></ul>
+      </div>
     </div>
 
     <!-- KEYS-->
@@ -441,7 +464,7 @@
             ></span>
           </label>
           <label class="radio">
-            <input class="radioLaptop" id="managerNo" type="radio" name="laptop" value="No"/>No<span
+            <input class="radioLaptop" id="managerNo" type="radio" name="laptop" value="No" />No<span
               class="checkmark"
             ></span
           ></label>
@@ -466,7 +489,7 @@
             ></span>
           </label>
           <label class="radio">
-            <input class="radioCarPark" id="contactedNo" type="radio" name="car park" value="No"/>No<span
+            <input class="radioCarPark" id="contactedNo" type="radio" name="car park" value="No" />No<span
               class="checkmark"
             ></span
           ></label>

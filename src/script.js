@@ -87,14 +87,26 @@ const archHoClear = document.querySelector('#archHoClear');
 
 //Patrol
 const patrolCon = document.querySelector('#patrolCon');
+const newFormPatrol = document.querySelector('#newFormPatrol');
+
 const datePatrol = document.querySelector('#datePatrol');
 const patrolForm = document.querySelector('#patrolForm');
 const patrolList = document.querySelector('#patrolList');
+const patrolNav = document.querySelector('#patrolNav');
 
 const patrol1 = document.querySelector('#patrol1');
 const patrol2 = document.querySelector('#patrol2');
 const patrolSignature = document.querySelector('#patrolSignature');
 const textPatrol = document.querySelector('#textPatrol');
+
+//archive patrol
+const archPBtn = document.querySelector('#archPBtn');
+const patrolArchCon = document.querySelector('#patrolArchCon');
+const archP1 = document.querySelector('#archP1');
+const archP2 = document.querySelector('#archP2');
+const archPForm = document.querySelector('#archPForm');
+const archivePList = document.querySelector('#archivePList');
+const archPClear = document.querySelector('#archPClear');
 
 //Keys
 const keysCon = document.querySelector('#keysCon');
@@ -457,7 +469,9 @@ archHoClear.addEventListener('click', (e) => {
 patrolBtn.addEventListener('click', (e) => {
   clearScreen();
   patrolCon.style.display = 'block';
+  newFormPatrol.style.display = 'block';
   backBtn.style.display = 'block';
+  patrolNav.style.display = 'block';
 
   ipcRenderer.send('loadLastPatrol', {
     type: 'patrol',
@@ -520,13 +534,23 @@ displayPatrols = (sheet, page) => {
   li.appendChild(resultPastPatrols);
 
   let signedPastPatrols = document.createElement('p');
-  signedPastPatrols.textContent = `Signed By: ${sheet.signature}`;
+  signedPastPatrols.textContent = `Signed By: ${sheet.signature.toUpperCase()}`;
   li.appendChild(signedPastPatrols);
 
   if (page === 'last') {
     patrolList.appendChild(li);
   }
 };
+
+//patrol Archive btn
+archPBtn.addEventListener('click', (e) => {
+  clearScreen();
+  patrolCon.style.display = 'block';
+  patrolArchCon.style.display = 'block';
+  newFormPatrol.style.display = 'none';
+
+  backBtn.style.display = 'block';
+});
 
 //KEYS
 keysBtn.addEventListener('click', (e) => {
