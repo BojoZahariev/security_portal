@@ -496,13 +496,17 @@ displayPatrols = (sheet, page) => {
   let li = document.createElement('li');
   li.classList.add('patrolPart');
 
+  let dateHourPDiv = document.createElement('div');
+
   let datePastPatrols = document.createElement('p');
   datePastPatrols.textContent = sheet.date;
-  li.appendChild(datePastPatrols);
+  dateHourPDiv.appendChild(datePastPatrols);
 
-  let hourPastPatrols = document.createElement('p');
+  let hourPastPatrols = document.createElement('span');
+  hourPastPatrols.classList.add('date');
   hourPastPatrols.textContent = sheet.time;
-  li.appendChild(hourPastPatrols);
+  datePastPatrols.appendChild(hourPastPatrols);
+  li.appendChild(dateHourPDiv);
 
   let resultPastPatrols = document.createElement('p');
   resultPastPatrols.textContent = `Result: ${sheet.problems}`;
