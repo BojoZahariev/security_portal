@@ -90,3 +90,12 @@ ipcMain.on('findSheet', (e, item) => {
       .exec((err, docs) => mainWindow.webContents.send('found', docs));
   }
 });
+
+//PATROL
+//delete patrol item from the db
+ipcMain.on('deletePatrol', (e, item) => {
+  db.remove({ id: item.sheet.id }, {}, (err, numRemoved) => {
+    if (err) throw new Error(err);
+    mainWindow.webContents.send('deletedPatrol', numRemoved);
+  });
+});

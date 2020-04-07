@@ -512,6 +512,22 @@ displayPatrols = (sheet, page) => {
   signedPastPatrols.textContent = `Signed By: ${sheet.signature.toUpperCase()}`;
   li.appendChild(signedPastPatrols);
 
+  //delete btn
+  if (page === 'archive') {
+    let deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.classList.add('deleteBtn');
+    deleteBtn.classList.add('deleteBtnPatrol');
+    li.appendChild(deleteBtn);
+
+    deleteBtn.addEventListener('click', function (e) {
+      let div = deleteBtn.parentElement;
+      div.style.display = 'none';
+
+      ipcRenderer.send('deletePatrol', { sheet });
+    });
+  }
+
   if (page === 'last') {
     patrolList.appendChild(li);
   } else if (page === 'archive') {
