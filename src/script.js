@@ -539,6 +539,8 @@ displayPatrols = (sheet, page) => {
 
   if (page === 'last') {
     patrolList.appendChild(li);
+  } else if (page === 'archive') {
+    archivePList.appendChild(li);
   }
 };
 
@@ -550,6 +552,38 @@ archPBtn.addEventListener('click', (e) => {
   newFormPatrol.style.display = 'none';
 
   backBtn.style.display = 'block';
+});
+
+//archive patrol submit and send to db
+archPForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let searchDate = `${archP1.value.slice(8, 10)}/${archP1.value.slice(5, 7)}/${archP1.value.slice(0, 4)}`;
+  let month = `${archP2.value.slice(5, 7)}/${archP2.value.slice(0, 4)}`;
+  //clear the page
+  archivePList.innerHTML = '';
+
+  //send request to the db
+  ipcRenderer.send('findPatrol', {
+    type: 'patrol',
+    searchDate,
+    month,
+  });
+});
+
+//catch found handover sheets
+ipcRenderer.on('foundPatrol', (e, docs) => {
+  docs.forEach((element) => {
+    displayPatrols(element, 'archive');
+  });
+});
+
+//clear the form and reset btn
+archPClear.addEventListener('click', (e) => {
+  //clear the page
+  archivePList.innerHTML = '';
+  //reset the input
+  archPForm.reset();
 });
 
 //KEYS
