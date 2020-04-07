@@ -198,7 +198,7 @@ hoBtn.addEventListener('click', (e) => {
   hoNav.style.display = 'block';
   backBtn.style.display = 'block';
 
-  ipcRenderer.send('loadLastHandover', {
+  ipcRenderer.send('loadLast', {
     type: 'handover',
   });
 });
@@ -316,14 +316,6 @@ newFormHo.addEventListener('submit', (e) => {
   }
 });
 
-//catch loaded last handover
-ipcRenderer.on('loadedLastHandover', (e, item) => {
-  //send for display
-  if (item) {
-    displayHandover(item, 'last');
-  }
-});
-
 //Display Handover
 const displayHandover = (sheet, page) => {
   let li = document.createElement('li');
@@ -436,17 +428,10 @@ archHoForm.addEventListener('submit', (e) => {
   archiveList.innerHTML = '';
 
   //send request to the db
-  ipcRenderer.send('findHo', {
+  ipcRenderer.send('findSheet', {
     type: 'handover',
     searchDate,
     month,
-  });
-});
-
-//catch found handover sheets
-ipcRenderer.on('foundHo', (e, docs) => {
-  docs.forEach((element) => {
-    displayHandover(element, 'archive');
   });
 });
 
@@ -473,19 +458,9 @@ patrolBtn.addEventListener('click', (e) => {
   backBtn.style.display = 'block';
   patrolNav.style.display = 'block';
 
-  ipcRenderer.send('loadLastPatrol', {
+  ipcRenderer.send('loadLast', {
     type: 'patrol',
   });
-});
-
-//catch loaded last patrol
-ipcRenderer.on('loadedLastPatrol', (e, item) => {
-  //send for display
-  if (item) {
-    //clear the old
-    patrolList.innerHTML = '';
-    displayPatrols(item, 'last');
-  }
 });
 
 datePatrol.textContent = dateFormat().slice(0, 10);
@@ -564,17 +539,10 @@ archPForm.addEventListener('submit', (e) => {
   archivePList.innerHTML = '';
 
   //send request to the db
-  ipcRenderer.send('findPatrol', {
+  ipcRenderer.send('findSheet', {
     type: 'patrol',
     searchDate,
     month,
-  });
-});
-
-//catch found handover sheets
-ipcRenderer.on('foundPatrol', (e, docs) => {
-  docs.forEach((element) => {
-    displayPatrols(element, 'archive');
   });
 });
 
@@ -621,6 +589,31 @@ carParkBtn.addEventListener('click', (e) => {
 });
 
 dateCarPark.textContent = dateFormat();
+
+//catch loaded last sheet
+ipcRenderer.on('loadedLast', (e, item) => {
+  //send for display
+  if (item) {
+    if (item.type === 'handover') {
+      displayHandover(item, 'last');
+    } else if (item.type === 'patrol') {
+      //clear the old
+      patrolList.innerHTML = '';
+      displayPatrols(item, 'last');
+    }
+  }
+});
+
+//catch found sheets
+ipcRenderer.on('found', (e, docs) => {
+  docs.forEach((element) => {
+    if (element.type === 'handover') {
+      displayHandover(element, 'archive');
+    } else if (element.type === 'patrol') {
+      displayPatrols(element, 'archive');
+    }
+  });
+});
 
 //Catches ClearAll from menu, asks for a password and sends the event to server to clear the db.
 ipcRenderer.on('clearAll', () => {

@@ -441,6 +441,7 @@ textarea {
 
 .patrolPart {
   display: flex;
+  width: 90%;
   justify-content: space-between;
   padding: 10px;
   font-size: 20px;

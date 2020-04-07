@@ -58,10 +58,10 @@ ipcMain.on('loadLastHandoverInc', (e, item) => {
 });
 
 //load last handover from the db
-ipcMain.on('loadLastHandover', (e, item) => {
+ipcMain.on('loadLast', (e, item) => {
   db.find({ type: item.type })
     .sort({ id: -1 })
-    .exec((err, docs) => mainWindow.webContents.send('loadedLastHandover', docs[0]));
+    .exec((err, docs) => mainWindow.webContents.send('loadedLast', docs[0]));
 });
 
 //delete handover item from the db
@@ -73,12 +73,12 @@ ipcMain.on('deleteHo', (e, item) => {
 });
 
 //FIND handover
-ipcMain.on('findHo', (e, item) => {
+ipcMain.on('findSheet', (e, item) => {
   //date only
   if (item.searchDate !== '//' && item.month === '/') {
     db.find({ date: item.searchDate, type: item.type })
       .sort({ id: -1 })
-      .exec((err, docs) => mainWindow.webContents.send('foundHo', docs));
+      .exec((err, docs) => mainWindow.webContents.send('found', docs));
   } else if (item.month !== '/' && item.searchDate === '//') {
     db.find({
       type: item.type,
@@ -87,33 +87,6 @@ ipcMain.on('findHo', (e, item) => {
       },
     })
       .sort({ id: -1 })
-      .exec((err, docs) => mainWindow.webContents.send('foundHo', docs));
-  }
-});
-
-//PATROL
-
-ipcMain.on('loadLastPatrol', (e, item) => {
-  db.find({ type: item.type })
-    .sort({ id: -1 })
-    .exec((err, docs) => mainWindow.webContents.send('loadedLastPatrol', docs[0]));
-});
-
-//FIND patrol
-ipcMain.on('findPatrol', (e, item) => {
-  //date only
-  if (item.searchDate !== '//' && item.month === '/') {
-    db.find({ date: item.searchDate, type: item.type })
-      .sort({ id: -1 })
-      .exec((err, docs) => mainWindow.webContents.send('foundPatrol', docs));
-  } else if (item.month !== '/' && item.searchDate === '//') {
-    db.find({
-      type: item.type,
-      $where: function () {
-        return this.date.includes(item.month);
-      },
-    })
-      .sort({ id: -1 })
-      .exec((err, docs) => mainWindow.webContents.send('foundPatrol', docs));
+      .exec((err, docs) => mainWindow.webContents.send('found', docs));
   }
 });
