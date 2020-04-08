@@ -241,23 +241,25 @@ textarea {
 }
 
 #archHo1,
-#archHo2 {
+#archHo2,
+#archP1,
+#archP2 {
   background: #f1faee url(images/calendar.png) 97% 50% no-repeat;
 }
 
 #archHo1::-webkit-inner-spin-button,
-#archHo2::-webkit-inner-spin-button {
+#archHo2::-webkit-inner-spin-button,
+#archP1::-webkit-inner-spin-button,
+#archP2::-webkit-inner-spin-button {
   display: none;
 }
 
 #archHo1::-webkit-calendar-picker-indicator,
-#archHo2::-webkit-calendar-picker-indicator {
+#archHo2::-webkit-calendar-picker-indicator,
+#archP1::-webkit-calendar-picker-indicator,
+#archP2::-webkit-calendar-picker-indicator {
   opacity: 0;
   width: 20px;
-}
-
-#newFormHo {
-  display: none;
 }
 
 #archHoForm {
@@ -308,6 +310,7 @@ textarea {
 .sectionTitle {
   padding: 15px;
   font-size: 20px;
+  font-weight: 600;
 }
 
 .radio {
@@ -367,7 +370,8 @@ textarea {
 #textCom,
 #textPatrol,
 #passwordDivHolder,
-#patrolArchCon {
+#patrolArchCon,
+#newFormHo {
   display: none;
 }
 
