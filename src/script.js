@@ -494,7 +494,8 @@ patrolForm.addEventListener('submit', (e) => {
 
 displayPatrols = (sheet, page) => {
   let li = document.createElement('li');
-  li.classList.add('patrolPart');
+  li.classList.add('forms');
+  li.classList.add('flexForm');
 
   let dateHourPDiv = document.createElement('div');
 
@@ -509,11 +510,21 @@ displayPatrols = (sheet, page) => {
   li.appendChild(dateHourPDiv);
 
   let resultPastPatrols = document.createElement('p');
-  resultPastPatrols.textContent = `Result: ${sheet.problems}`;
+  resultPastPatrols.textContent = 'Result: ';
+  resultPastPatrols.classList.add('bold');
+  let resultPastPatrolsText = document.createElement('p');
+  resultPastPatrolsText.classList.add('thin');
+  resultPastPatrolsText.textContent = sheet.problems;
+  resultPastPatrols.appendChild(resultPastPatrolsText);
   li.appendChild(resultPastPatrols);
 
   let signedPastPatrols = document.createElement('p');
-  signedPastPatrols.textContent = `Signed By: ${sheet.signature.toUpperCase()}`;
+  signedPastPatrols.textContent = 'Signed By: ';
+  signedPastPatrols.classList.add('bold');
+  let signedPastPatrolsText = document.createElement('span');
+  signedPastPatrolsText.classList.add('hoName');
+  signedPastPatrolsText.textContent = sheet.signature.toUpperCase();
+  signedPastPatrols.appendChild(signedPastPatrolsText);
   li.appendChild(signedPastPatrols);
 
   //delete btn

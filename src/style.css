@@ -440,16 +440,16 @@ textarea {
   text-align: center;
 }
 
-.patrolPart {
-  position: relative;
-  display: flex;
-  width: 90%;
-  justify-content: space-between;
-  padding: 10px;
-  font-size: 20px;
-  background-color: #65b32e;
-  border: 1px solid #222;
-  margin: 3px auto;
+.bold {
+  font-weight: 600;
+}
+
+.thin {
+  display: inline;
+  font-weight: 400;
+  background-color: #fff;
+  border: 1px solid #ffc220;
+  padding: 5px;
 }
 
 .deleteBtnPatrol {
