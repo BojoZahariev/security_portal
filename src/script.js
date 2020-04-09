@@ -110,8 +110,15 @@ const archPClear = document.querySelector('#archPClear');
 
 //Keys
 const keysCon = document.querySelector('#keysCon');
-const dateKeys = document.querySelector('#dateKeys');
+const newFormKeys = document.querySelector('#newFormKeys');
+const keysList = document.querySelector('#keysList');
 const keysNav = document.querySelector('#keysNav');
+
+const keysForm = document.querySelector('#keysForm');
+const dateKeys = document.querySelector('#dateKeys');
+const keysInput1 = document.querySelector('#keysInput1');
+const keysInput2 = document.querySelector('#keysInput2');
+const keysSignature = document.querySelector('#keysSignature');
 
 //Children
 const childrenCon = document.querySelector('#childrenCon');
@@ -590,11 +597,98 @@ archPClear.addEventListener('click', (e) => {
 keysBtn.addEventListener('click', (e) => {
   clearScreen();
   keysCon.style.display = 'block';
+  newFormKeys.style.display = 'block';
   keysNav.style.display = 'block';
   backBtn.style.display = 'block';
+
+  ipcRenderer.send('loadLast', {
+    type: 'keys',
+  });
 });
 
-dateKeys.textContent = dateFormat();
+dateKeys.textContent = dateFormat().slice(0, 10);
+
+keysForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (keysInput1.value.length > 1 && keysInput2.value.length > 0 && keysSignature.value.length > 1) {
+    ipcRenderer.send('addItem', {
+      id: Date.now(),
+      type: 'keys',
+      date: dateFormat().slice(0, 10),
+      time: dateFormat().slice(11, 16),
+      takenBy: keysInput1.value,
+      keyNumber: keysInput2.value,
+      returned: 'Not Returned',
+      signature: keysSignature.value,
+    });
+
+    keysForm.reset();
+
+    //back to landing screen
+    clearScreen();
+    initialDiv.style.display = 'block';
+  }
+});
+
+//display Keys
+displayKeys = (sheet, page) => {
+  let li = document.createElement('li');
+  li.classList.add('forms');
+  li.classList.add('flexForm');
+
+  let dateHourKDiv = document.createElement('div');
+
+  let datePastKeys = document.createElement('p');
+  datePastKeys.textContent = sheet.date;
+  dateHourKDiv.appendChild(datePastKeys);
+
+  let hourPastKeys = document.createElement('span');
+  hourPastKeys.classList.add('date');
+  hourPastKeys.textContent = sheet.time;
+  datePastKeys.appendChild(hourPastKeys);
+  li.appendChild(dateHourKDiv);
+
+  let takenByPast = document.createElement('p');
+  takenByPast.textContent = 'Taken By: ';
+  takenByPast.classList.add('bold');
+  let takenByPastText = document.createElement('span');
+  takenByPastText.classList.add('hoName');
+  takenByPastText.textContent = sheet.takenBy;
+  takenByPast.appendChild(takenByPastText);
+  li.appendChild(takenByPast);
+
+  let signedPastKeys = document.createElement('p');
+  signedPastKeys.textContent = 'Signed By: ';
+  signedPastKeys.classList.add('bold');
+  let signedPastKeysText = document.createElement('span');
+  signedPastKeysText.classList.add('hoName');
+  signedPastKeysText.textContent = sheet.signature.toUpperCase();
+  signedPastKeys.appendChild(signedPastKeysText);
+  li.appendChild(signedPastKeys);
+
+  //delete btn
+  if (page === 'archive') {
+    let deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.classList.add('deleteBtn');
+    deleteBtn.classList.add('deleteBtnPatrol');
+    li.appendChild(deleteBtn);
+
+    deleteBtn.addEventListener('click', function (e) {
+      let div = deleteBtn.parentElement;
+      div.style.display = 'none';
+
+      ipcRenderer.send('deletePatrol', { sheet });
+    });
+  }
+
+  if (page === 'last') {
+    keysList.appendChild(li);
+  } else if (page === 'archive') {
+    archiveKList.appendChild(li);
+  }
+};
 
 //CHILDREN
 childrenBtn.addEventListener('click', (e) => {
@@ -603,7 +697,7 @@ childrenBtn.addEventListener('click', (e) => {
   backBtn.style.display = 'block';
 });
 
-dateChildren.textContent = dateFormat();
+dateChildren.textContent = dateFormat().slice(0, 10);
 
 //LAPTOP
 laptopBtn.addEventListener('click', (e) => {
@@ -612,7 +706,7 @@ laptopBtn.addEventListener('click', (e) => {
   backBtn.style.display = 'block';
 });
 
-dateLaptop.textContent = dateFormat();
+dateLaptop.textContent = dateFormat().slice(0, 10);
 
 //CARPARK
 carParkBtn.addEventListener('click', (e) => {
@@ -621,7 +715,7 @@ carParkBtn.addEventListener('click', (e) => {
   backBtn.style.display = 'block';
 });
 
-dateCarPark.textContent = dateFormat();
+dateCarPark.textContent = dateFormat().slice(0, 10);
 
 //catch loaded last sheet
 ipcRenderer.on('loadedLast', (e, item) => {
@@ -633,6 +727,10 @@ ipcRenderer.on('loadedLast', (e, item) => {
       //clear the old
       patrolList.innerHTML = '';
       displayPatrols(item, 'last');
+    } else if (item.type === 'keys') {
+      //clear old
+      keysList.innerHTML = '';
+      displayKeys(item, 'last');
     }
   }
 });

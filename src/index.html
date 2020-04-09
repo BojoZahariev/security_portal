@@ -358,21 +358,23 @@
 
     <!-- KEYS-->
     <div id="keysCon" class="containers">
-      <p class="smallTitle">Key Register</p>
+      <div id="newFormKeys">
+        <p class="smallTitle">Key Register</p>
 
-      <form id="keysForm" class="forms flexForm">
-        <span id="dateKeys" class="date"></span>
-        <label>Key given to: <input id="keys1" type="text" placeholder="Name" class="inputs" /></label>
-        <input id="keys2" type="text" placeholder="Key #" class="inputs smallInputs" />
-        <label>Security Officer<input id="keys3" type="text" placeholder="Name" class="inputs" /></label>
-        <button id="keysFormSubmit" class="submitBtn">SUBMIT</button>
-      </form>
+        <form id="keysForm" class="forms flexForm">
+          <span id="dateKeys" class="date"></span>
+          <label>Key given to: <input id="keysInput1" type="text" placeholder="Name" class="inputs" /></label>
+          <input id="keysInput2" type="text" placeholder="Key #" class="inputs smallInputs" />
+          <label>Security Officer<input id="keysSignature" type="text" placeholder="Name" class="inputs" /></label>
+          <button id="keysFormSubmit" class="submitBtn" type="submit">SUBMIT</button>
+        </form>
 
-      <p class="smallTitle">Outstanding Keys</p>
-      <ul id="keysList" class="lists"></ul>
+        <p class="smallTitle">Outstanding Keys</p>
+        <ul id="keysList" class="lists"></ul>
 
-      <div class="nav containers" id="keysNav">
-        <button id="archKBtn" class="submitBtn">ARCHIVE</button>
+        <div class="nav containers" id="keysNav">
+          <button id="archKBtn" class="submitBtn">ARCHIVE</button>
+        </div>
       </div>
     </div>
 
