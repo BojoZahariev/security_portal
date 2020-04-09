@@ -360,21 +360,20 @@
     <div id="keysCon" class="containers">
       <p class="smallTitle">Key Register</p>
 
-      <form class="forms flexForm">
+      <form id="keysForm" class="forms flexForm">
         <span id="dateKeys" class="date"></span>
-        <input id="inputKeysName" type="text" placeholder="Name" class="inputs" />
-        <input id="inputKeysKey" type="text" placeholder="Key No" class="inputs" />
+        <label>Key given to: <input id="keys1" type="text" placeholder="Name" class="inputs" /></label>
+        <input id="keys2" type="text" placeholder="Key #" class="inputs smallInputs" />
+        <label>Security Officer<input id="keys3" type="text" placeholder="Name" class="inputs" /></label>
         <button id="keysFormSubmit" class="submitBtn">SUBMIT</button>
       </form>
 
-      <ul class="lists">
-        <li>
-          <span>05/03/2020</span> <span>Denise</span> <span>11.00</span><span>not returned</span><span> Bojo</span>
-        </li>
-        <li>
-          <span>04/03/2020</span> <span>Denise</span> <span>12.00</span><span>returned at 12.30</span><span> Bojo</span>
-        </li>
-      </ul>
+      <p class="smallTitle">Outstanding Keys</p>
+      <ul id="keysList" class="lists"></ul>
+
+      <div class="nav containers" id="keysNav">
+        <button id="archKBtn" class="submitBtn">ARCHIVE</button>
+      </div>
     </div>
 
     <!-- Children-->

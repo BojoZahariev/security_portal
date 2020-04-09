@@ -111,6 +111,7 @@ const archPClear = document.querySelector('#archPClear');
 //Keys
 const keysCon = document.querySelector('#keysCon');
 const dateKeys = document.querySelector('#dateKeys');
+const keysNav = document.querySelector('#keysNav');
 
 //Children
 const childrenCon = document.querySelector('#childrenCon');
@@ -589,6 +590,7 @@ archPClear.addEventListener('click', (e) => {
 keysBtn.addEventListener('click', (e) => {
   clearScreen();
   keysCon.style.display = 'block';
+  keysNav.style.display = 'block';
   backBtn.style.display = 'block';
 });
 

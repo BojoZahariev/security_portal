@@ -459,3 +459,9 @@ textarea {
 .deleteBtnPatrol {
   right: -50px;
 }
+
+/*KEYS*/
+
+.smallInputs {
+  width: 100px;
+}
