@@ -601,9 +601,20 @@ keysBtn.addEventListener('click', (e) => {
   keysNav.style.display = 'block';
   backBtn.style.display = 'block';
 
-  ipcRenderer.send('loadLast', {
+  ipcRenderer.send('loadNotReturned', {
     type: 'keys',
   });
+});
+
+ipcRenderer.on('loadedNotReturned', (e, docs) => {
+  if (docs) {
+    //clear old
+    keysList.innerHTML = '';
+
+    docs.forEach((element) => {
+      displayKeys(element, 'last');
+    });
+  }
 });
 
 dateKeys.textContent = dateFormat().slice(0, 10);
@@ -670,6 +681,7 @@ displayKeys = (sheet, page) => {
   let returnedCheck = document.createElement('p');
   returnedCheck.textContent = sheet.returned;
   returnedCheck.classList.add('bold');
+  returnedCheck.classList.add('pointer');
   if (sheet.returned === 'Returned') {
     returnedCheck.style.color = '#76c043';
   } else {

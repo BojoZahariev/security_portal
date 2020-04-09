@@ -72,7 +72,7 @@ ipcMain.on('deleteHo', (e, item) => {
   });
 });
 
-//FIND handover
+//FIND handover,patrol
 ipcMain.on('findSheet', (e, item) => {
   //date only
   if (item.searchDate !== '//' && item.month === '/') {
@@ -101,6 +101,18 @@ ipcMain.on('deletePatrol', (e, item) => {
 });
 
 //KEYS
+
+//load all not returned keys from the db
+ipcMain.on('loadNotReturned', (e, item) => {
+  db.find({
+    type: item.type,
+    $where: function () {
+      return this.returned.includes('Not Returned');
+    },
+  })
+    .sort({ id: -1 })
+    .exec((err, docs) => mainWindow.webContents.send('loadedNotReturned', docs));
+});
 
 //update returned
 ipcMain.on('updateItemReturned', (e, item) => {

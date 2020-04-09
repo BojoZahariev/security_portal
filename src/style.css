@@ -465,3 +465,7 @@ textarea {
 .smallInputs {
   width: 100px;
 }
+
+.pointer {
+  cursor: pointer;
+}
