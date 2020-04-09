@@ -736,6 +736,16 @@ displayKeys = (sheet, page) => {
   }
 };
 
+//patrol Archive btn
+archKBtn.addEventListener('click', (e) => {
+  clearScreen();
+  keysCon.style.display = 'block';
+  keysArchCon.style.display = 'block';
+  newFormKeys.style.display = 'none';
+
+  backBtn.style.display = 'block';
+});
+
 //CHILDREN
 childrenBtn.addEventListener('click', (e) => {
   clearScreen();

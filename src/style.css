@@ -462,6 +462,10 @@ textarea {
 
 /*KEYS*/
 
+#keysCon {
+  text-align: center;
+}
+
 .smallInputs {
   width: 100px;
 }
