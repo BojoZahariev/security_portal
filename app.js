@@ -99,3 +99,41 @@ ipcMain.on('deletePatrol', (e, item) => {
     mainWindow.webContents.send('deletedPatrol', numRemoved);
   });
 });
+
+//KEYS
+
+//update returned
+ipcMain.on('updateItemReturned', (e, item) => {
+  db.update(
+    { id: item.sheet.id, type: item.sheet.type },
+    {
+      id: item.sheet.id,
+      type: 'keys',
+      date: item.sheet.date,
+      time: item.sheet.time,
+      takenBy: item.sheet.takenBy,
+      keyNumber: item.sheet.keyNumber,
+      returned: 'Returned',
+      signature: item.sheet.signature,
+    },
+    {}
+  );
+});
+
+//update not returned
+ipcMain.on('updateItemNotReturned', (e, item) => {
+  db.update(
+    { id: item.sheet.id, type: item.sheet.type },
+    {
+      id: item.sheet.id,
+      type: 'keys',
+      date: item.sheet.date,
+      time: item.sheet.time,
+      takenBy: item.sheet.takenBy,
+      keyNumber: item.sheet.keyNumber,
+      returned: 'Not Returned',
+      signature: item.sheet.signature,
+    },
+    {}
+  );
+});

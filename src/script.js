@@ -658,6 +658,26 @@ displayKeys = (sheet, page) => {
   takenByPast.appendChild(takenByPastText);
   li.appendChild(takenByPast);
 
+  let keyNPast = document.createElement('p');
+  keyNPast.textContent = 'Key #: ';
+  keyNPast.classList.add('bold');
+  let keyNText = document.createElement('span');
+  keyNText.classList.add('hoName');
+  keyNText.textContent = sheet.keyNumber;
+  keyNPast.appendChild(keyNText);
+  li.appendChild(keyNPast);
+
+  let returnedCheck = document.createElement('p');
+  returnedCheck.textContent = sheet.returned;
+  returnedCheck.classList.add('bold');
+  if (sheet.returned === 'Returned') {
+    returnedCheck.style.color = '#76c043';
+  } else {
+    returnedCheck.style.color = 'red';
+  }
+
+  li.appendChild(returnedCheck);
+
   let signedPastKeys = document.createElement('p');
   signedPastKeys.textContent = 'Signed By: ';
   signedPastKeys.classList.add('bold');
@@ -682,6 +702,20 @@ displayKeys = (sheet, page) => {
       ipcRenderer.send('deletePatrol', { sheet });
     });
   }
+
+  //Returned , Not returned
+  returnedCheck.addEventListener('click', () => {
+    console.log(returnedCheck.textContent);
+    if (returnedCheck.textContent === 'Not Returned') {
+      ipcRenderer.send('updateItemReturned', { sheet });
+      returnedCheck.textContent = 'Returned';
+      returnedCheck.style.color = '#76c043';
+    } else if (returnedCheck.textContent === 'Returned') {
+      ipcRenderer.send('updateItemNotReturned', { sheet });
+      returnedCheck.textContent = 'Not Returned';
+      returnedCheck.style.color = 'red';
+    }
+  });
 
   if (page === 'last') {
     keysList.appendChild(li);
