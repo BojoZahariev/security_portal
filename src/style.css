@@ -184,7 +184,9 @@ ul {
 .smallTitle {
   font-size: 25px;
   padding: 10px;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #367c2b;
+  text-align: center;
+  font-weight: 700;
 }
 
 .inputs {
@@ -290,11 +292,6 @@ textarea {
   top: 0;
   left: 0;
   padding: 10px;
-}
-
-.smallTitle {
-  text-align: center;
-  font-weight: 700;
 }
 
 .dates {
