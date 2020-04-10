@@ -701,7 +701,7 @@ displayKeys = (sheet, page) => {
   li.appendChild(returnedCheck);
 
   let signedPastKeys = document.createElement('p');
-  signedPastKeys.textContent = 'Signed By: ';
+  signedPastKeys.textContent = 'Given By: ';
   signedPastKeys.classList.add('bold');
   let signedPastKeysText = document.createElement('span');
   signedPastKeysText.classList.add('hoName');
@@ -727,7 +727,6 @@ displayKeys = (sheet, page) => {
 
   //Returned , Not returned
   returnedCheck.addEventListener('click', () => {
-    console.log(returnedCheck.textContent);
     if (returnedCheck.textContent === 'Not Returned') {
       ipcRenderer.send('updateItemReturned', { sheet });
       returnedCheck.textContent = 'Returned';
@@ -762,6 +761,7 @@ archKForm.addEventListener('submit', (e) => {
 
   let searchDate = `${archK1.value.slice(8, 10)}/${archK1.value.slice(5, 7)}/${archK1.value.slice(0, 4)}`;
   let month = `${archK2.value.slice(5, 7)}/${archK2.value.slice(0, 4)}`;
+  let key = archK3.value;
   //clear the page
   archiveKList.innerHTML = '';
 

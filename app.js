@@ -75,17 +75,23 @@ ipcMain.on('deleteHo', (e, item) => {
 //FIND handover,patrol
 ipcMain.on('findSheet', (e, item) => {
   //date only
-  if (item.searchDate !== '//' && item.month === '/') {
+  if (item.searchDate !== '//' && item.month === '/' && item.key === '') {
     db.find({ date: item.searchDate, type: item.type })
       .sort({ id: -1 })
       .exec((err, docs) => mainWindow.webContents.send('found', docs));
-  } else if (item.month !== '/' && item.searchDate === '//') {
+    //month only
+  } else if (item.month !== '/' && item.searchDate === '//' && item.key === '') {
     db.find({
       type: item.type,
       $where: function () {
         return this.date.includes(item.month);
       },
     })
+      .sort({ id: -1 })
+      .exec((err, docs) => mainWindow.webContents.send('found', docs));
+    //key number
+  } else if (item.key !== '' && item.month === '/' && item.searchDate === '//') {
+    db.find({ keyNumber: item.key, type: item.type })
       .sort({ id: -1 })
       .exec((err, docs) => mainWindow.webContents.send('found', docs));
   }
