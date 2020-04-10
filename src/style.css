@@ -167,6 +167,7 @@ ul {
   justify-content: space-between;
   padding: 10px;
   font-weight: 600;
+  transition: all 1s;
 }
 
 #handOverBtnDiv,

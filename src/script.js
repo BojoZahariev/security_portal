@@ -120,6 +120,16 @@ const keysInput1 = document.querySelector('#keysInput1');
 const keysInput2 = document.querySelector('#keysInput2');
 const keysSignature = document.querySelector('#keysSignature');
 
+//Archive keys
+const archKBtn = document.querySelector('#archKBtn');
+const keysArchCon = document.querySelector('#keysArchCon');
+const archKForm = document.querySelector('#archKForm');
+const archK1 = document.querySelector('#archK1');
+const archK2 = document.querySelector('#archK2');
+const archK3 = document.querySelector('#archK3');
+const archiveKList = document.querySelector('#archiveKList');
+const archKClear = document.querySelector('#archKClear');
+
 //Children
 const childrenCon = document.querySelector('#childrenCon');
 const dateChildren = document.querySelector('#dateChildren');
@@ -746,6 +756,32 @@ archKBtn.addEventListener('click', (e) => {
   backBtn.style.display = 'block';
 });
 
+//archive keys submit and send to db
+archKForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let searchDate = `${archK1.value.slice(8, 10)}/${archK1.value.slice(5, 7)}/${archK1.value.slice(0, 4)}`;
+  let month = `${archK2.value.slice(5, 7)}/${archK2.value.slice(0, 4)}`;
+  //clear the page
+  archiveKList.innerHTML = '';
+
+  //send request to the db
+  ipcRenderer.send('findSheet', {
+    type: 'keys',
+    searchDate,
+    month,
+    key,
+  });
+});
+
+//clear the form and reset btn
+archKClear.addEventListener('click', (e) => {
+  //clear the page
+  archiveKList.innerHTML = '';
+  //reset the input
+  archKForm.reset();
+});
+
 //CHILDREN
 childrenBtn.addEventListener('click', (e) => {
   clearScreen();
@@ -798,6 +834,8 @@ ipcRenderer.on('found', (e, docs) => {
       displayHandover(element, 'archive');
     } else if (element.type === 'patrol') {
       displayPatrols(element, 'archive');
+    } else if (element.type === 'keys') {
+      displayKeys(element, 'archive');
     }
   });
 });
