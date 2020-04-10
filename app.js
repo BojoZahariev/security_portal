@@ -75,12 +75,12 @@ ipcMain.on('deleteHo', (e, item) => {
 //FIND handover,patrol
 ipcMain.on('findSheet', (e, item) => {
   //date only
-  if (item.searchDate !== '//' && item.month === '/' && item.key === '') {
+  if (item.searchDate !== '//' && item.month === '/') {
     db.find({ date: item.searchDate, type: item.type })
       .sort({ id: -1 })
       .exec((err, docs) => mainWindow.webContents.send('found', docs));
     //month only
-  } else if (item.month !== '/' && item.searchDate === '//' && item.key === '') {
+  } else if (item.month !== '/' && item.searchDate === '//') {
     db.find({
       type: item.type,
       $where: function () {

@@ -505,8 +505,11 @@ patrolForm.addEventListener('submit', (e) => {
     textPatrol.style.display = 'none';
 
     //back to landing screen
-    clearScreen();
-    initialDiv.style.display = 'block';
+    //clearScreen();
+    //initialDiv.style.display = 'block';
+    ipcRenderer.send('loadLast', {
+      type: 'patrol',
+    });
   }
 });
 
@@ -647,9 +650,13 @@ keysForm.addEventListener('submit', (e) => {
     keysForm.reset();
 
     //back to landing screen
-    clearScreen();
-    initialDiv.style.display = 'block';
+    // clearScreen();
+    //initialDiv.style.display = 'block';
   }
+
+  ipcRenderer.send('loadNotReturned', {
+    type: 'keys',
+  });
 });
 
 //display Keys
@@ -745,7 +752,7 @@ displayKeys = (sheet, page) => {
   }
 };
 
-//patrol Archive btn
+//keys Archive btn
 archKBtn.addEventListener('click', (e) => {
   clearScreen();
   keysCon.style.display = 'block';
