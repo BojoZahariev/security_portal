@@ -738,6 +738,11 @@ displayKeys = (sheet, page) => {
       ipcRenderer.send('updateItemReturned', { sheet });
       returnedCheck.textContent = 'Returned';
       returnedCheck.style.color = '#76c043';
+      //remove the log from the page if it's returned
+      if (page === 'last') {
+        let div = returnedCheck.parentElement;
+        div.style.display = 'none';
+      }
     } else if (returnedCheck.textContent === 'Returned') {
       ipcRenderer.send('updateItemNotReturned', { sheet });
       returnedCheck.textContent = 'Not Returned';
