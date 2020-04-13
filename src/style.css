@@ -184,7 +184,7 @@ ul {
 .smallTitle {
   font-size: 25px;
   padding: 10px;
-  border-bottom: 1px solid #367c2b;
+  border-bottom: 1px solid #222;
   text-align: center;
   font-weight: 700;
 }
@@ -197,6 +197,7 @@ ul {
   padding: 5px 5px;
   box-shadow: inset 0 3px 6px #0000001a;
   width: 200px;
+  height: 40px;
   font-size: 18px;
   margin: 5px;
 }
@@ -476,4 +477,10 @@ textarea {
 
 .pointer {
   cursor: pointer;
+}
+
+/*LAPTOP*/
+
+.mediumInputs {
+  width: 150px;
 }

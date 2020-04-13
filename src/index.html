@@ -400,6 +400,37 @@
       </div>
     </div>
 
+    <!-- LAPTOP-->
+    <div id="laptopCon" class="containers">
+      <p class="smallTitle">Laptop Sweep Record</p>
+
+      <form class="forms flexForm">
+        <span id="dateLaptop" class="date"></span>
+        <input id="laptopInput1" type="text" placeholder="Colleague's Name" class="inputs" />
+        <input id="laptopInput2" type="text" placeholder="Serial Number" class="inputs" />
+        <div>
+          <span class="question">Line manager informed?</span>
+
+          <label class="radio">
+            <input class="radioLaptop" id="managerOK" type="radio" name="laptop" value="Ok" checked />Yes<span
+              class="checkmark"
+            ></span>
+          </label>
+          <label class="radio">
+            <input class="radioLaptop" id="managerNo" type="radio" name="laptop" value="No" />No<span
+              class="checkmark"
+            ></span
+          ></label>
+        </div>
+        <input id="laptopSignature" type="text" placeholder="S.O. Name" class="inputs" />
+
+        <button id="laptopFormSubmit" class="submitBtn">SUBMIT</button>
+      </form>
+
+      <p class="smallTitle">Not collected Laptops</p>
+      <ul id="laptopList" class="lists"></ul>
+    </div>
+
     <!-- Children-->
     <div id="childrenCon" class="containers">
       <p class="smallTitle">Children visiting the workplace - Declaration</p>
@@ -471,31 +502,6 @@
         Retention Period: 3 years for over 18's or 3 years post the date of 18th birthday for under 18's. This is for
         claim purposes.
       </p>
-    </div>
-
-    <!-- LAPTOP-->
-    <div id="laptopCon" class="containers">
-      <p class="smallTitle">Laptop Sweep Record</p>
-
-      <form class="forms flexForm">
-        <span id="dateLaptop" class="date"></span>
-        <input id="inputLaptop1" type="text" placeholder="S.O. Name" class="inputs" />
-        <input id="inputLaptop2" type="text" placeholder="Serial Number" class="inputs" />
-        <div>
-          <span class="question">Line manager informed?</span>
-          <label class="radio">
-            <input class="radioLaptop" id="managerOK" type="radio" name="laptop" value="Ok" checked />Yes<span
-              class="checkmark"
-            ></span>
-          </label>
-          <label class="radio">
-            <input class="radioLaptop" id="managerNo" type="radio" name="laptop" value="No" />No<span
-              class="checkmark"
-            ></span
-          ></label>
-        </div>
-        <button id="laptopFormSubmit" class="submitBtn">SUBMIT</button>
-      </form>
     </div>
 
     <!-- CAR PARK-->
