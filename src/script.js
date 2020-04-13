@@ -113,7 +113,7 @@ const keysCon = document.querySelector('#keysCon');
 const newFormKeys = document.querySelector('#newFormKeys');
 const keysList = document.querySelector('#keysList');
 const keysNav = document.querySelector('#keysNav');
-
+//form
 const keysForm = document.querySelector('#keysForm');
 const dateKeys = document.querySelector('#dateKeys');
 const keysInput1 = document.querySelector('#keysInput1');
@@ -130,13 +130,23 @@ const archK3 = document.querySelector('#archK3');
 const archiveKList = document.querySelector('#archiveKList');
 const archKClear = document.querySelector('#archKClear');
 
+//Laptop
+const laptopCon = document.querySelector('#laptopCon');
+const newFormLaptops = document.querySelector('#newFormLaptops');
+const laptopList = document.querySelector('#laptopList');
+const laptopNav = document.querySelector('#laptopNav');
+//form
+const laptopsForm = document.querySelector('#laptopsForm');
+const dateLaptop = document.querySelector('#dateLaptop');
+const laptopInput1 = document.querySelector('#laptopInput1');
+const laptopInput2 = document.querySelector('#laptopInput2');
+const laptop1 = document.querySelector('#laptop1');
+const laptop2 = document.querySelector('#laptop2');
+const laptopSignature = document.querySelector('#laptopSignature');
+
 //Children
 const childrenCon = document.querySelector('#childrenCon');
 const dateChildren = document.querySelector('#dateChildren');
-
-//Laptop
-const laptopCon = document.querySelector('#laptopCon');
-const dateLaptop = document.querySelector('#dateLaptop');
 
 //Car Park
 const carParkCon = document.querySelector('#carParkCon');
@@ -252,7 +262,7 @@ const checkedShift = () => {
   }
 };
 
-//Checks which pairs radio is checked
+//Checks which pairs radio is checked and return the text area if
 const checkedPairs = (radio1, radio2, text) => {
   if (radio1.checked) {
     return radio1.value;
@@ -648,10 +658,6 @@ keysForm.addEventListener('submit', (e) => {
     });
 
     keysForm.reset();
-
-    //back to landing screen
-    // clearScreen();
-    //initialDiv.style.display = 'block';
   }
 
   ipcRenderer.send('loadNotReturned', {
@@ -794,6 +800,165 @@ archKClear.addEventListener('click', (e) => {
   archKForm.reset();
 });
 
+//LAPTOP
+laptopBtn.addEventListener('click', (e) => {
+  clearScreen();
+  laptopCon.style.display = 'block';
+  newFormLaptops.style.display = 'block';
+  laptopNav.style.display = 'block';
+  backBtn.style.display = 'block';
+
+  ipcRenderer.send('loadNotCollected', {
+    type: 'laptop',
+  });
+});
+
+dateLaptop.textContent = dateFormat().slice(0, 10);
+
+ipcRenderer.on('loadedNotCollected', (e, docs) => {
+  if (docs) {
+    //clear old
+    laptopList.innerHTML = '';
+
+    docs.forEach((element) => {
+      displayLaptops(element, 'last');
+    });
+  }
+});
+
+laptopsForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (laptopInput2.value.length > 1 && laptopSignature.value.length > 1) {
+    ipcRenderer.send('addItem', {
+      id: Date.now(),
+      type: 'laptop',
+      date: dateFormat().slice(0, 10),
+      time: dateFormat().slice(11, 16),
+      colleagueName: laptopInput1.value,
+      serialNumber: laptopInput2.value,
+      managerInformed: laptop1.checked ? laptop1.value : laptop2.value,
+      collected: 'Not Collected',
+      signature: laptopSignature.value,
+    });
+
+    laptopsForm.reset();
+  }
+
+  ipcRenderer.send('loadNotCollected', {
+    type: 'laptop',
+  });
+});
+
+//display Keys
+displayLaptops = (sheet, page) => {
+  let li = document.createElement('li');
+  li.classList.add('forms');
+  li.classList.add('flexForm');
+
+  let dateHourDiv = document.createElement('div');
+
+  let datePast = document.createElement('p');
+  datePast.textContent = sheet.date;
+  dateHourDiv.appendChild(datePast);
+
+  let hourPast = document.createElement('span');
+  hourPast.classList.add('date');
+  hourPast.textContent = sheet.time;
+  datePast.appendChild(hourPast);
+  li.appendChild(dateHourDiv);
+
+  let leftBy = document.createElement('p');
+  leftBy.textContent = 'Colleague: ';
+  leftBy.classList.add('bold');
+  let leftByText = document.createElement('span');
+  leftByText.classList.add('hoName');
+  leftByText.textContent = sheet.colleagueName;
+  leftBy.appendChild(leftByText);
+  li.appendChild(leftBy);
+
+  let laptopN = document.createElement('p');
+  laptopN.textContent = 'Serial #: ';
+  laptopN.classList.add('bold');
+  let laptopNText = document.createElement('span');
+  laptopNText.classList.add('hoName');
+  laptopNText.textContent = sheet.serialNumber;
+  laptopN.appendChild(laptopNText);
+  li.appendChild(laptopN);
+
+  let managerIn = document.createElement('p');
+  managerIn.textContent = 'Manager informed: ';
+  managerIn.classList.add('bold');
+  let managerInText = document.createElement('span');
+  managerInText.classList.add('hoName');
+  managerInText.textContent = sheet.managerInformed;
+  managerIn.appendChild(managerInText);
+  li.appendChild(managerIn);
+
+  let collectedCheck = document.createElement('p');
+  collectedCheck.textContent = sheet.collected;
+  collectedCheck.classList.add('bold');
+  collectedCheck.classList.add('pointer');
+  if (sheet.collected === 'Collected') {
+    collectedCheck.style.color = '#76c043';
+  } else {
+    collectedCheck.style.color = 'red';
+  }
+
+  li.appendChild(collectedCheck);
+
+  let signedPast = document.createElement('p');
+  signedPast.textContent = 'Taken by: ';
+  signedPast.classList.add('bold');
+  let signedPastText = document.createElement('span');
+  signedPastText.classList.add('hoName');
+  signedPastText.textContent = sheet.signature.toUpperCase();
+  signedPast.appendChild(signedPastText);
+  li.appendChild(signedPast);
+
+  //delete btn
+  if (page === 'archive') {
+    let deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.classList.add('deleteBtn');
+    deleteBtn.classList.add('deleteBtnPatrol');
+    li.appendChild(deleteBtn);
+
+    deleteBtn.addEventListener('click', function (e) {
+      let div = deleteBtn.parentElement;
+      div.style.display = 'none';
+
+      ipcRenderer.send('deletePatrol', { sheet });
+    });
+  }
+
+  //Collected , Not collected
+  collectedCheck.addEventListener('click', () => {
+    if (collectedCheck.textContent === 'Not Collected') {
+      ipcRenderer.send('updateItemCollected', { sheet });
+      collectedCheck.textContent = 'Collected';
+      collectedCheck.style.color = '#76c043';
+      //remove the log from the page if it's returned
+      if (page === 'last') {
+        let div = collectedCheck.parentElement;
+        setTimeout(() => {
+          div.style.display = 'none';
+        }, 2000);
+      }
+    } else if (collectedCheck.textContent === 'Collected') {
+      ipcRenderer.send('updateItemNotCollected', { sheet });
+      collectedCheck.textContent = 'Not Collected';
+      collectedCheck.style.color = 'red';
+    }
+  });
+
+  if (page === 'last') {
+    laptopList.appendChild(li);
+  } else if (page === 'archive') {
+    archiveLList.appendChild(li);
+  }
+};
+
 //CHILDREN
 childrenBtn.addEventListener('click', (e) => {
   clearScreen();
@@ -802,15 +967,6 @@ childrenBtn.addEventListener('click', (e) => {
 });
 
 dateChildren.textContent = dateFormat().slice(0, 10);
-
-//LAPTOP
-laptopBtn.addEventListener('click', (e) => {
-  clearScreen();
-  laptopCon.style.display = 'block';
-  backBtn.style.display = 'block';
-});
-
-dateLaptop.textContent = dateFormat().slice(0, 10);
 
 //CARPARK
 carParkBtn.addEventListener('click', (e) => {

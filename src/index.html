@@ -402,33 +402,38 @@
 
     <!-- LAPTOP-->
     <div id="laptopCon" class="containers">
-      <p class="smallTitle">Laptop Sweep Record</p>
+      <div id="newFormLaptops">
+        <p class="smallTitle">Laptop Sweep Record</p>
 
-      <form class="forms flexForm">
-        <span id="dateLaptop" class="date"></span>
-        <input id="laptopInput1" type="text" placeholder="Colleague's Name" class="inputs" />
-        <input id="laptopInput2" type="text" placeholder="Serial Number" class="inputs" />
-        <div>
-          <span class="question">Line manager informed?</span>
+        <form id="laptopsForm" class="forms flexForm">
+          <span id="dateLaptop" class="date"></span>
+          <input id="laptopInput1" type="text" placeholder="Colleague's Name" class="inputs" />
+          <input id="laptopInput2" type="text" placeholder="Serial Number" class="inputs" />
 
-          <label class="radio">
-            <input class="radioLaptop" id="managerOK" type="radio" name="laptop" value="Ok" checked />Yes<span
-              class="checkmark"
-            ></span>
-          </label>
-          <label class="radio">
-            <input class="radioLaptop" id="managerNo" type="radio" name="laptop" value="No" />No<span
-              class="checkmark"
-            ></span
-          ></label>
+          <div>
+            <span class="question">Line manager informed?</span>
+            <label class="radio">
+              <input class="radioLaptop" id="laptop1" type="radio" name="laptop" value="Yes" checked />Yes
+              <span class="checkmark"></span>
+            </label>
+            <label class="radio">
+              <input class="radioLaptop" id="laptop2" type="radio" name="laptop" value="No" />No
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <input id="laptopSignature" type="text" placeholder="S.O. Name" class="inputs" />
+
+          <button id="laptopFormSubmit" class="submitBtn" type="submit">SUBMIT</button>
+        </form>
+
+        <p class="smallTitle">Laptops to be collected</p>
+        <ul id="laptopList" class="lists"></ul>
+
+        <div class="nav containers" id="laptopNav">
+          <button id="archLBtn" class="submitBtn">ARCHIVE</button>
         </div>
-        <input id="laptopSignature" type="text" placeholder="S.O. Name" class="inputs" />
-
-        <button id="laptopFormSubmit" class="submitBtn">SUBMIT</button>
-      </form>
-
-      <p class="smallTitle">Laptops to be collected</p>
-      <ul id="laptopList" class="lists"></ul>
+      </div>
     </div>
 
     <!-- Children-->

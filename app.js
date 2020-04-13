@@ -110,12 +110,7 @@ ipcMain.on('deletePatrol', (e, item) => {
 
 //load all not returned keys from the db
 ipcMain.on('loadNotReturned', (e, item) => {
-  db.find({
-    type: item.type,
-    $where: function () {
-      return this.returned.includes('Not Returned');
-    },
-  })
+  db.find({ returned: 'Not Returned', type: item.type })
     .sort({ id: -1 })
     .exec((err, docs) => mainWindow.webContents.send('loadedNotReturned', docs));
 });
@@ -154,4 +149,12 @@ ipcMain.on('updateItemNotReturned', (e, item) => {
     },
     {}
   );
+});
+
+//LAPTOPS
+//load all not returned keys from the db
+ipcMain.on('loadNotCollected', (e, item) => {
+  db.find({ collected: 'Not Collected', type: item.type })
+    .sort({ id: -1 })
+    .exec((err, docs) => mainWindow.webContents.send('loadedNotCollected', docs));
 });
