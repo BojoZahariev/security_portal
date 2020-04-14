@@ -248,30 +248,15 @@ textarea {
   margin: 10px auto;
 }
 
-#archHo1,
-#archHo2,
-#archP1,
-#archP2,
-#archK1,
-#archK2 {
+.calendar {
   background: #f1faee url(images/calendar.png) 97% 50% no-repeat;
 }
 
-#archHo1::-webkit-inner-spin-button,
-#archHo2::-webkit-inner-spin-button,
-#archP1::-webkit-inner-spin-button,
-#archP2::-webkit-inner-spin-button,
-#archK1::-webkit-inner-spin-button,
-#archK2::-webkit-inner-spin-button {
+.calendar::-webkit-inner-spin-button {
   display: none;
 }
 
-#archHo1::-webkit-calendar-picker-indicator,
-#archHo2::-webkit-calendar-picker-indicator,
-#archP1::-webkit-calendar-picker-indicator,
-#archP2::-webkit-calendar-picker-indicator,
-#archK1::-webkit-calendar-picker-indicator,
-#archK2::-webkit-calendar-picker-indicator {
+.calendar::-webkit-calendar-picker-indicator {
   opacity: 0;
   width: 20px;
 }

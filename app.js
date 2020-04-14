@@ -72,7 +72,7 @@ ipcMain.on('deleteHo', (e, item) => {
   });
 });
 
-//FIND handover,patrol
+//FIND handover,patrol,keys,laptops
 ipcMain.on('findSheet', (e, item) => {
   //date only
   if (item.searchDate !== '//' && item.month === '/') {
@@ -90,12 +90,12 @@ ipcMain.on('findSheet', (e, item) => {
       .sort({ id: -1 })
       .exec((err, docs) => mainWindow.webContents.send('found', docs));
     //key number
-  } else if (item.key !== '' && item.month === '/' && item.searchDate === '//') {
+  } else if (item.type === 'keys' && item.key !== '' && item.month === '/' && item.searchDate === '//') {
     db.find({ keyNumber: item.key, type: item.type })
       .sort({ id: -1 })
       .exec((err, docs) => mainWindow.webContents.send('found', docs));
     //serial number
-  } else if (item.serial !== '' && item.month === '/' && item.searchDate === '//') {
+  } else if (item.type === 'laptop' && item.serial !== '' && item.month === '/' && item.searchDate === '//') {
     db.find({ serialNumber: item.serial, type: item.type })
       .sort({ id: -1 })
       .exec((err, docs) => mainWindow.webContents.send('found', docs));

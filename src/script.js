@@ -986,6 +986,8 @@ archLForm.addEventListener('submit', (e) => {
   let searchDate = `${archL1.value.slice(8, 10)}/${archL1.value.slice(5, 7)}/${archL1.value.slice(0, 4)}`;
   let month = `${archL2.value.slice(5, 7)}/${archL2.value.slice(0, 4)}`;
   let serial = archL3.value;
+
+  console.log(archL3.value);
   //clear the page
   archiveLList.innerHTML = '';
 
