@@ -158,3 +158,40 @@ ipcMain.on('loadNotCollected', (e, item) => {
     .sort({ id: -1 })
     .exec((err, docs) => mainWindow.webContents.send('loadedNotCollected', docs));
 });
+
+//update collected
+ipcMain.on('updateItemCollected', (e, item) => {
+  db.update(
+    { id: item.sheet.id, type: item.sheet.type },
+    {
+      id: item.sheet.id,
+      type: 'laptop',
+      date: item.sheet.date,
+      time: item.sheet.time,
+      colleagueName: item.sheet.colleagueName,
+      serialNumber: item.sheet.serialNumber,
+      managerInformed: item.sheet.managerInformed,
+      collected: 'Collected',
+      signature: item.sheet.signature,
+    },
+    {}
+  );
+});
+
+ipcMain.on('updateItemNotCollected', (e, item) => {
+  db.update(
+    { id: item.sheet.id, type: item.sheet.type },
+    {
+      id: item.sheet.id,
+      type: 'laptop',
+      date: item.sheet.date,
+      time: item.sheet.time,
+      colleagueName: item.sheet.colleagueName,
+      serialNumber: item.sheet.serialNumber,
+      managerInformed: item.sheet.managerInformed,
+      collected: 'Not Collected',
+      signature: item.sheet.signature,
+    },
+    {}
+  );
+});
