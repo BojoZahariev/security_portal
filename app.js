@@ -94,6 +94,11 @@ ipcMain.on('findSheet', (e, item) => {
     db.find({ keyNumber: item.key, type: item.type })
       .sort({ id: -1 })
       .exec((err, docs) => mainWindow.webContents.send('found', docs));
+    //serial number
+  } else if (item.serial !== '' && item.month === '/' && item.searchDate === '//') {
+    db.find({ serialNumber: item.serial, type: item.type })
+      .sort({ id: -1 })
+      .exec((err, docs) => mainWindow.webContents.send('found', docs));
   }
 });
 
@@ -178,6 +183,7 @@ ipcMain.on('updateItemCollected', (e, item) => {
   );
 });
 
+//update not collected
 ipcMain.on('updateItemNotCollected', (e, item) => {
   db.update(
     { id: item.sheet.id, type: item.sheet.type },

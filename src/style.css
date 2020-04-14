@@ -467,10 +467,6 @@ textarea {
 
 /*KEYS*/
 
-#keysCon {
-  text-align: center;
-}
-
 .smallInputs {
   width: 100px;
 }
@@ -480,3 +476,10 @@ textarea {
 }
 
 /*LAPTOP*/
+.containers {
+  text-align: center;
+}
+
+.archLForm {
+  padding: 10px;
+}

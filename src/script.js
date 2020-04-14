@@ -144,6 +144,16 @@ const laptop1 = document.querySelector('#laptop1');
 const laptop2 = document.querySelector('#laptop2');
 const laptopSignature = document.querySelector('#laptopSignature');
 
+//Archive laptops
+const archLBtn = document.querySelector('#archLBtn');
+const laptopArchCon = document.querySelector('#laptopArchCon');
+const archLForm = document.querySelector('#archLForm');
+const archL1 = document.querySelector('#archL1');
+const archL2 = document.querySelector('#archL2');
+const archL3 = document.querySelector('#archL3');
+const archiveLList = document.querySelector('#archiveLList');
+const archLClear = document.querySelector('#archLClear');
+
 //Children
 const childrenCon = document.querySelector('#childrenCon');
 const dateChildren = document.querySelector('#dateChildren');
@@ -959,6 +969,43 @@ displayLaptops = (sheet, page) => {
   }
 };
 
+//keys Archive btn
+archLBtn.addEventListener('click', (e) => {
+  clearScreen();
+  laptopCon.style.display = 'block';
+  laptopArchCon.style.display = 'block';
+  newFormLaptops.style.display = 'none';
+
+  backBtn.style.display = 'block';
+});
+
+//archive keys submit and send to db
+archLForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let searchDate = `${archL1.value.slice(8, 10)}/${archL1.value.slice(5, 7)}/${archL1.value.slice(0, 4)}`;
+  let month = `${archL2.value.slice(5, 7)}/${archL2.value.slice(0, 4)}`;
+  let serial = archL3.value;
+  //clear the page
+  archiveLList.innerHTML = '';
+
+  //send request to the db
+  ipcRenderer.send('findSheet', {
+    type: 'laptop',
+    searchDate,
+    month,
+    serial,
+  });
+});
+
+//clear the form and reset btn
+archLClear.addEventListener('click', (e) => {
+  //clear the page
+  archiveLList.innerHTML = '';
+  //reset the input
+  archLForm.reset();
+});
+
 //CHILDREN
 childrenBtn.addEventListener('click', (e) => {
   clearScreen();
@@ -1004,6 +1051,8 @@ ipcRenderer.on('found', (e, docs) => {
       displayPatrols(element, 'archive');
     } else if (element.type === 'keys') {
       displayKeys(element, 'archive');
+    } else if (element.type === 'laptop') {
+      displayLaptops(element, 'archive');
     }
   });
 });
