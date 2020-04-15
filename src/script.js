@@ -951,6 +951,8 @@ displayLaptops = (sheet, page) => {
       //remove the log from the page if it's returned
       if (page === 'last') {
         let div = collectedCheck.parentElement;
+        div.classList.add('anime');
+
         setTimeout(() => {
           div.style.display = 'none';
         }, 2000);

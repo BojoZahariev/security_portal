@@ -469,3 +469,24 @@ textarea {
 .archLForm {
   padding: 10px;
 }
+
+.anime {
+  animation-name: myAnimation;
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes myAnimation {
+  0% {
+    opacity: 1;
+    transform: rotateX(90deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+}
