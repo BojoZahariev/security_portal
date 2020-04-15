@@ -1,67 +1,38 @@
-{"colleagueName":"fdfdf","collected":"Not Collected","date":"15/04/2020","id":1586939761853,"managerInformed":"Yes","serialNumber":"55555","signature":"jjjj","time":"09:36","type":"laptop","_id":"3qbodvk9SMCKtIa3"}
 {"id":1586768214007,"type":"laptop","date":"13/04/2020","time":"09:56","colleagueName":"rrrr","serialNumber":"55656565665","managerInformed":"No","collected":"Collected","signature":"bojo","_id":"3xfBOrerSeHT308j"}
-{"id":1586938771296,"type":"laptop","date":"15/04/2020","time":"09:19","colleagueName":"ererere","serialNumber":"65656565656","managerInformed":"Yes","collected":"Collected","signature":"uuuuuuuuuuu","_id":"4lawo1BpiQDmzw0h"}
 {"date":"08/04/2020","id":1586329160999,"problems":"Everything Ok","signature":"bojo","time":"07:59","type":"patrol","_id":"5PGZ2E8bvgwWkvBu"}
-{"id":1586938740865,"type":"laptop","date":"15/04/2020","time":"09:19","colleagueName":"erere","serialNumber":"444","managerInformed":"No","collected":"Collected","signature":"ggg","_id":"99IKD07BNP71YY2y"}
-{"id":1586939661478,"type":"laptop","date":"15/04/2020","time":"09:34","colleagueName":"ererer","serialNumber":"2222","managerInformed":"Yes","collected":"Collected","signature":"trtr","_id":"BCMphSyuZiAM5lR2"}
 {"date":"15/04/2020","id":1586938092100,"keyNumber":"32","returned":"Not Returned","signature":"bojo","takenBy":"fffgfggf","time":"09:08","type":"keys","_id":"BT2OIVCCZ0WDkyuj"}
 {"date":"10/04/2020","id":1586512915603,"problems":"Everything Ok","signature":"bojo","time":"11:01","type":"patrol","_id":"CoNDcKap8OAaPUam"}
-{"id":1586939285445,"type":"laptop","date":"15/04/2020","time":"09:28","colleagueName":"dfdff","serialNumber":"454554","managerInformed":"Yes","collected":"Collected","signature":"dfdf","_id":"FtmkwlPvzrrmfnhI"}
 {"id":1586515012987,"type":"keys","date":"10/04/2020","time":"11:36","takenBy":"ddddddddddddddddd","keyNumber":"33","returned":"Returned","signature":"jjjjjjjjjjjjjjjjjjjjjjjjj","_id":"G2pdbRAu94t98yGe"}
 {"date":"13/04/2020","id":1586764030664,"problems":"Everything Ok","signature":"bojo","time":"08:47","type":"patrol","_id":"GODywTstlUMvz1bS"}
 {"date":"10/04/2020","id":1586512543111,"problems":"Everything Ok","signature":"aaaaaa","time":"10:55","type":"patrol","_id":"L4w6n5MyJ8f9Xn7a"}
 {"id":1586767993543,"type":"laptop","date":"13/04/2020","time":"09:53","colleagueName":"ddd","serialNumber":"dddddd","managerInformed":"No","collected":"Collected","signature":"bojo","_id":"LbzuEcAex4RM5248"}
 {"id":1586764598865,"type":"keys","date":"13/04/2020","time":"08:56","takenBy":"rrr","keyNumber":"6","returned":"Returned","signature":"iiii","_id":"MZRmBnvHeebX7kHs"}
-{"id":1586423701188,"type":"keys","date":"09/04/2020","time":"10:15","takenBy":"wwwww","keyNumber":"3","returned":"Returned","signature":"bojo","_id":"Nqdj5boDYqa5V34t"}
-{"date":"06/04/2020","id":1586164349012,"problems":" wwwwwwww ffwfwfwffwfwfw fdfdfd       ","signature":"bojo","time":"10:12","type":"patrol","_id":"Peu7uawExuJB1N9r"}
 {"id":1586768385534,"type":"laptop","date":"13/04/2020","time":"09:59","colleagueName":"hhhhh","serialNumber":"788788778878778","managerInformed":"Yes","collected":"Collected","signature":"nnnn","_id":"PqtCwz9Ofi5dAePi"}
-{"id":1586512503838,"type":"keys","date":"10/04/2020","time":"10:55","takenBy":"cccc","keyNumber":"2","returned":"Returned","signature":"vvvvv","_id":"Ro4KEBADB2os2pNU"}
 {"date":"10/04/2020","id":1586505187620,"problems":"Everything Ok","signature":"bojo","time":"08:53","type":"patrol","_id":"SLKSPMxLrHY7JuEi"}
 {"date":"09/04/2020","id":1586419171184,"problems":"fgfgfgggffggffgfggfgfgfg fgfgfg","signature":"bojo","time":"08:59","type":"patrol","_id":"V4PITVoqDN7imrmt"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"kkkkkkk,kkkkkk","comms":"None","date":"08/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1586329089723,"inBarrs":"Normal","incidents":"Door left open.","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"XntPxxNbLR9H4Rr1"}
 {"id":1586424240155,"type":"keys","date":"09/04/2020","time":"10:24","takenBy":"rrrrrr","keyNumber":"1","returned":"Returned","signature":"yyyyy","_id":"Z4QXbU9mItecsXme"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"fffffff/hhhh","comms":"None","date":"13/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1586763984598,"inBarrs":"Normal","incidents":"13.04","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"bBpqsfaUJvPZVyDS"}
-{"id":1586938712589,"type":"laptop","date":"15/04/2020","time":"09:18","colleagueName":"errer","serialNumber":"56565","managerInformed":"Yes","collected":"Collected","signature":"jhj","_id":"bVSWc1tABR6ACkIJ"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"asassasas","comms":"None","date":"14/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1586850063045,"inBarrs":"Normal","incidents":"14.04","keys":"Yes","shift":"Early","signature":"bojo","type":"handover","_id":"be6zKNKN4QGGDKrz"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"eee","comms":"None","date":"03/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1585909639284,"inBarrs":"Normal","incidents":"1","keys":"Yes","shift":"Late","signature":"eee","type":"handover","_id":"cEhX2sORWtes7Nd7"}
 {"date":"13/04/2020","id":1586763999617,"problems":"ttttttt","signature":"bojo","time":"08:46","type":"patrol","_id":"dEQEnRrJYMxkbowH"}
 {"id":1586858589238,"type":"laptop","date":"14/04/2020","time":"11:03","colleagueName":"vvvvv","serialNumber":"44","managerInformed":"Yes","collected":"Collected","signature":"bojo","_id":"dSoYsYRjIr8mM49r"}
 {"date":"07/04/2020","id":1586254929195,"problems":"Everything Ok","signature":"bojo","time":"11:22","type":"patrol","_id":"eHGJ7he9xwOXIeAK"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"wwwww , rrrrrr","comms":"None","date":"10/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1586505181948,"inBarrs":"Normal","incidents":"10.04","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"epd4SvEjE2hxOkeC"}
-{"id":1586939608994,"type":"laptop","date":"15/04/2020","time":"09:33","colleagueName":"errer","serialNumber":"777777","managerInformed":"Yes","collected":"Collected","signature":"hghg","_id":"ftfE4HQ0gXK8Dlq7"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"bbvbvbvbvvbvb","comms":"None","date":"15/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1586938065897,"inBarrs":"Normal","incidents":"15.04","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"g3CWKwjAuH2WnrqI"}
 {"id":1586851441982,"type":"laptop","date":"14/04/2020","time":"09:04","colleagueName":"rrrrrrr","serialNumber":"6666666666666","managerInformed":"Yes","collected":"Collected","signature":"bojo","_id":"gHmWoVHoABrymuqU"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"vvvvvv, nnnnnnnn","comms":"None","date":"09/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1586419144793,"inBarrs":"Normal","incidents":"9.04","keys":"Yes","shift":"Full Day","signature":"bojo","type":"handover","_id":"ghX1YzQwaUl1hcjN"}
-{"id":1586938787748,"type":"laptop","date":"15/04/2020","time":"09:19","colleagueName":"eeeeeeeeeeeeeeeee","serialNumber":"333333333333333333","managerInformed":"Yes","collected":"Collected","signature":"ttttttttttttttttt","_id":"iBDqeJwoFEvzkSkj"}
 {"id":1586858454841,"type":"laptop","date":"14/04/2020","time":"11:00","colleagueName":"ff","serialNumber":"888","managerInformed":"Yes","collected":"Collected","signature":"bojo","_id":"kRrhNkQdGWNcWgUv"}
-{"date":"14/04/2020","id":1586850090356,"keyNumber":"9","returned":"Not Returned","signature":"bojo","takenBy":"erereree","time":"08:41","type":"keys","_id":"ktggjbd0GiNwUG7n"}
+{"id":1586850090356,"type":"keys","date":"14/04/2020","time":"08:41","takenBy":"erereree","keyNumber":"9","returned":"Returned","signature":"bojo","_id":"ktggjbd0GiNwUG7n"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"gggggggg, hhhhhhhh","comms":"None","date":"06/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1586159162357,"inBarrs":"Normal","incidents":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.","keys":"Yes","shift":"Early","signature":"bojo","type":"handover","_id":"m2Mom7rcolUldsI2"}
 {"date":"15/04/2020","id":1586938072500,"problems":"Everything Ok","signature":"bojo","time":"09:07","type":"patrol","_id":"msGVuNOzceL0aA0H"}
+{"id":1586940246341,"type":"laptop","date":"15/04/2020","time":"09:44","colleagueName":"dfdfdf","serialNumber":"555","managerInformed":"Yes","collected":"Collected","signature":"hhh","_id":"n2SJ9QOf3bY3dh10"}
 {"id":1586768710203,"type":"laptop","date":"13/04/2020","time":"10:05","colleagueName":"ddddddddddddd","serialNumber":"5555555555555555","managerInformed":"No","collected":"Collected","signature":"bojo","_id":"pe9bSAZHolOntnT7"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"ffff","comms":"None","date":"03/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1585912487611,"inBarrs":"Normal","incidents":"2","keys":"Yes","shift":"Late","signature":"vvvvv","type":"handover","_id":"r0ovsgLlyf2wYkw2"}
-{"id":1586764061249,"type":"keys","date":"13/04/2020","time":"08:47","takenBy":"tttttt","keyNumber":"32","returned":"Returned","signature":"uuuuu","_id":"s3niLu1iCYYMOTuP"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"ddddd","comms":"None","date":"07/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1586250753140,"inBarrs":"Normal","incidents":"7.04 10.16","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"smJ8au4sY9KiZVuZ"}
 {"id":1586512404067,"type":"keys","date":"10/04/2020","time":"10:53","takenBy":"ttttt","keyNumber":"67","returned":"Returned","signature":"yyyyyy","_id":"uJscOScNgSUVrMXF"}
 {"date":"14/04/2020","id":1586850077048,"problems":"Everything Ok","signature":"bojo","time":"08:41","type":"patrol","_id":"uoN9H8LCojELIJgp"}
-{"id":1586505209436,"type":"keys","date":"10/04/2020","time":"08:53","takenBy":"fffff","keyNumber":"12","returned":"Returned","signature":"hhhhhhh","_id":"uxIdlgKroHdhVngh"}
 {"id":1586768197983,"type":"keys","date":"13/04/2020","time":"09:56","takenBy":"ffff","keyNumber":"13","returned":"Returned","signature":"yyyyy","_id":"zGdF9hSHQ3xNexoj"}
-{"id":1586939761853,"type":"laptop","date":"15/04/2020","time":"09:36","colleagueName":"fdfdf","serialNumber":"55555","managerInformed":"Yes","collected":"Collected","signature":"jjjj","_id":"3qbodvk9SMCKtIa3"}
-{"$$deleted":true,"_id":"bVSWc1tABR6ACkIJ"}
-{"$$deleted":true,"_id":"99IKD07BNP71YY2y"}
-{"$$deleted":true,"_id":"4lawo1BpiQDmzw0h"}
-{"$$deleted":true,"_id":"iBDqeJwoFEvzkSkj"}
-{"$$deleted":true,"_id":"FtmkwlPvzrrmfnhI"}
-{"$$deleted":true,"_id":"ftfE4HQ0gXK8Dlq7"}
-{"$$deleted":true,"_id":"BCMphSyuZiAM5lR2"}
-{"colleagueName":"ereer","collected":"Not Collected","date":"15/04/2020","id":1586939981081,"managerInformed":"No","serialNumber":"44444","signature":"ttt","time":"09:39","type":"laptop","_id":"rHuniwTSVg8i6Afm"}
-{"id":1586939981081,"type":"laptop","date":"15/04/2020","time":"09:39","colleagueName":"ereer","serialNumber":"44444","managerInformed":"No","collected":"Collected","signature":"ttt","_id":"rHuniwTSVg8i6Afm"}
-{"id":1586939761853,"type":"laptop","date":"15/04/2020","time":"09:36","colleagueName":"fdfdf","serialNumber":"55555","managerInformed":"Yes","collected":"Not Collected","signature":"jjjj","_id":"3qbodvk9SMCKtIa3"}
-{"id":1586939761853,"type":"laptop","date":"15/04/2020","time":"09:36","colleagueName":"fdfdf","serialNumber":"55555","managerInformed":"Yes","collected":"Collected","signature":"jjjj","_id":"3qbodvk9SMCKtIa3"}
-{"id":1586939761853,"type":"laptop","date":"15/04/2020","time":"09:36","colleagueName":"fdfdf","serialNumber":"55555","managerInformed":"Yes","collected":"Not Collected","signature":"jjjj","_id":"3qbodvk9SMCKtIa3"}
-{"$$deleted":true,"_id":"3qbodvk9SMCKtIa3"}
-{"colleagueName":"rrrrrrr","collected":"Not Collected","date":"15/04/2020","id":1586940022904,"managerInformed":"No","serialNumber":"33333","signature":"gggg","time":"09:40","type":"laptop","_id":"OkkSY3f2RyrWZJng"}
-{"colleagueName":"dfdfdf","collected":"Not Collected","date":"15/04/2020","id":1586940246341,"managerInformed":"Yes","serialNumber":"555","signature":"hhh","time":"09:44","type":"laptop","_id":"n2SJ9QOf3bY3dh10"}
-{"id":1586940022904,"type":"laptop","date":"15/04/2020","time":"09:40","colleagueName":"rrrrrrr","serialNumber":"33333","managerInformed":"No","collected":"Collected","signature":"gggg","_id":"OkkSY3f2RyrWZJng"}
-{"$$deleted":true,"_id":"rHuniwTSVg8i6Afm"}
-{"$$deleted":true,"_id":"OkkSY3f2RyrWZJng"}
-{"id":1586940246341,"type":"laptop","date":"15/04/2020","time":"09:44","colleagueName":"dfdfdf","serialNumber":"555","managerInformed":"Yes","collected":"Collected","signature":"hhh","_id":"n2SJ9QOf3bY3dh10"}
+{"$$deleted":true,"_id":"SLKSPMxLrHY7JuEi"}
+{"$$deleted":true,"_id":"L4w6n5MyJ8f9Xn7a"}
+{"$$deleted":true,"_id":"dEQEnRrJYMxkbowH"}

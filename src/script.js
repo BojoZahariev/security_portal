@@ -578,7 +578,11 @@ displayPatrols = (sheet, page) => {
 
     deleteBtn.addEventListener('click', function (e) {
       let div = deleteBtn.parentElement;
-      div.style.display = 'none';
+      div.classList.add('anime');
+
+      setTimeout(() => {
+        div.style.display = 'none';
+      }, 2000);
 
       ipcRenderer.send('deletePatrol', { sheet });
     });
@@ -742,7 +746,11 @@ displayKeys = (sheet, page) => {
 
     deleteBtn.addEventListener('click', function (e) {
       let div = deleteBtn.parentElement;
-      div.style.display = 'none';
+      div.classList.add('anime');
+
+      setTimeout(() => {
+        div.style.display = 'none';
+      }, 2000);
 
       ipcRenderer.send('deletePatrol', { sheet });
     });
@@ -757,7 +765,11 @@ displayKeys = (sheet, page) => {
       //remove the log from the page if it's returned
       if (page === 'last') {
         let div = returnedCheck.parentElement;
-        div.style.display = 'none';
+        div.classList.add('anime');
+
+        setTimeout(() => {
+          div.style.display = 'none';
+        }, 2000);
       }
     } else if (returnedCheck.textContent === 'Returned') {
       ipcRenderer.send('updateItemNotReturned', { sheet });
@@ -860,7 +872,7 @@ laptopsForm.addEventListener('submit', (e) => {
   });
 });
 
-//display Keys
+//display laptops
 displayLaptops = (sheet, page) => {
   let li = document.createElement('li');
   li.classList.add('forms');
