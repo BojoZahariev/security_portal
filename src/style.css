@@ -490,3 +490,9 @@ textarea {
     transform: rotateX(90deg);
   }
 }
+
+/*CHILDREN*/
+
+#newFormChildren {
+  text-align: left;
+}
