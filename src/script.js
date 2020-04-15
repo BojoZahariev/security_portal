@@ -936,7 +936,11 @@ displayLaptops = (sheet, page) => {
 
     deleteBtn.addEventListener('click', function (e) {
       let div = deleteBtn.parentElement;
-      div.style.display = 'none';
+      div.classList.add('anime');
+
+      setTimeout(() => {
+        div.style.display = 'none';
+      }, 2000);
 
       ipcRenderer.send('deletePatrol', { sheet });
     });
