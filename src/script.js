@@ -176,7 +176,7 @@ const archCh1 = document.querySelector('#archCh1');
 const archCh2 = document.querySelector('#archCh2');
 
 const archiveChList = document.querySelector('#archiveChList');
-const archChClear = document.querySelector('#archLChClear');
+const archChClear = document.querySelector('#archChClear');
 
 //Car Park
 const carParkCon = document.querySelector('#carParkCon');
@@ -1076,6 +1076,7 @@ childrenForm.addEventListener('submit', (e) => {
     });
 
     childrenForm.reset();
+    childrenFormDrop.style.display = 'none';
   }
 });
 
@@ -1147,6 +1148,31 @@ archChBtn.addEventListener('click', (e) => {
   backBtn.style.display = 'block';
 });
 
+//archive children submit and send to db
+archChForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let searchDate = `${archCh1.value.slice(8, 10)}/${archCh1.value.slice(5, 7)}/${archCh1.value.slice(0, 4)}`;
+  let month = `${archCh2.value.slice(5, 7)}/${archCh2.value.slice(0, 4)}`;
+  //clear the page
+  archiveChList.innerHTML = '';
+
+  //send request to the db
+  ipcRenderer.send('findSheet', {
+    type: 'children',
+    searchDate,
+    month,
+  });
+});
+
+//clear the form and reset btn
+archChClear.addEventListener('click', (e) => {
+  //clear the page
+  archiveChList.innerHTML = '';
+  //reset the input
+  archChForm.reset();
+});
+
 //CARPARK
 carParkBtn.addEventListener('click', (e) => {
   clearScreen();
@@ -1185,6 +1211,8 @@ ipcRenderer.on('found', (e, docs) => {
       displayKeys(element, 'archive');
     } else if (element.type === 'laptop') {
       displayLaptops(element, 'archive');
+    } else if (element.type === 'children') {
+      displayChildren(element);
     }
   });
 });
