@@ -156,7 +156,17 @@ const archLClear = document.querySelector('#archLClear');
 
 //Children
 const childrenCon = document.querySelector('#childrenCon');
+const newFormChildren = document.querySelector('#newFormChildren');
+const childrenNav = document.querySelector('#childrenNav');
+
+//form
+const childrenForm = document.querySelector('#childrenForm');
+const childrenFormDrop = document.querySelector('#childrenFormDrop');
 const dateChildren = document.querySelector('#dateChildren');
+const childrenInput1 = document.querySelector('#childrenInput1');
+const childrenInput2 = document.querySelector('#childrenInput2');
+const children1 = document.querySelector('#children1');
+const children2 = document.querySelector('#children2');
 
 //Car Park
 const carParkCon = document.querySelector('#carParkCon');
@@ -1030,6 +1040,8 @@ archLClear.addEventListener('click', (e) => {
 childrenBtn.addEventListener('click', (e) => {
   clearScreen();
   childrenCon.style.display = 'block';
+  newFormChildren.style.display = 'block';
+  childrenNav.style.display = 'block';
   backBtn.style.display = 'block';
 });
 

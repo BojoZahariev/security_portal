@@ -513,25 +513,28 @@
         </ol>
 
         <form id="childrenForm" class="forms">
-          <div class="noFlex">
+          <div>
             <p class="question">
               I confirm that i have read and understood the points outlined above and the Children visiting the
               Workplace policy. I accept that I will be responsible at all times for the child I am supervising.
             </p>
             <label class="radio">
-              <input class="radioLaptop" id="laptop1" type="radio" name="laptop" value="No" checked />No
+              <input class="radioChildren" id="children1" type="radio" name="children" value="Yes" checked />No
               <span class="checkmark"></span>
             </label>
             <label class="radio">
-              <input class="radioLaptop" id="laptop2" type="radio" name="laptop" value="Yes" />Yes
+              <input class="radioChildren" id="children2" type="radio" name="children" value="No" />Yes
               <span class="checkmark"></span>
             </label>
           </div>
-          <span id="dateChildren" class="date"></span>
-          <input id="children1" type="text" placeholder="Name" class="inputs" />
-          <input id="children2" type="text" placeholder="S.O Name" class="inputs" />
 
-          <button id="childrenFormSubmit" class="submitBtn" type="submit">SUBMIT</button>
+          <div id="childrenFormDrop">
+            <span id="dateChildren" class="date"></span>
+            <input id="childrenInput1" type="text" placeholder="Name" class="inputs" />
+            <input id="childrenInput2" type="text" placeholder="S.O Name" class="inputs" />
+
+            <button id="childrenFormSubmit" class="submitBtn" type="submit">SUBMIT</button>
+          </div>
         </form>
 
         <p>Last Updated: August 2018</p>
@@ -539,6 +542,10 @@
           Retention Period: 3 years for over 18's or 3 years post the date of 18th birthday for under 18's. This is for
           claim purposes.
         </p>
+
+        <div class="nav containers" id="childrenNav">
+          <button id="archChBtn" class="submitBtn">ARCHIVE</button>
+        </div>
       </div>
     </div>
 
