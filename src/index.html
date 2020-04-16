@@ -512,15 +512,26 @@
           </li>
         </ol>
 
-        <p>
-          I confirm that i have read and understood the points outlined above and the Children visiting the Workplace
-          policy. I accept that I will be responsible at all times for the child I am supervising.
-        </p>
-        <form class="flexForm">
+        <form id="childrenForm" class="forms">
+          <div class="noFlex">
+            <p class="question">
+              I confirm that i have read and understood the points outlined above and the Children visiting the
+              Workplace policy. I accept that I will be responsible at all times for the child I am supervising.
+            </p>
+            <label class="radio">
+              <input class="radioLaptop" id="laptop1" type="radio" name="laptop" value="No" checked />No
+              <span class="checkmark"></span>
+            </label>
+            <label class="radio">
+              <input class="radioLaptop" id="laptop2" type="radio" name="laptop" value="Yes" />Yes
+              <span class="checkmark"></span>
+            </label>
+          </div>
           <span id="dateChildren" class="date"></span>
-          <input id="inputChildren" type="text" placeholder="Name" class="inputs" />
+          <input id="children1" type="text" placeholder="Name" class="inputs" />
+          <input id="children2" type="text" placeholder="S.O Name" class="inputs" />
 
-          <button id="childrenFormSubmit" class="submitBtn">SUBMIT</button>
+          <button id="childrenFormSubmit" class="submitBtn" type="submit">SUBMIT</button>
         </form>
 
         <p>Last Updated: August 2018</p>
