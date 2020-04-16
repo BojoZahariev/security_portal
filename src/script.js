@@ -168,6 +168,16 @@ const childrenInput2 = document.querySelector('#childrenInput2');
 const children1 = document.querySelector('#children1');
 const children2 = document.querySelector('#children2');
 
+//Archive Children
+const archChBtn = document.querySelector('#archChBtn');
+const childrenArchCon = document.querySelector('#childrenArchCon');
+const archChForm = document.querySelector('#archChForm');
+const archCh1 = document.querySelector('#archCh1');
+const archCh2 = document.querySelector('#archCh2');
+
+const archiveChList = document.querySelector('#archiveChList');
+const archChClear = document.querySelector('#archLChClear');
+
 //Car Park
 const carParkCon = document.querySelector('#carParkCon');
 const dateCarPark = document.querySelector('#dateCarPark');
@@ -1039,6 +1049,8 @@ archLClear.addEventListener('click', (e) => {
 //CHILDREN
 childrenBtn.addEventListener('click', (e) => {
   clearScreen();
+  childrenForm.reset();
+  childrenFormDrop.style.display = 'none';
   childrenCon.style.display = 'block';
   newFormChildren.style.display = 'block';
   childrenNav.style.display = 'block';
@@ -1046,6 +1058,94 @@ childrenBtn.addEventListener('click', (e) => {
 });
 
 dateChildren.textContent = dateFormat().slice(0, 10);
+
+const radiosChildren = document.getElementsByClassName('radioChildren');
+displayTextArea(radiosChildren, childrenFormDrop);
+
+childrenForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (childrenInput1.value.length > 1 && childrenInput2.value.length > 1) {
+    ipcRenderer.send('addItem', {
+      id: Date.now(),
+      type: 'children',
+      date: dateFormat().slice(0, 10),
+      time: dateFormat().slice(11, 16),
+      colleagueSignature: childrenInput1.value,
+      securitySignature: childrenInput2.value,
+    });
+
+    childrenForm.reset();
+  }
+});
+
+//display children
+displayChildren = (sheet) => {
+  let li = document.createElement('li');
+  li.classList.add('forms');
+  li.classList.add('flexForm');
+
+  let dateHourDiv = document.createElement('div');
+
+  let datePast = document.createElement('p');
+  datePast.textContent = sheet.date;
+  dateHourDiv.appendChild(datePast);
+
+  let hourPast = document.createElement('span');
+  hourPast.classList.add('date');
+  hourPast.textContent = sheet.time;
+  datePast.appendChild(hourPast);
+  li.appendChild(dateHourDiv);
+
+  let signedBy = document.createElement('p');
+  signedBy.textContent = 'Colleague: ';
+  signedBy.classList.add('bold');
+  let signedByText = document.createElement('span');
+  signedByText.classList.add('hoName');
+  signedByText.textContent = sheet.colleagueSignature;
+  signedBy.appendChild(signedByText);
+  li.appendChild(signedBy);
+
+  let signedPast = document.createElement('p');
+  signedPast.textContent = 'Security Officer: ';
+  signedPast.classList.add('bold');
+  let signedPastText = document.createElement('span');
+  signedPastText.classList.add('hoName');
+  signedPastText.textContent = sheet.securitySignature;
+  signedPast.appendChild(signedPastText);
+  li.appendChild(signedPast);
+
+  //delete btn
+
+  let deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Delete';
+  deleteBtn.classList.add('deleteBtn');
+  deleteBtn.classList.add('deleteBtnPatrol');
+  li.appendChild(deleteBtn);
+
+  deleteBtn.addEventListener('click', function (e) {
+    let div = deleteBtn.parentElement;
+    div.classList.add('anime');
+
+    setTimeout(() => {
+      div.style.display = 'none';
+    }, 2000);
+
+    ipcRenderer.send('deletePatrol', { sheet });
+  });
+
+  archiveChList.appendChild(li);
+};
+
+//children Archive btn
+archChBtn.addEventListener('click', (e) => {
+  clearScreen();
+  childrenCon.style.display = 'block';
+  childrenArchCon.style.display = 'block';
+  newFormChildren.style.display = 'none';
+
+  backBtn.style.display = 'block';
+});
 
 //CARPARK
 carParkBtn.addEventListener('click', (e) => {
