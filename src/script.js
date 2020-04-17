@@ -570,12 +570,13 @@ patrolForm.addEventListener('submit', (e) => {
     //close the textarea
     textPatrol.style.display = 'none';
 
-    //back to landing screen
-    //clearScreen();
-    //initialDiv.style.display = 'block';
     ipcRenderer.send('loadLast', {
       type: 'patrol',
     });
+
+    messageSubmit('success');
+  } else {
+    messageSubmit('fail');
   }
 });
 
@@ -718,11 +719,15 @@ keysForm.addEventListener('submit', (e) => {
     });
 
     keysForm.reset();
-  }
 
-  ipcRenderer.send('loadNotReturned', {
-    type: 'keys',
-  });
+    ipcRenderer.send('loadNotReturned', {
+      type: 'keys',
+    });
+
+    messageSubmit('success');
+  } else {
+    messageSubmit('fail');
+  }
 });
 
 //display Keys
@@ -911,11 +916,15 @@ laptopsForm.addEventListener('submit', (e) => {
     });
 
     laptopsForm.reset();
-  }
 
-  ipcRenderer.send('loadNotCollected', {
-    type: 'laptop',
-  });
+    ipcRenderer.send('loadNotCollected', {
+      type: 'laptop',
+    });
+
+    messageSubmit('success');
+  } else {
+    messageSubmit('fail');
+  }
 });
 
 //display laptops
@@ -1103,6 +1112,10 @@ childrenForm.addEventListener('submit', (e) => {
 
     childrenForm.reset();
     childrenFormDrop.style.display = 'none';
+
+    messageSubmit('success');
+  } else {
+    messageSubmit('fail');
   }
 });
 
