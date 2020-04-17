@@ -182,6 +182,10 @@ const archChClear = document.querySelector('#archChClear');
 const carParkCon = document.querySelector('#carParkCon');
 const dateCarPark = document.querySelector('#dateCarPark');
 
+//Submitted Div
+const submittedDiv = document.querySelector('#submittedDiv');
+const submittedDivText = document.querySelector('#submittedDivText');
+
 //send request for the last handover to display the last incident
 window.addEventListener('load', () => {
   ipcRenderer.send('loadLastHandoverInc', {
@@ -242,6 +246,20 @@ backBtn.addEventListener('click', (e) => {
   clearScreen();
   initialDiv.style.display = 'block';
 });
+
+//Message on successfully or not submitted form
+const messageSubmit = (stat) => {
+  submittedDiv.style.display = 'flex';
+
+  if (stat === 'success') {
+    submittedDivText.textContent = 'Form Submitted.';
+  } else if (stat === 'fail') {
+    submittedDivText.textContent = 'Please fill the form.';
+  }
+  setTimeout(() => {
+    submittedDiv.style.display = 'none';
+  }, 2000);
+};
 
 //HO
 dateHo.textContent = dateFormat().slice(0, 10);
@@ -371,6 +389,10 @@ newFormHo.addEventListener('submit', (e) => {
     //back to landing screen
     clearScreen();
     initialDiv.style.display = 'block';
+
+    messageSubmit('success');
+  } else {
+    messageSubmit('fail');
   }
 });
 
@@ -442,7 +464,11 @@ const displayHandover = (sheet, page) => {
 
     deleteBtn.addEventListener('click', function (e) {
       let div = deleteBtn.parentElement;
-      div.style.display = 'none';
+      div.classList.add('anime');
+
+      setTimeout(() => {
+        div.style.display = 'none';
+      }, 2000);
 
       ipcRenderer.send('deleteHo', { sheet });
     });

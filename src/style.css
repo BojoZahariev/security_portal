@@ -492,11 +492,11 @@ textarea {
 /*Submitted Div*/
 
 #submittedDiv {
-  position: absolute;
+  position: fixed;
   display: none;
   justify-content: center;
   align-items: center;
-  top: 20%;
+  top: 20vh;
   left: 50%;
   padding: 20px;
   width: 600px;
