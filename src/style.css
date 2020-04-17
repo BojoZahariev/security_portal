@@ -181,7 +181,22 @@ ul {
 #childrenCon,
 #laptopCon,
 #carParkCon,
-#HoArchCon {
+#HoArchCon,
+#textInc,
+#textFire,
+#textKeys,
+#textCams,
+#textAct,
+#textDoors,
+#textIntBarrs,
+#textExtBarrs,
+#textCity,
+#textCom,
+#textPatrol,
+#passwordDivHolder,
+#patrolArchCon,
+#newFormHo,
+#submittedDiv {
   display: none;
 }
 
@@ -352,23 +367,6 @@ textarea {
   padding: 20px;
 }
 
-#textInc,
-#textFire,
-#textKeys,
-#textCams,
-#textAct,
-#textDoors,
-#textIntBarrs,
-#textExtBarrs,
-#textCity,
-#textCom,
-#textPatrol,
-#passwordDivHolder,
-#patrolArchCon,
-#newFormHo {
-  display: none;
-}
-
 .submitBtn {
   display: inline-block;
   max-height: 43px;
@@ -496,4 +494,28 @@ textarea {
 #newFormChildren {
   text-align: left;
   font-size: 20px;
+}
+
+/*Submitted Div*/
+
+#submittedDiv {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20%;
+  left: 50%;
+  padding: 20px;
+  width: 600px;
+  height: 400px;
+
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: #76c043;
+  border: 1px solid #ffc220;
+}
+
+.tyTitle {
+  padding: 0;
 }
