@@ -69,6 +69,11 @@ ul {
 
 .containers {
   text-align: center;
+  display: none;
+}
+
+#initialDiv {
+  display: block;
 }
 
 #backBtn {
@@ -174,14 +179,6 @@ ul {
   transition: all 1s;
 }
 
-#handOverBtnDiv,
-#handOverCon,
-#patrolCon,
-#keysCon,
-#childrenCon,
-#laptopCon,
-#carParkCon,
-#HoArchCon,
 #textInc,
 #textFire,
 #textKeys,
@@ -192,11 +189,7 @@ ul {
 #textExtBarrs,
 #textCity,
 #textCom,
-#textPatrol,
-#passwordDivHolder,
-#patrolArchCon,
-#newFormHo,
-#submittedDiv {
+#textPatrol {
   display: none;
 }
 
@@ -500,7 +493,7 @@ textarea {
 
 #submittedDiv {
   position: absolute;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   top: 20%;
