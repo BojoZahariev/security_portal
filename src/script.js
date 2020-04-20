@@ -180,7 +180,16 @@ const archChClear = document.querySelector('#archChClear');
 
 //Car Park
 const carParkCon = document.querySelector('#carParkCon');
+const newFormCarPark = document.querySelector('#newFormCarPark');
+const carParkNav = document.querySelector('#carParkNav');
+
+const carParkForm = document.querySelector('#carParkForm');
 const dateCarPark = document.querySelector('#dateCarPark');
+const inputCarPark1 = document.querySelector('#inputCarPark1');
+const inputCarPark2 = document.querySelector('#inputCarPark2');
+const carPark1 = document.querySelector('#carPark1');
+const carPark2 = document.querySelector('#carPark2');
+const carParkSignature = document.querySelector('#carParkSignature');
 
 //Submitted Div
 const submittedDiv = document.querySelector('#submittedDiv');
