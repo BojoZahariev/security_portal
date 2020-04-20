@@ -157,7 +157,7 @@ ipcMain.on('updateItemNotReturned', (e, item) => {
 });
 
 //LAPTOPS
-//load all not returned keys from the db
+//load all not colected laptops from the db
 ipcMain.on('loadNotCollected', (e, item) => {
   db.find({ collected: 'Not Collected', type: item.type })
     .sort({ id: -1 })
