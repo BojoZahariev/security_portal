@@ -201,3 +201,50 @@ ipcMain.on('updateItemNotCollected', (e, item) => {
     {}
   );
 });
+
+//CAR PARK
+
+//load all not contacted
+ipcMain.on('loadNotContacted', (e, item) => {
+  db.find({ type: item.type, contacted: 'Not Contacted' })
+    .sort({ id: -1 })
+    .exec((err, docs) => mainWindow.webContents.send('loadedNotContacted', docs));
+});
+
+//update contacted
+ipcMain.on('updateItemContacted', (e, item) => {
+  db.update(
+    { id: item.sheet.id, type: item.sheet.type },
+    {
+      id: item.sheet.id,
+      type: 'carPark',
+      date: item.sheet.date,
+      time: item.sheet.time,
+      colleagueName: item.sheet.colleagueName,
+      reg: item.sheet.reg,
+      reason: item.sheet.reason,
+      contacted: 'Contacted',
+      securitySignature: item.sheet.securitySignature,
+    },
+    {}
+  );
+});
+
+//update not contacted
+ipcMain.on('updateItemNotContacted', (e, item) => {
+  db.update(
+    { id: item.sheet.id, type: item.sheet.type },
+    {
+      id: item.sheet.id,
+      type: 'carPark',
+      date: item.sheet.date,
+      time: item.sheet.time,
+      colleagueName: item.sheet.colleagueName,
+      reg: item.sheet.reg,
+      reason: item.sheet.reason,
+      contacted: 'Not Contacted',
+      securitySignature: item.sheet.securitySignature,
+    },
+    {}
+  );
+});

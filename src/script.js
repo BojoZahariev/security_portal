@@ -187,6 +187,7 @@ const carParkForm = document.querySelector('#carParkForm');
 const dateCarPark = document.querySelector('#dateCarPark');
 const inputCarPark1 = document.querySelector('#inputCarPark1');
 const inputCarPark2 = document.querySelector('#inputCarPark2');
+const inputCarPark3 = document.querySelector('#inputCarPark3');
 const carPark1 = document.querySelector('#carPark1');
 const carPark2 = document.querySelector('#carPark2');
 const carParkSignature = document.querySelector('#carParkSignature');
@@ -1051,7 +1052,7 @@ displayLaptops = (sheet, page) => {
   }
 };
 
-//keys Archive btn
+//laptop Archive btn
 archLBtn.addEventListener('click', (e) => {
   clearScreen();
   laptopCon.style.display = 'block';
@@ -1061,7 +1062,7 @@ archLBtn.addEventListener('click', (e) => {
   backBtn.style.display = 'block';
 });
 
-//archive keys submit and send to db
+//archive laptops submit and send to db
 archLForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -1224,11 +1225,172 @@ archChClear.addEventListener('click', (e) => {
 //CARPARK
 carParkBtn.addEventListener('click', (e) => {
   clearScreen();
+  carParkForm.reset();
   carParkCon.style.display = 'block';
+  newFormCarPark.style.display = 'block';
+  carParkNav.style.display = 'block';
   backBtn.style.display = 'block';
+
+  ipcRenderer.send('loadNotContacted', {
+    type: 'carPark',
+  });
+});
+
+ipcRenderer.on('loadedNotContacted', (e, docs) => {
+  if (docs) {
+    //clear old
+    carParkList.innerHTML = '';
+
+    docs.forEach((element) => {
+      displayCarPark(element, 'last');
+    });
+  }
 });
 
 dateCarPark.textContent = dateFormat().slice(0, 10);
+
+carParkForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (inputCarPark2.value.length > 1 && inputCarPark3.value.length > 1 && carParkSignature.value.length > 1) {
+    ipcRenderer.send('addItem', {
+      id: Date.now(),
+      type: 'carPark',
+      date: dateFormat().slice(0, 10),
+      time: dateFormat().slice(11, 16),
+      colleagueName: inputCarPark1.value,
+      reg: inputCarPark2.value,
+      reason: inputCarPark3.value,
+      contacted: carPark1.checked ? carPark1.value : carPark2.value,
+      securitySignature: carParkSignature.value,
+    });
+
+    carParkForm.reset();
+
+    ipcRenderer.send('loadNotContacted', {
+      type: 'carPark',
+    });
+
+    messageSubmit('success');
+  } else {
+    messageSubmit('fail');
+  }
+});
+
+//display car park
+displayCarPark = (sheet, page) => {
+  let li = document.createElement('li');
+  li.classList.add('forms');
+  li.classList.add('flexForm');
+
+  let dateHourDiv = document.createElement('div');
+
+  let datePast = document.createElement('p');
+  datePast.textContent = sheet.date;
+  dateHourDiv.appendChild(datePast);
+
+  let hourPast = document.createElement('span');
+  hourPast.classList.add('date');
+  hourPast.textContent = sheet.time;
+  datePast.appendChild(hourPast);
+  li.appendChild(dateHourDiv);
+
+  let signedBy = document.createElement('p');
+  signedBy.textContent = 'Colleague: ';
+  signedBy.classList.add('bold');
+  let signedByText = document.createElement('span');
+  signedByText.classList.add('hoName');
+  signedByText.textContent = sheet.colleagueName;
+  signedBy.appendChild(signedByText);
+  li.appendChild(signedBy);
+
+  let regN = document.createElement('p');
+  regN.textContent = 'Car Reg.: ';
+  regN.classList.add('bold');
+  let regNText = document.createElement('span');
+  regNText.classList.add('hoName');
+  regNText.textContent = sheet.reg;
+  regN.appendChild(regNText);
+  li.appendChild(regN);
+
+  let reason = document.createElement('p');
+  reason.textContent = 'Reason: ';
+  reason.classList.add('bold');
+  let reasonText = document.createElement('span');
+  reasonText.classList.add('hoName');
+  reasonText.textContent = sheet.reason;
+  reason.appendChild(reasonText);
+  li.appendChild(reason);
+
+  //contacted, not contacted
+  let collectedCheck = document.createElement('p');
+  collectedCheck.textContent = sheet.contacted;
+  collectedCheck.classList.add('bold');
+  collectedCheck.classList.add('pointer');
+  if (sheet.contacted === 'Contacted') {
+    collectedCheck.style.color = '#76c043';
+  } else {
+    collectedCheck.style.color = 'red';
+  }
+
+  li.appendChild(collectedCheck);
+
+  let signedPast = document.createElement('p');
+  signedPast.textContent = 'S.O: ';
+  signedPast.classList.add('bold');
+  let signedPastText = document.createElement('span');
+  signedPastText.classList.add('hoName');
+  signedPastText.textContent = sheet.securitySignature;
+  signedPast.appendChild(signedPastText);
+  li.appendChild(signedPast);
+
+  //delete btn
+
+  let deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Delete';
+  deleteBtn.classList.add('deleteBtn');
+  deleteBtn.classList.add('deleteBtnPatrol');
+  li.appendChild(deleteBtn);
+
+  deleteBtn.addEventListener('click', function (e) {
+    let div = deleteBtn.parentElement;
+    div.classList.add('anime');
+
+    setTimeout(() => {
+      div.style.display = 'none';
+    }, 2000);
+
+    ipcRenderer.send('deletePatrol', { sheet });
+  });
+
+  //Collected , Not collected
+  collectedCheck.addEventListener('click', () => {
+    if (collectedCheck.textContent === 'Not Contacted') {
+      ipcRenderer.send('updateItemContacted', { sheet });
+      collectedCheck.textContent = 'Contacted';
+      collectedCheck.style.color = '#76c043';
+      //remove the log from the page if it's returned
+      if (page === 'last') {
+        let div = collectedCheck.parentElement;
+        div.classList.add('anime');
+
+        setTimeout(() => {
+          div.style.display = 'none';
+        }, 2000);
+      }
+    } else if (collectedCheck.textContent === 'Collected') {
+      ipcRenderer.send('updateItemNotContacted', { sheet });
+      collectedCheck.textContent = 'Not Contacted';
+      collectedCheck.style.color = 'red';
+    }
+  });
+
+  if (page === 'last') {
+    carParkList.appendChild(li);
+  } else if (page === 'archive') {
+    archiveCpList.appendChild(li);
+  }
+};
 
 //catch loaded last sheet
 ipcRenderer.on('loadedLast', (e, item) => {
