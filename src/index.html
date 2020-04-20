@@ -606,6 +606,26 @@
           <button id="archCarBtn" class="submitBtn">ARCHIVE</button>
         </div>
       </div>
+
+      <!--Car park Archive-->
+      <div id="carParkArchCon" class="containers">
+        <p class="smallTitle">Car Park Checks Archive</p>
+        <form id="archCpForm">
+          <label>Search by date</label>
+          <input id="archCp1" class="inputs calendar" type="date" />
+
+          <label>Search by month</label>
+          <input id="archCp2" class="inputs calendar" type="month" />
+
+          <label>Search by registration</label>
+          <input id="archCp3" class="inputs smallInputs" type="text" />
+
+          <button id="archCpSubmit" class="submitBtn" type="submit">SEARCH</button>
+          <button id="archCpClear" class="submitBtn">Clear</button>
+        </form>
+
+        <ul id="archiveCpList"></ul>
+      </div>
     </div>
 
     <img src="images/arrow.png" id="backBtn" />
