@@ -515,8 +515,9 @@
         <form id="childrenForm" class="forms">
           <div>
             <p class="question">
-              I confirm that i have read and understood the points outlined above and the Children visiting the
-              Workplace policy. I accept that I will be responsible at all times for the child I am supervising.
+              By clicking 'Yes', I confirm that i have read and understood the points outlined above and the Children
+              visiting the Workplace policy. I accept that I will be responsible at all times for the child I am
+              supervising.
             </p>
             <label class="radio">
               <input class="radioChildren" id="children1" type="radio" name="children" value="Yes" checked />No
@@ -568,28 +569,37 @@
 
     <!-- CAR PARK-->
     <div id="carParkCon" class="containers">
-      <p class="smallTitle">Car Park Check Sheet</p>
+      <div id="newFormCarPark">
+        <p class="smallTitle">Car Park Check Sheet</p>
 
-      <form class="forms flexForm">
-        <span id="dateCarPark" class="date"></span>
-        <input id="inputCarPark1" type="text" placeholder="Name" class="inputs" />
-        <input id="inputCarPark2" type="text" placeholder="Vehicle reg." class="inputs" />
-        <div>
-          <span class="question">Contacted?</span>
-          <label class="radio">
-            <input class="radioCarPark" id="contactedOK" type="radio" name="car park" value="Ok" checked />Yes<span
-              class="checkmark"
-            ></span>
-          </label>
-          <label class="radio">
-            <input class="radioCarPark" id="contactedNo" type="radio" name="car park" value="No" />No<span
-              class="checkmark"
-            ></span
-          ></label>
+        <form class="forms flexForm">
+          <span id="dateCarPark" class="date"></span>
+          <input id="inputCarPark1" type="text" placeholder="Name" class="inputs" />
+          <input id="inputCarPark2" type="text" placeholder="Reg." class="inputs smallInputs" />
+          <div>
+            <span class="question">Contacted?</span>
+            <label class="radio">
+              <input class="radioCarPark" id="carPark1" type="radio" name="car park" value="Ok" checked />Yes<span
+                class="checkmark"
+              ></span>
+            </label>
+            <label class="radio">
+              <input class="radioCarPark" id="carPark2" type="radio" name="car park" value="No" />No<span
+                class="checkmark"
+              ></span
+            ></label>
+          </div>
+          <input id="carParkSignature" type="text" placeholder="S.O Name" class="inputs" />
+          <button id="laptopFormSubmit" class="submitBtn" type="submit">SUBMIT</button>
+        </form>
+
+        <p class="smallTitle">Car Park Patrol results</p>
+        <ul id="carParkList" class="lists"></ul>
+
+        <div class="nav containers" id="carParkNav">
+          <button id="archCarBtn" class="submitBtn">ARCHIVE</button>
         </div>
-        <input id="inputCarPark3" type="text" placeholder="Reason" class="inputs" />
-        <button id="laptopFormSubmit" class="submitBtn">SUBMIT</button>
-      </form>
+      </div>
     </div>
 
     <img src="images/arrow.png" id="backBtn" />
