@@ -1,16 +1,20 @@
 {"date":"17/04/2020","id":1587113805410,"problems":"Everything Ok","signature":"bojo","time":"09:56","type":"patrol","_id":"0i65zifnr12x0pAb"}
 {"id":1587024334272,"type":"laptop","date":"16/04/2020","time":"09:05","colleagueName":"fhffhhfh","serialNumber":"23323323232323232","managerInformed":"No","collected":"Collected","signature":"bojo","_id":"1DSTmRGlpHXa89T3"}
-{"colleagueName":"ddddd","collected":"Not Collected","date":"20/04/2020","id":1587370458594,"managerInformed":"Yes","serialNumber":"22","signature":"vvvv","time":"09:14","type":"laptop","_id":"2ZthyyqC5yvhtD0z"}
+{"id":1587370458594,"type":"laptop","date":"20/04/2020","time":"09:14","colleagueName":"ddddd","serialNumber":"22","managerInformed":"Yes","collected":"Collected","signature":"vvvv","_id":"2ZthyyqC5yvhtD0z"}
 {"date":"20/04/2020","id":1587368471690,"problems":"Everything Ok","signature":"bojo","time":"08:41","type":"patrol","_id":"2uHxduf3LncaCd5W"}
 {"id":1586768214007,"type":"laptop","date":"13/04/2020","time":"09:56","colleagueName":"rrrr","serialNumber":"55656565665","managerInformed":"No","collected":"Collected","signature":"bojo","_id":"3xfBOrerSeHT308j"}
 {"date":"08/04/2020","id":1586329160999,"problems":"Everything Ok","signature":"bojo","time":"07:59","type":"patrol","_id":"5PGZ2E8bvgwWkvBu"}
+{"act":"Normal","cams":"Normal","city":"Yes","collOf":"gggggggg","comms":"None","date":"23/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1587627076308,"inBarrs":"Normal","incidents":"23.04","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"7CHY4kAIeQjSiole"}
+{"date":"23/04/2020","id":1587627096592,"keyNumber":"98","returned":"Not Returned","signature":"bojo","takenBy":"fffff","time":"08:31","type":"keys","_id":"8dd84d3UXhOo4E5o"}
+{"date":"23/04/2020","id":1587627083652,"problems":"Everything Ok","signature":"bojo","time":"08:31","type":"patrol","_id":"9UEs5WOxNvCeSO9H"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"fgfgdsfssd","comms":"None","date":"20/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1587368462483,"inBarrs":"Normal","incidents":"20.04","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"ANDc8dLrzYozd5fg"}
 {"id":1586938092100,"type":"keys","date":"15/04/2020","time":"09:08","takenBy":"fffgfggf","keyNumber":"32","returned":"Returned","signature":"bojo","_id":"BT2OIVCCZ0WDkyuj"}
 {"date":"10/04/2020","id":1586512915603,"problems":"Everything Ok","signature":"bojo","time":"11:01","type":"patrol","_id":"CoNDcKap8OAaPUam"}
 {"id":1586515012987,"type":"keys","date":"10/04/2020","time":"11:36","takenBy":"ddddddddddddddddd","keyNumber":"33","returned":"Returned","signature":"jjjjjjjjjjjjjjjjjjjjjjjjj","_id":"G2pdbRAu94t98yGe"}
 {"date":"13/04/2020","id":1586764030664,"problems":"Everything Ok","signature":"bojo","time":"08:47","type":"patrol","_id":"GODywTstlUMvz1bS"}
 {"id":1587370452255,"type":"laptop","date":"20/04/2020","time":"09:14","colleagueName":"dfdfd","serialNumber":"22","managerInformed":"Yes","collected":"Collected","signature":"bbbb","_id":"GXj8jlRgHTG2dCbu"}
-{"date":"17/04/2020","id":1587108912101,"keyNumber":"35","returned":"Not Returned","signature":"bojo","takenBy":"sdssds","time":"08:35","type":"keys","_id":"Hf4AQThhx6BAbv47"}
+{"id":1587108912101,"type":"keys","date":"17/04/2020","time":"08:35","takenBy":"sdssds","keyNumber":"35","returned":"Returned","signature":"bojo","_id":"Hf4AQThhx6BAbv47"}
+{"id":1587630081355,"type":"carPark","date":"23/04/2020","time":"09:21","colleagueName":"dfdfd","reg":"565667","reason":"ttttttthhhhhhhhh","contacted":"Contacted","securitySignature":"bojo","_id":"INGagnHjqyYi3YA0"}
 {"id":1587113857158,"type":"laptop","date":"17/04/2020","time":"09:57","colleagueName":"ggg","serialNumber":"9999999999999","managerInformed":"Yes","collected":"Collected","signature":"bojo","_id":"Ia8n5eCbgBh01nJC"}
 {"colleagueSignature":"dadddadada","date":"20/04/2020","id":1587368514935,"securitySignature":"bojo","time":"08:41","type":"children","_id":"JCJVUQcbJ02qqKW7"}
 {"id":1586767993543,"type":"laptop","date":"13/04/2020","time":"09:53","colleagueName":"ddd","serialNumber":"dddddd","managerInformed":"No","collected":"Collected","signature":"bojo","_id":"LbzuEcAex4RM5248"}
@@ -18,7 +22,7 @@
 {"colleagueSignature":"dfdfdfdfdfdfd","date":"16/04/2020","id":1587034206827,"securitySignature":"bojo","time":"11:50","type":"children","_id":"NdvHDfflISsMxFdt"}
 {"id":1586768385534,"type":"laptop","date":"13/04/2020","time":"09:59","colleagueName":"hhhhh","serialNumber":"788788778878778","managerInformed":"Yes","collected":"Collected","signature":"nnnn","_id":"PqtCwz9Ofi5dAePi"}
 {"date":"16/04/2020","id":1587024296120,"problems":"Everything Ok","signature":"bojo","time":"09:04","type":"patrol","_id":"QKzRI1UrC3BpVSSo"}
-{"date":"17/04/2020","id":1587113826578,"keyNumber":"77","returned":"Not Returned","signature":"bojo","takenBy":"gggggg","time":"09:57","type":"keys","_id":"ReAxPe8s1qsAe8EB"}
+{"id":1587113826578,"type":"keys","date":"17/04/2020","time":"09:57","takenBy":"gggggg","keyNumber":"77","returned":"Returned","signature":"bojo","_id":"ReAxPe8s1qsAe8EB"}
 {"date":"09/04/2020","id":1586419171184,"problems":"fgfgfgggffggffgfggfgfgfg fgfgfg","signature":"bojo","time":"08:59","type":"patrol","_id":"V4PITVoqDN7imrmt"}
 {"colleagueSignature":"ffffff","date":"17/04/2020","id":1587113874293,"securitySignature":"jjjjjjjjjjj","time":"09:57","type":"children","_id":"VfzP6pSWB4DF2QuC"}
 {"id":1587368501971,"type":"laptop","date":"20/04/2020","time":"08:41","colleagueName":"vvv","serialNumber":"9999999","managerInformed":"Yes","collected":"Collected","signature":"bojo","_id":"W9Fw1AMLVN5VwgG2"}
@@ -44,24 +48,18 @@
 {"date":"15/04/2020","id":1586938072500,"problems":"Everything Ok","signature":"bojo","time":"09:07","type":"patrol","_id":"msGVuNOzceL0aA0H"}
 {"id":1586940246341,"type":"laptop","date":"15/04/2020","time":"09:44","colleagueName":"dfdfdf","serialNumber":"555","managerInformed":"Yes","collected":"Collected","signature":"hhh","_id":"n2SJ9QOf3bY3dh10"}
 {"id":1587370977899,"type":"carPark","date":"20/04/2020","time":"09:22","colleagueName":"fgfggfgfg","reg":"66","reason":"ffsfsfsfsfsfs","contacted":"Contacted","securitySignature":"bojo","_id":"nFwgftAQkQg8Ztku"}
+{"colleagueName":"hhhhhhh","contacted":"Not Contacted","date":"23/04/2020","id":1587631400707,"reason":"fefeffefefef","reg":"666","securitySignature":"bojo","time":"09:43","type":"carPark","_id":"nhCrf9ZGvNPrOcVv"}
 {"id":1587024322591,"type":"keys","date":"16/04/2020","time":"09:05","takenBy":"dgdgdgdg","keyNumber":"48","returned":"Returned","signature":"bojo","_id":"oRzas1o47j07qxUv"}
 {"id":1586768710203,"type":"laptop","date":"13/04/2020","time":"10:05","colleagueName":"ddddddddddddd","serialNumber":"5555555555555555","managerInformed":"No","collected":"Collected","signature":"bojo","_id":"pe9bSAZHolOntnT7"}
+{"colleagueName":"fffff","collected":"Not Collected","date":"23/04/2020","id":1587627118017,"managerInformed":"No","serialNumber":"766666666666","signature":"bojo","time":"08:31","type":"laptop","_id":"pfDddMam0673kCqM"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"ffff","comms":"None","date":"03/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1585912487611,"inBarrs":"Normal","incidents":"2","keys":"Yes","shift":"Late","signature":"vvvvv","type":"handover","_id":"r0ovsgLlyf2wYkw2"}
-{"date":"20/04/2020","id":1587368483730,"keyNumber":"14","returned":"Not Returned","signature":"bojo","takenBy":"fffff","time":"08:41","type":"keys","_id":"r4JJXxCp7YVcEBWX"}
+{"id":1587368483730,"type":"keys","date":"20/04/2020","time":"08:41","takenBy":"fffff","keyNumber":"14","returned":"Returned","signature":"bojo","_id":"r4JJXxCp7YVcEBWX"}
 {"id":1587368854934,"type":"carPark","date":"20/04/2020","time":"08:47","colleagueName":"ggggg","reg":"133333","reason":"hfhhfhfhhfh","contacted":"Contacted","securitySignature":"bojo","_id":"rL85fw63Jwdd4BrF"}
 {"id":1587108935105,"type":"laptop","date":"17/04/2020","time":"08:35","colleagueName":"fffdfdff","serialNumber":"333334455666","managerInformed":"No","collected":"Collected","signature":"bojo","_id":"rRrSLCfUvv8dd2F8"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"ddddd","comms":"None","date":"07/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1586250753140,"inBarrs":"Normal","incidents":"7.04 10.16","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"smJ8au4sY9KiZVuZ"}
+{"colleagueSignature":"rrrrrrrrrrrrrr","date":"23/04/2020","id":1587627139585,"securitySignature":"bojo","time":"08:32","type":"children","_id":"tVpepzX1BWoL2u25"}
 {"id":1586512404067,"type":"keys","date":"10/04/2020","time":"10:53","takenBy":"ttttt","keyNumber":"67","returned":"Returned","signature":"yyyyyy","_id":"uJscOScNgSUVrMXF"}
 {"date":"14/04/2020","id":1586850077048,"problems":"Everything Ok","signature":"bojo","time":"08:41","type":"patrol","_id":"uoN9H8LCojELIJgp"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"fgfgfgfgf","comms":"None","date":"16/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1587024289132,"inBarrs":"Normal","incidents":"16.04","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"y5vLOj17Crw48f6H"}
 {"id":1586768197983,"type":"keys","date":"13/04/2020","time":"09:56","takenBy":"ffff","keyNumber":"13","returned":"Returned","signature":"yyyyy","_id":"zGdF9hSHQ3xNexoj"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"nnnnnnnnn","comms":"None","date":"17/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1587112529929,"inBarrs":"Normal","incidents":"17 2","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"zxUwWFIkSdplPs8Q"}
-{"act":"Normal","cams":"Normal","city":"Yes","collOf":"gggggggg","comms":"None","date":"23/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1587627076308,"inBarrs":"Normal","incidents":"23.04","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"7CHY4kAIeQjSiole"}
-{"date":"23/04/2020","id":1587627083652,"problems":"Everything Ok","signature":"bojo","time":"08:31","type":"patrol","_id":"9UEs5WOxNvCeSO9H"}
-{"date":"23/04/2020","id":1587627096592,"keyNumber":"98","returned":"Not Returned","signature":"bojo","takenBy":"fffff","time":"08:31","type":"keys","_id":"8dd84d3UXhOo4E5o"}
-{"id":1587108912101,"type":"keys","date":"17/04/2020","time":"08:35","takenBy":"sdssds","keyNumber":"35","returned":"Returned","signature":"bojo","_id":"Hf4AQThhx6BAbv47"}
-{"id":1587113826578,"type":"keys","date":"17/04/2020","time":"09:57","takenBy":"gggggg","keyNumber":"77","returned":"Returned","signature":"bojo","_id":"ReAxPe8s1qsAe8EB"}
-{"id":1587368483730,"type":"keys","date":"20/04/2020","time":"08:41","takenBy":"fffff","keyNumber":"14","returned":"Returned","signature":"bojo","_id":"r4JJXxCp7YVcEBWX"}
-{"colleagueName":"fffff","collected":"Not Collected","date":"23/04/2020","id":1587627118017,"managerInformed":"No","serialNumber":"766666666666","signature":"bojo","time":"08:31","type":"laptop","_id":"pfDddMam0673kCqM"}
-{"id":1587370458594,"type":"laptop","date":"20/04/2020","time":"09:14","colleagueName":"ddddd","serialNumber":"22","managerInformed":"Yes","collected":"Collected","signature":"vvvv","_id":"2ZthyyqC5yvhtD0z"}
-{"colleagueSignature":"rrrrrrrrrrrrrr","date":"23/04/2020","id":1587627139585,"securitySignature":"bojo","time":"08:32","type":"children","_id":"tVpepzX1BWoL2u25"}

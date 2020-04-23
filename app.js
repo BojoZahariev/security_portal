@@ -99,6 +99,11 @@ ipcMain.on('findSheet', (e, item) => {
     db.find({ serialNumber: item.serial, type: item.type })
       .sort({ id: -1 })
       .exec((err, docs) => mainWindow.webContents.send('found', docs));
+    //reg number
+  } else if (item.type === 'carPark' && item.regNumber !== '' && item.month === '/' && item.searchDate === '//') {
+    db.find({ reg: item.regNumber, type: item.type })
+      .sort({ id: -1 })
+      .exec((err, docs) => mainWindow.webContents.send('found', docs));
   }
 });
 

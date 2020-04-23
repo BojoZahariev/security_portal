@@ -193,7 +193,7 @@ const carPark2 = document.querySelector('#carPark2');
 const carParkSignature = document.querySelector('#carParkSignature');
 
 //Archive Carpark
-const archCarBtn = document.querySelector('#archCarBtn');
+const archCpBtn = document.querySelector('#archCpBtn');
 const carParkArchCon = document.querySelector('#carParkArchCon');
 const archCpForm = document.querySelector('#archCpForm');
 const archCp1 = document.querySelector('#archCp1');
@@ -1374,7 +1374,7 @@ displayCarPark = (sheet, page) => {
     ipcRenderer.send('deletePatrol', { sheet });
   });
 
-  //Collected , Not collected
+  //Contacted , Not contacted
   collectedCheck.addEventListener('click', () => {
     if (collectedCheck.textContent === 'Not Contacted') {
       ipcRenderer.send('updateItemContacted', { sheet });
@@ -1389,7 +1389,7 @@ displayCarPark = (sheet, page) => {
           div.style.display = 'none';
         }, 2000);
       }
-    } else if (collectedCheck.textContent === 'Collected') {
+    } else if (collectedCheck.textContent === 'Contacted') {
       ipcRenderer.send('updateItemNotContacted', { sheet });
       collectedCheck.textContent = 'Not Contacted';
       collectedCheck.style.color = 'red';
@@ -1403,7 +1403,44 @@ displayCarPark = (sheet, page) => {
   }
 };
 
-//catch loaded last sheet
+//carpark Archive btn
+archCpBtn.addEventListener('click', (e) => {
+  clearScreen();
+  carParkCon.style.display = 'block';
+  carParkArchCon.style.display = 'block';
+  newFormCarPark.style.display = 'none';
+
+  backBtn.style.display = 'block';
+});
+
+//archive carpark submit and send to db
+archCpForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let searchDate = `${archCp1.value.slice(8, 10)}/${archCp1.value.slice(5, 7)}/${archCp1.value.slice(0, 4)}`;
+  let month = `${archCp2.value.slice(5, 7)}/${archCp2.value.slice(0, 4)}`;
+  let regNumber = archCp3.value;
+  //clear the page
+  archiveCpList.innerHTML = '';
+
+  //send request to the db
+  ipcRenderer.send('findSheet', {
+    type: 'carPark',
+    searchDate,
+    month,
+    regNumber,
+  });
+});
+
+//clear the form and reset btn
+archCpClear.addEventListener('click', (e) => {
+  //clear the page
+  archiveCpList.innerHTML = '';
+  //reset the input
+  archCpForm.reset();
+});
+
+//catch loaded last sheet for handover and patrol
 ipcRenderer.on('loadedLast', (e, item) => {
   //send for display
   if (item) {
@@ -1413,10 +1450,6 @@ ipcRenderer.on('loadedLast', (e, item) => {
       //clear the old
       patrolList.innerHTML = '';
       displayPatrols(item, 'last');
-    } else if (item.type === 'keys') {
-      //clear old
-      keysList.innerHTML = '';
-      displayKeys(item, 'last');
     }
   }
 });
@@ -1434,6 +1467,8 @@ ipcRenderer.on('found', (e, docs) => {
       displayLaptops(element, 'archive');
     } else if (element.type === 'children') {
       displayChildren(element);
+    } else if (element.type === 'carPark') {
+      displayCarPark(element, 'archive');
     }
   });
 });
