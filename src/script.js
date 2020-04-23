@@ -192,6 +192,17 @@ const carPark1 = document.querySelector('#carPark1');
 const carPark2 = document.querySelector('#carPark2');
 const carParkSignature = document.querySelector('#carParkSignature');
 
+//Archive Carpark
+const archCarBtn = document.querySelector('#archCarBtn');
+const carParkArchCon = document.querySelector('#carParkArchCon');
+const archCpForm = document.querySelector('#archCpForm');
+const archCp1 = document.querySelector('#archCp1');
+const archCp2 = document.querySelector('#archCp2');
+const archCp3 = document.querySelector('#archCp3');
+
+const archiveCpList = document.querySelector('#archiveCpList');
+const archCpClear = document.querySelector('#archCpClear');
+
 //Submitted Div
 const submittedDiv = document.querySelector('#submittedDiv');
 const submittedDivText = document.querySelector('#submittedDivText');
