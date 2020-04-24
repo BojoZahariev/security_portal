@@ -218,9 +218,15 @@ ul {
   position: relative;
   background-color: #ece4b7;
   border: 1px solid #222;
-  width: 90%;
+  width: 80%;
+  max-width: 900px;
   margin: 10px auto;
   text-align: center;
+}
+
+#newFormHo {
+  width: 80%;
+  max-width: 900px;
 }
 
 .deleteBtn {
