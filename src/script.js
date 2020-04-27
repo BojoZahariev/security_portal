@@ -298,6 +298,9 @@ hoBtn.addEventListener('click', (e) => {
   ipcRenderer.send('loadLast', {
     type: 'handover',
   });
+
+  //clear old records once a day
+  runOncePerDay();
 });
 
 newBtn.addEventListener('click', (e) => {

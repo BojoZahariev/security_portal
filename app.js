@@ -256,7 +256,6 @@ ipcMain.on('updateItemNotContacted', (e, item) => {
 
 //DELETE Older than 6 months
 
-//clear older than 6 months
 ipcMain.on('deleteOld', (e, item) => {
   db.remove(
     {
