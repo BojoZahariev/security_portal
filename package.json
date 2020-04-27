@@ -1,8 +1,8 @@
 {
   "dependencies": {
     "electromon": "^1.0.10",
-    "electron": "^5.0.8",
-    "electron-packager": "^14.0.3",
+    "electron": "^8.2.3",
+    "electron-packager": "^14.2.1",
     "nedb": "^1.8.0"
   },
   "name": "portal",
