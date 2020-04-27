@@ -87,5 +87,5 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-
-release-builds/portal-linux-x64/
+#release builds
+release-builds/
