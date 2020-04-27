@@ -253,3 +253,21 @@ ipcMain.on('updateItemNotContacted', (e, item) => {
     {}
   );
 });
+
+//DELETE Older than 6 months
+
+//clear older than 6 months
+ipcMain.on('deleteOld', (e, item) => {
+  db.remove(
+    {
+      $where: function () {
+        return this.date.includes(item.sixAgoFormattedMonth);
+      },
+    },
+    { multi: true },
+    function (err, numRemoved) {
+      if (err) throw new Error(err);
+      mainWindow.webContents.send('deletedOld', numRemoved);
+    }
+  );
+});

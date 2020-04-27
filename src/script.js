@@ -1526,3 +1526,52 @@ ipcRenderer.on('cleared', () => {
   yesterdayText.textContent = 'None';
   lastIncDate.textContent = 'the last shift';
 });
+
+//clear entries older than 6 months
+const clearOld = () => {
+  //get the date 7 months ago
+  var d = new Date();
+  d.setMonth(d.getMonth() - 7);
+
+  //let day = addZero(d.getDate());
+  let month = addZero(d.getMonth() + 1);
+  let year = d.getFullYear();
+
+  let sixAgoFormattedMonth = month + '/' + year;
+
+  ipcRenderer.send('deleteOld', { sixAgoFormattedMonth });
+
+  console.log(sixAgoFormattedMonth);
+};
+
+// Clears the old once a day if one day has passed.
+function hasOneDayPassed() {
+  // get today's date.
+  var date = new Date().toLocaleDateString();
+
+  // if there's a date in localstorage and it's equal to the above:
+  // inferring a day has yet to pass since both dates are equal.
+  if (localStorage.myDate == date) {
+    return false;
+  }
+
+  // this portion of logic occurs when a day has passed
+  localStorage.myDate = date;
+  return true;
+}
+
+//run once a day
+function runOncePerDay() {
+  if (!hasOneDayPassed()) {
+    return false;
+  } else {
+    clearOld();
+  }
+}
+
+ipcRenderer.on('deletedOld', (e, numRemoved) => {
+  console.log(numRemoved);
+});
+
+//clear old records once a day
+runOncePerDay();
