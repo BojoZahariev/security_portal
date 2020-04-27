@@ -68,5 +68,9 @@
 {"date":"14/04/2020","id":1586850077048,"problems":"Everything Ok","signature":"bojo","time":"08:41","type":"patrol","_id":"uoN9H8LCojELIJgp"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"fgfgfgfgf","comms":"None","date":"16/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1587024289132,"inBarrs":"Normal","incidents":"16.04","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"y5vLOj17Crw48f6H"}
 {"id":1586768197983,"type":"keys","date":"13/04/2020","time":"09:56","takenBy":"ffff","keyNumber":"13","returned":"Returned","signature":"yyyyy","_id":"zGdF9hSHQ3xNexoj"}
-{"act":"Normal","cams":"Normal","city":"Yes","collOf":"nnnnnnnnn","comms":"None","date":"17/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1587112529929,"inBarrs":"Normal","incidents":"17 2","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"zxUwWFIkSdplPs8Q"}
-{"$$deleted":true,"_id":"zxUwWFIkSdplPs8Q"}
+{"act":"Normal","cams":"Normal","city":"Yes","collOf":"bnbnbnbnbnbn","comms":"None","date":"27/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1587973492347,"inBarrs":"Normal","incidents":"27.04","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"sY1nsyuPnrBLwOFy"}
+{"date":"27/04/2020","id":1587973506979,"problems":"Everything Ok","signature":"bojo","time":"08:45","type":"patrol","_id":"DHsnj0mrkJBBvjIS"}
+{"date":"27/04/2020","id":1587973521391,"keyNumber":"12","returned":"Not Returned","signature":"bojo","takenBy":"fffhfhfhh","time":"08:45","type":"keys","_id":"A0ZyH6eDN0zDu4PX"}
+{"colleagueName":"ggfgfgfgf","collected":"Not Collected","date":"27/04/2020","id":1587973535835,"managerInformed":"Yes","serialNumber":"888888888333","signature":"bojo","time":"08:45","type":"laptop","_id":"UzigVmvcrP8w9WL1"}
+{"colleagueSignature":"fgfgfgfgfgfg","date":"27/04/2020","id":1587973546919,"securitySignature":"bojo","time":"08:45","type":"children","_id":"Ju0bjSZ5JVoJxH9q"}
+{"colleagueName":"fgfgfgfg","contacted":"Not Contacted","date":"27/04/2020","id":1587973564087,"reason":"ttttttttttttt","reg":"2222222","securitySignature":"bojo","time":"08:46","type":"carPark","_id":"8PmxxCXjpSZqYeyx"}
