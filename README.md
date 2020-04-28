@@ -1,3 +1,3 @@
-# Security Portal App for paperless office.
+# Security Portal App.
 
 ## Tools: Electron, JavaScript, NeDB, CSS, HTML
