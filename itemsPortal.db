@@ -6,6 +6,7 @@
 {"date":"08/04/2020","id":1586329160999,"problems":"Everything Ok","signature":"bojo","time":"07:59","type":"patrol","_id":"5PGZ2E8bvgwWkvBu"}
 {"id":1588060281256,"type":"keys","date":"28/04/2020","time":"08:51","takenBy":"ghhhghggh","keyNumber":"55","returned":"Not Returned","signature":"bojo","_id":"5uC775jKWQlwDUx8"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"gggggggg","comms":"None","date":"23/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1587627076308,"inBarrs":"Normal","incidents":"23.04","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"7CHY4kAIeQjSiole"}
+{"id":1588060676636,"type":"handover","date":"28/04/2020","collOf":"nbnbnbbnbbb","shift":"Full Day","incidents":"None","firePanel":"Normal","keys":"Yes","cams":"Normal","act":"Normal","doors":"Normal","inBarrs":"Normal","extBarrs":"Normal","city":"Yes","comms":"None","signature":"bojo","_id":"87S2kcAEq38eOHpO"}
 {"colleagueName":"fgfgfgfg","contacted":"Not Contacted","date":"27/04/2020","id":1587973564087,"reason":"ttttttttttttt","reg":"2222222","securitySignature":"bojo","time":"08:46","type":"carPark","_id":"8PmxxCXjpSZqYeyx"}
 {"id":1587627096592,"type":"keys","date":"23/04/2020","time":"08:31","takenBy":"fffff","keyNumber":"98","returned":"Returned","signature":"bojo","_id":"8dd84d3UXhOo4E5o"}
 {"date":"23/04/2020","id":1587627083652,"problems":"Everything Ok","signature":"bojo","time":"08:31","type":"patrol","_id":"9UEs5WOxNvCeSO9H"}
@@ -81,4 +82,3 @@
 {"date":"14/04/2020","id":1586850077048,"problems":"Everything Ok","signature":"bojo","time":"08:41","type":"patrol","_id":"uoN9H8LCojELIJgp"}
 {"act":"Normal","cams":"Normal","city":"Yes","collOf":"fgfgfgfgf","comms":"None","date":"16/04/2020","doors":"Normal","extBarrs":"Normal","firePanel":"Normal","id":1587024289132,"inBarrs":"Normal","incidents":"16.04","keys":"Yes","shift":"Late","signature":"bojo","type":"handover","_id":"y5vLOj17Crw48f6H"}
 {"id":1586768197983,"type":"keys","date":"13/04/2020","time":"09:56","takenBy":"ffff","keyNumber":"13","returned":"Returned","signature":"yyyyy","_id":"zGdF9hSHQ3xNexoj"}
-{"id":1588060676636,"type":"handover","date":"28/04/2020","collOf":"nbnbnbbnbbb","shift":"Full Day","incidents":"None","firePanel":"Normal","keys":"Yes","cams":"Normal","act":"Normal","doors":"Normal","inBarrs":"Normal","extBarrs":"Normal","city":"Yes","comms":"None","signature":"bojo","_id":"87S2kcAEq38eOHpO"}

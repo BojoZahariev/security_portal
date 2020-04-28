@@ -8,6 +8,21 @@ const { app, BrowserWindow, Menu, ipcMain } = electron;
 
 let mainWindow;
 
+//prevents more than one instances
+const gotTheLock = app.requestSingleInstanceLock();
+
+if (!gotTheLock) {
+  app.quit();
+} else {
+  app.on('second-instance', (event, commandLine, workingDirectory) => {
+    // Someone tried to run a second instance, we should focus our window.
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore();
+      mainWindow.focus();
+    }
+  });
+}
+
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
     icon: path.join(__dirname, 'assets/icons/win/icon.ico'),

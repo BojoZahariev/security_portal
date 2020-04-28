@@ -5,7 +5,7 @@
     "nedb": "^1.8.0"
   },
   "name": "portal",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "main": "app.js",
   "devDependencies": {},
   "scripts": {
