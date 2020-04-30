@@ -1554,12 +1554,12 @@ function hasOneDayPassed() {
 
   // if there's a date in localstorage and it's equal to the above:
   // inferring a day has yet to pass since both dates are equal.
-  if (localStorage.myDate == date) {
+  if (localStorage.myDate2 == date) {
     return false;
   }
 
   // this portion of logic occurs when a day has passed
-  localStorage.myDate = date;
+  localStorage.myDate2 = date;
   return true;
 }
 
