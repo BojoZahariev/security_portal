@@ -106,7 +106,12 @@ ipcMain.on('findSheet', (e, item) => {
       .exec((err, docs) => mainWindow.webContents.send('found', docs));
     //key number
   } else if (item.type === 'keys' && item.key !== '' && item.month === '/' && item.searchDate === '//') {
-    db.find({ keyNumber: item.key, type: item.type })
+    db.find({
+      type: item.type,
+      $where: function () {
+        return this.keyNumber.includes(item.key);
+      },
+    })
       .sort({ id: -1 })
       .exec((err, docs) => mainWindow.webContents.send('found', docs));
     //serial number
