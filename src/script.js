@@ -78,7 +78,7 @@ const hoFormSubmit = document.querySelector('#hoFormSubmit');
 const lastHo = document.querySelector('#lastHo');
 
 //Archive handover
-const HoArchCon = document.querySelector('#HoArchCon');
+const hoArchCon = document.querySelector('#hoArchCon');
 const archHo1 = document.querySelector('#archHo1');
 const archHo2 = document.querySelector('#archHo2');
 const archHoForm = document.querySelector('#archHoForm');
@@ -283,7 +283,6 @@ const messageSubmit = (stat) => {
 };
 
 //HO
-dateHo.textContent = dateFormat().slice(0, 10);
 
 hoBtn.addEventListener('click', (e) => {
   clearScreen();
@@ -310,6 +309,8 @@ newBtn.addEventListener('click', (e) => {
   lastHo.style.display = 'none';
   newFormHo.style.display = 'block';
   backBtn.style.display = 'block';
+
+  dateHo.textContent = dateFormat().slice(0, 10);
 });
 
 //Archive btn
@@ -317,7 +318,7 @@ archHoBtn.addEventListener('click', (e) => {
   clearScreen();
 
   handOverCon.style.display = 'block';
-  HoArchCon.style.display = 'block';
+  hoArchCon.style.display = 'block';
   lastHo.style.display = 'none';
   newFormHo.style.display = 'none';
   backBtn.style.display = 'block';
@@ -566,12 +567,12 @@ patrolBtn.addEventListener('click', (e) => {
   backBtn.style.display = 'block';
   patrolNav.style.display = 'block';
 
+  datePatrol.textContent = dateFormat().slice(0, 10);
+
   ipcRenderer.send('loadLast', {
     type: 'patrol',
   });
 });
-
-datePatrol.textContent = dateFormat().slice(0, 10);
 
 const radiosPatrol = document.getElementsByClassName('radioPatrol');
 displayTextArea(radiosPatrol, textPatrol);
@@ -709,6 +710,8 @@ keysBtn.addEventListener('click', (e) => {
   keysNav.style.display = 'block';
   backBtn.style.display = 'block';
 
+  dateKeys.textContent = dateFormat().slice(0, 10);
+
   ipcRenderer.send('loadNotReturned', {
     type: 'keys',
   });
@@ -724,8 +727,6 @@ ipcRenderer.on('loadedNotReturned', (e, docs) => {
     });
   }
 });
-
-dateKeys.textContent = dateFormat().slice(0, 10);
 
 keysForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -905,12 +906,12 @@ laptopBtn.addEventListener('click', (e) => {
   laptopNav.style.display = 'block';
   backBtn.style.display = 'block';
 
+  dateLaptop.textContent = dateFormat().slice(0, 10);
+
   ipcRenderer.send('loadNotCollected', {
     type: 'laptop',
   });
 });
-
-dateLaptop.textContent = dateFormat().slice(0, 10);
 
 ipcRenderer.on('loadedNotCollected', (e, docs) => {
   if (docs) {
@@ -1114,9 +1115,9 @@ childrenBtn.addEventListener('click', (e) => {
   newFormChildren.style.display = 'block';
   childrenNav.style.display = 'block';
   backBtn.style.display = 'block';
-});
 
-dateChildren.textContent = dateFormat().slice(0, 10);
+  dateChildren.textContent = dateFormat().slice(0, 10);
+});
 
 const radiosChildren = document.getElementsByClassName('radioChildren');
 displayTextArea(radiosChildren, childrenFormDrop);
@@ -1245,6 +1246,8 @@ carParkBtn.addEventListener('click', (e) => {
   carParkNav.style.display = 'block';
   backBtn.style.display = 'block';
 
+  dateCarPark.textContent = dateFormat().slice(0, 10);
+
   ipcRenderer.send('loadNotContacted', {
     type: 'carPark',
   });
@@ -1260,8 +1263,6 @@ ipcRenderer.on('loadedNotContacted', (e, docs) => {
     });
   }
 });
-
-dateCarPark.textContent = dateFormat().slice(0, 10);
 
 carParkForm.addEventListener('submit', (e) => {
   e.preventDefault();
